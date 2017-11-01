@@ -1,0 +1,13 @@
+# Site settings
+# accessible in the templates via {{ site.myvariable }}.
+
+title: Jessica L. Chang Portfolio
+email: jessicalauren718@gmail.com
+description: excerpt for SEO
+name: Jessica Chang
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "http://jessicalchang.com" # the base hostname & protocol for your site, e.g. http://example.com
+
+# Build settings
+markdown: kramdown
+# plugins:
