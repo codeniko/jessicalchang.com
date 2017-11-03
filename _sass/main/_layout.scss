@@ -248,6 +248,8 @@
   background-size: contain;
   background-position: center;
   position: relative;
+  display: flex;
+  justify-content: center;
 }
 
 .hero-inner {
@@ -267,6 +269,15 @@
   align-items: center;
   align-content: center;
   justify-content: center;
+}
+
+.scroll-down {
+  background: url(images/scroll-icon.svg) no-repeat;
+  width: 20px;
+  height: 11px;
+  background-size: 20px 11px;
+  position: absolute;
+  bottom: 10%;
 }
 
 .home-hello {
