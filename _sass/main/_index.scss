@@ -21,7 +21,7 @@
 
   // same position for mobile
   @include media-query($on-tablet) {
-    top: 33%;
+    top: 30%;
   }
 
   display: flex;
@@ -65,6 +65,12 @@
     line-height: 73px;
   }
 
+  @include media-query(600px) {
+    font-size: 54px;
+    margin-bottom: 31px;
+    line-height: 65px;
+  }
+
   @include media-query($on-mobile) {
     font-size: 48px;
     margin-bottom: 31px;
@@ -103,6 +109,13 @@
     font-size: 36px;
     max-width: 416px;
     line-height: 44px;
+  }
+
+  @include media-query(600px) {
+    font-size: 30px;
+    max-width: 350px;
+    margin-top: -10px;
+    line-height: 38px;
   }
 
   @include media-query($on-mobile) {

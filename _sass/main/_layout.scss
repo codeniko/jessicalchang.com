@@ -13,6 +13,10 @@
   // Positioning context for the mobile navigation icon
   position: relative;
 
+  @include media-query(640px) {
+    padding: 24px 28px;
+  }
+
   @include media-query($on-mobile) {
     padding: 18px 15px;
   }
@@ -22,6 +26,11 @@
   display: inline-block;
   @include bg-image-fixed('images/logo.svg', 42px, 51px);
 
+  @include media-query(640px) {
+    width: 33px;
+    height: 40px;
+  }
+
   @include media-query($on-mobile) {
     width: 25px;
     height: 30px;
@@ -30,10 +39,6 @@
 
 // encapsulates nav-links set
 .trigger {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  width: 280px;
 }
 
 .site-nav {
@@ -49,6 +54,20 @@
     font-size: 18px;
     color: $text-color;
     @include lato-font(400);
+
+    &:not(:last-child) {
+      margin-right: 38px;
+    }
+
+    @include media-query(640px) {
+      line-height: 20px;
+      font-size: 15px;
+
+      &:not(:last-child) {
+        margin-right: 25px;
+      }
+    }
+
   }
 
   @include media-query($on-mobile) {
