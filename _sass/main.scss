@@ -51,9 +51,42 @@ $on-desktop:        800px !default;
   font-weight: $weight;
 }
 
+// responsive background image that maintains height/width ratio
+// ratio = height/width ratio of image
+@mixin bg-image($url, $ratio, $max-width: null, $max-height: null) {
+  @if $max-width { max-width: $max-width; }
+  @if $max-height { max-height: $max-height; }
+
+  width: 100%;
+  background: url($url) no-repeat;
+  background-size: contain;
+  background-position: center;
+  position: relative;
+
+  .padding {
+    height: 0px;
+    display: block;
+    padding-top: $ratio;
+  }
+}
+
+// fixed size background image
+@mixin bg-image-fixed($url, $width, $height) {
+  width: $width;
+  height: $height;
+  background: url($url) no-repeat;
+  background-size: contain;
+  background-position: center;
+  position: relative;
+}
+
 // Import partials.
 @import
   "normalize.css",
   "main/base",
-  "main/layout"
+  "main/layout",
+  "main/index"
 ;
+
+// Import fonts
+@import url("https://fonts.googleapis.com/css?family=Lato:300,400|Montserrat:400,700");

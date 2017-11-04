@@ -1,0 +1,68 @@
+.hero-image {
+  @include bg-image('images/home-hero.jpg', 49.72%, null, 716px);
+
+  // center inner text
+  display: flex;
+  justify-content: center;
+}
+
+.hero-text-container {
+  position: absolute;
+  top: 28%;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+}
+
+.scroll-down {
+  @include bg-image-fixed('images/scroll-icon.svg', 20px, 11px);
+  position: absolute;
+  bottom: 10%;
+}
+
+.home-hello {
+  @include mont-font(700);
+  font-size: 64px;
+  letter-spacing: -0.2px;
+  margin-bottom: 34px;
+}
+
+.home-desc {
+  @include mont-font(400);
+  font-size: 48px;
+  letter-spacing: -0.1px;
+  line-height: 58px;
+  max-width: 696px;
+  text-align: center;
+}
+
+.section-header {
+  @include mont-font(400);
+  text-transform: uppercase;
+  font-size: 24px;
+  letter-spacing: -0.1px;
+  padding: 90px 0px;
+  display: block;
+  text-align: center;
+}
+
+.featured-sections {
+}
+
+.section-row {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.featured-zeit {
+  @include bg-image('images/zeit-home.jpg', 75%, 536px, null);
+
+  &:hover {
+    background: url(images/zeit-home-hover.jpg) no-repeat;
+  }
+}
