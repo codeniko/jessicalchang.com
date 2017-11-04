@@ -21,8 +21,9 @@ $grey-color-dark:  darken($grey-color, 25%) !default;
 // Width of the content area
 $content-width:    800px !default;
 
-$on-mobile:          600px !default;
-$on-desktop:        800px !default;
+$on-mobile:        375px !default;
+$on-tablet:        768px !default;
+$on-desktop:       1200px !default;
 
 // Use media queries like this:
 // @include media-query($on-mobile) {

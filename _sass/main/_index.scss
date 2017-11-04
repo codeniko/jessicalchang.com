@@ -1,5 +1,9 @@
 .hero-image {
-  @include bg-image('images/home-hero.jpg', 49.72%, null, 716px);
+  @include bg-image('images/home-hero.jpg', 49.72%);
+
+  @include media-query($on-tablet) {
+    @include bg-image('images/home-hero-tablet.jpg', 93.23%);
+  }
 
   // center inner text
   display: flex;
@@ -10,6 +14,10 @@
   position: absolute;
   top: 28%;
   width: 100%;
+
+  @include media-query($on-tablet) {
+    top: 33%;
+  }
 
   display: flex;
   flex-direction: column;
@@ -22,13 +30,24 @@
   @include bg-image-fixed('images/scroll-icon.svg', 20px, 11px);
   position: absolute;
   bottom: 10%;
+
+  @include media-query($on-tablet) {
+    bottom: 7%;
+  }
 }
 
 .home-hello {
   @include mont-font(700);
   font-size: 64px;
   letter-spacing: -0.2px;
-  margin-bottom: 34px;
+  margin-bottom: 45px;
+  line-height: 78px;
+
+  @include media-query($on-tablet) {
+    font-size: 60px;
+    margin-bottom: 31px;
+    line-height: 73px;
+  }
 }
 
 .home-desc {
@@ -38,12 +57,19 @@
   line-height: 58px;
   max-width: 696px;
   text-align: center;
+
+  @include media-query($on-tablet) {
+    font-size: 36px;
+    max-width: 416px;
+    line-height: 44px;
+  }
 }
 
 .section-header {
   @include mont-font(400);
   text-transform: uppercase;
   font-size: 24px;
+  line-height: 29px;
   letter-spacing: -0.1px;
   padding: 90px 0px;
   display: block;
