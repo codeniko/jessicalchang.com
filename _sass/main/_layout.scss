@@ -1,3 +1,12 @@
+#page-overlay {
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(65, 67, 67, 0.51);
+  z-index: 10;
+}
+
 /**
  * Site header
  */
@@ -9,9 +18,6 @@
   flex-flow: row nowrap;
   justify-content: space-between;
   align-items: center;
-
-  // Positioning context for the mobile navigation icon
-  position: relative;
 
   @include media-query(640px) {
     padding: 24px 28px;
@@ -48,29 +54,49 @@
     display: none;
   }
 
+  // don't show home nav link on non-mobile devices
+  .home-nav-link {
+    display: none;
+  }
+
   .nav-link {
+
     line-height: 22px;
     text-transform: uppercase;
     font-size: 18px;
     color: $text-color;
     @include lato-font(400);
 
-    &:not(:last-child) {
-      margin-right: 38px;
+    // dont apply to mobile
+    @media screen and (min-width: $on-mobile + 1) {
+      &:not(:last-child) {
+        margin-right: 38px;
+      }
     }
 
     @include media-query(640px) {
       line-height: 20px;
       font-size: 15px;
 
-      &:not(:last-child) {
-        margin-right: 25px;
+      // dont apply to mobile
+      @media screen and (min-width: $on-mobile + 1) {
+        &:not(:last-child) {
+          margin-right: 25px;
+        }
       }
     }
 
+    // menu items after opening menu from hamburger button
+    @include media-query($on-mobile) {
+      line-height: 22px;
+      font-size: 18px;
+      margin-top: 20px;
+    }
   }
 
   @include media-query($on-mobile) {
+    $menu-width: 200px;
+
     label[for="nav-trigger"] {
       display: flex;
       justify-content: center;
@@ -78,8 +104,12 @@
 
       width: 36px;
       height: 36px;
-      z-index: 2;
+      z-index: 2; // keep it over the menu icon
       cursor: pointer;
+    }
+
+    .home-nav-link {
+      display: inline;
     }
 
     .mobile-menu-icon {
@@ -87,20 +117,33 @@
       display: block;
     }
 
+    input:checked + label[for="nav-trigger"] {
+      margin-right: $menu-width; 
+    }
+
+    // trigger nav menu close
     input ~ .trigger {
       clear: both;
       display: none;
     }
 
+    // trigger nav menu open
     input:checked ~ .trigger {
-      display: block;
-      padding-bottom: 5px;
+      //padding-bottom: 5px;
+      width: $menu-width;
+      position: absolute;
+      right: 0px;
+      top: 0px;
+      height: 100%;
+      background-color: #fbfbfb;
+      box-shadow: -5px 1px 10px 0 rgba(65, 67, 67, 0.38);
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      z-index: 20;
     }
 
-    .nav-link {
-      display: block;
-      padding: 5px 10px;
-    }
   }
 }
 

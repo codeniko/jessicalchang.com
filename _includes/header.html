@@ -6,12 +6,13 @@
 
   {% if page_paths %}
     <nav class="site-nav">
-      <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+      <input type="checkbox" id="nav-trigger" class="nav-trigger">
       <label for="nav-trigger">
         <div class="mobile-menu-icon"></div>
       </label>
 
       <div class="trigger">
+        <a class="nav-link home-nav-link" href="{{ site.baseurl }}/">Home</a>
         {% for path in page_paths %}
           {% assign my_page = site.pages | where: "path", path | first %}
           {% if my_page.title %}
