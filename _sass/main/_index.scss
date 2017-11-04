@@ -153,7 +153,7 @@
 .featured-zeit {
   @include bg-image('images/zeit-home.jpg', 75%, 536px, null);
 
-  @media only screen and (min-width: $on-mobile + 1) {
+  @media only screen and (min-width: $on-tablet + 1) {
     &:hover {
       @include bg-image('images/zeit-home-hover.jpg', 75%, 536px, null);
     }
