@@ -21,8 +21,8 @@ $grey-color-dark:  darken($grey-color, 25%) !default;
 // Width of the content area
 $content-width:    800px !default;
 
-$on-mobile:        375px !default;
-$on-tablet:        768px !default;
+$on-mobile:        450px !default;
+$on-tablet:        800px !default;
 $on-desktop:       1200px !default;
 
 @mixin media-query($device) {
