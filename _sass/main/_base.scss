@@ -2,6 +2,8 @@
  * Basic styling
  */
 body {
+  padding: 0px;
+  margin: 0px;
   max-width: 1440px;
   height: 100%;
   font: $base-font-weight #{$base-font-size}/#{$base-line-height} $base-font-family;
