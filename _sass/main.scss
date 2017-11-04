@@ -25,13 +25,6 @@ $on-mobile:        375px !default;
 $on-tablet:        768px !default;
 $on-desktop:       1200px !default;
 
-// Use media queries like this:
-// @include media-query($on-mobile) {
-//   .wrapper {
-//     padding-right: $spacing-unit / 2;
-//     padding-left: $spacing-unit / 2;
-//   }
-// }
 @mixin media-query($device) {
   @media screen and (max-width: $device) {
     @content;

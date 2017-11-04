@@ -5,6 +5,10 @@
     @include bg-image('images/home-hero-tablet.jpg', 93.23%);
   }
 
+  @include media-query($on-mobile) {
+    @include bg-image('images/home-hero-mobile.jpg', 160%);
+  }
+
   // center inner text
   display: flex;
   justify-content: center;
@@ -15,6 +19,7 @@
   top: 28%;
   width: 100%;
 
+  // same position for mobile
   @include media-query($on-tablet) {
     top: 33%;
   }
@@ -33,6 +38,10 @@
 
   @include media-query($on-tablet) {
     bottom: 7%;
+  }
+
+  @include media-query($on-mobile) {
+    bottom: 10%;
   }
 }
 
@@ -54,6 +63,12 @@
     font-size: 60px;
     margin-bottom: 31px;
     line-height: 73px;
+  }
+
+  @include media-query($on-mobile) {
+    font-size: 48px;
+    margin-bottom: 31px;
+    line-height: 58px;
   }
 }
 
@@ -89,6 +104,12 @@
     max-width: 416px;
     line-height: 44px;
   }
+
+  @include media-query($on-mobile) {
+    font-size: 24px;
+    max-width: 280px;
+    line-height: 29px;
+  }
 }
 
 .section-header {
@@ -100,6 +121,11 @@
   padding: 90px 0px;
   display: block;
   text-align: center;
+
+  @include media-query($on-mobile) {
+    font-size: 18px;
+    line-height: 22px;
+  }
 }
 
 .featured-sections {
@@ -114,7 +140,15 @@
 .featured-zeit {
   @include bg-image('images/zeit-home.jpg', 75%, 536px, null);
 
-  &:hover {
-    background: url(images/zeit-home-hover.jpg) no-repeat;
+
+  @media only screen and (min-width: $on-mobile + 1) {
+    &:hover {
+      background: url(images/zeit-home-hover.jpg) no-repeat;
+    }
   }
+
+  @include media-query($on-mobile) {
+    max-width: 295px;
+  }
+
 }

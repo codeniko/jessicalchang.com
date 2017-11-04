@@ -2,10 +2,8 @@
  * Site header
  */
 .site-header {
-  //min-height: $spacing-unit * 1.865;
-  padding: 30px 0px;
+  padding: 30px 40px;
   max-height: 111px;
-  width: 100%;
 
   display: flex;
   flex-flow: row nowrap;
@@ -14,12 +12,20 @@
 
   // Positioning context for the mobile navigation icon
   position: relative;
+
+  @include media-query($on-mobile) {
+    padding: 18px 15px;
+  }
 }
 
 .site-logo {
   display: inline-block;
   @include bg-image-fixed('images/logo.svg', 42px, 51px);
-  margin-left: 40px;
+
+  @include media-query($on-mobile) {
+    width: 25px;
+    height: 30px;
+  }
 }
 
 // encapsulates nav-links set
@@ -31,15 +37,9 @@
 }
 
 .site-nav {
-  margin-right: 40px;
+  display: inline-block;
 
-  //line-height: $base-line-height * $base-font-size * 2.25;
-
-  .nav-trigger {
-    display: none;
-  }
-
-  .menu-icon {
+  .nav-trigger, .mobile-menu-icon {
     display: none;
   }
 
@@ -49,44 +49,23 @@
     font-size: 18px;
     color: $text-color;
     @include lato-font(400);
-
-
-    // Gaps between nav items, but not on the last one
-    &:not(:last-child) {
-      //margin-right: 37px;
-    }
   }
 
   @include media-query($on-mobile) {
-    position: absolute;
-    top: 9px;
-    right: $spacing-unit / 2;
-    background-color: $background-color;
-    border: 1px solid $grey-color-light;
-    border-radius: 5px;
-    text-align: right;
-
     label[for="nav-trigger"] {
-      display: block;
-      float: right;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
       width: 36px;
       height: 36px;
       z-index: 2;
       cursor: pointer;
     }
 
-    .menu-icon {
+    .mobile-menu-icon {
+      @include bg-image-fixed('images/hamburger-menu.svg', 23px, 17px);
       display: block;
-      float: right;
-      width: 36px;
-      height: 26px;
-      line-height: 0;
-      padding-top: 10px;
-      text-align: center;
-
-      > svg path {
-        fill: $grey-color-dark;
-      }
     }
 
     input ~ .trigger {
@@ -102,11 +81,6 @@
     .nav-link {
       display: block;
       padding: 5px 10px;
-
-      &:not(:last-child) {
-        margin-right: 0;
-      }
-      margin-left: 20px;
     }
   }
 }
@@ -137,6 +111,10 @@
     max-width: 617px;
   }
 
+  @include media-query($on-mobile) {
+    max-width: 295px;
+  }
+
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
@@ -148,6 +126,11 @@
   font-size: 13px;
   line-height: 16px;
   text-transform: uppercase;
+
+  @include media-query($on-mobile) {
+    font-size: 11px;
+    line-height: 13px;
+  }
 }
 
 .social-media-list {
@@ -158,11 +141,20 @@
   max-width: 132px;
   width: 132px;
 
+  @include media-query($on-mobile) {
+    max-width: 88px;
+  }
+
   // shared
   .social-media {
     display: inline-block;
     width: 16px;
     height: 16px;
+
+    @include media-query($on-mobile) {
+      width: 12px;
+      height: 12px;
+    }
   }
 
   .email-icon {
@@ -170,6 +162,11 @@
     background-size: contain;
     width: 16px;
     height: 13px;
+
+    @include media-query($on-mobile) {
+      width: 12px;
+      height: 10px;
+    }
   }
 
   .linkedin-icon {
