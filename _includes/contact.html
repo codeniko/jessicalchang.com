@@ -1,0 +1,66 @@
+<div id="contact-modal">
+  <div class="contact-info">
+    <span class="contact-header-text">SAY HI</span>
+    <span class="contact-desc">Thanks for taking the time to stop by. Feel free to reach out and drop me a line. I’d love to chat!</span>
+    <div class="contact-details social-media-list">
+      <div class="contact-details-row">
+        <div class="social-media-icon location-icon"></div>
+        <span>{{ site.location }}</span>
+      </div>
+
+      <div class="contact-details-row">
+        <div class="social-media-icon phone-icon"></div>
+        <span>{{ site.phone }}</span>
+      </div>
+
+      <div class="contact-details-row">
+        <div class="social-media-icon email-icon"></div>
+        <span>{{ site.email }}</span>
+      </div>
+    </div>
+
+    <div class="social-media-list">
+      <div class="social-media-icon margin-excl-first-child linkedin-icon"></div>
+      <div class="social-media-icon margin-excl-first-child dribbble-icon"></div>
+      <div class="social-media-icon margin-excl-first-child pinterest-icon"></div>
+      <div class="social-media-icon margin-excl-first-child instagram-icon"></div>
+    </div>
+  </div>
+
+  <form id="contact-form" class="material-design">
+    <img src="{{ '/assets/images/exit-icon.svg' | relative_url }}" id="contact-close-icon">
+
+    <div class="form-row flex-row">
+      <div class="form-group form-col-2">
+        <input type="text" required="required" id="first-name">
+        <label class="control-label" for="input">FIRST NAME *</label><i class="bar"></i>
+      </div>
+
+      <div class="form-group form-col-2">
+        <input type="text" required="required" id="last-name">
+        <label class="control-label" for="input">LAST NAME*</label><i class="bar"></i>
+      </div>
+    </div>
+
+    <div class="form-group form-row">
+      <input type="text" required="required" id="email">
+      <label class="control-label" for="input">EMAIL ADDRESS *</label><i class="bar"></i>
+    </div>
+
+    <div class="form-group form-row form-col-1">
+      <input type="text" required="required" id="subject">
+      <label class="control-label" for="input">SUBJECT *</label><i class="bar"></i>
+    </div>
+
+    <div class="form-group form-row">
+      <input type="text" required="required" id="message">
+      <label class="control-label" for="input">MESSAGE *</label><i class="bar"></i>
+    </div>
+
+    <div class="submit-row">
+      <span><span class="asterisk">*</span> Required Fields</span>
+      <button type="button" id="contact-submit-button">SEND</button>
+    </div>
+
+  </form>
+</div>
