@@ -148,6 +148,15 @@
   display: flex;
   justify-content: center;
   position: relative;
+
+  a {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+  }
 }
 
 .featured-zeit {

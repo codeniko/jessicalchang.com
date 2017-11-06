@@ -155,7 +155,8 @@
 .site-footer {
   display: flex;
   justify-content: center;
-  margin-top: 90px;
+  padding-top: 90px;
+  background-color: #fbfbfb;
 }
 
 .footer-container {
@@ -252,4 +253,6 @@
  * Page content
  */
 .page-content {
+  width: 100%;
+  background-color: #fbfbfb;
 }

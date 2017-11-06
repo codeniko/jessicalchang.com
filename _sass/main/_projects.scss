@@ -1,0 +1,98 @@
+// assuming fontsize is default, in base
+
+.project-page {
+  display: flex;
+  justify-content: center;
+}
+
+.project-container {
+  max-width: 936px;
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+  //justify-content: center;
+  align-items: center;
+}
+
+.project-description {
+  text-align: center;
+  width: 510px;
+  margin: 95px 0px 130px 0px;
+
+  & > h2 {
+    @include mont-font(400);
+    letter-spacing: -0.1px;
+    font-size: 24px;
+    line-height: 29px;
+    margin: 0px;
+    padding: 0px;
+  }
+
+  .desc-line {
+    margin-top: 20px;
+
+    label {
+      @include lato-font(400);
+    }
+  }
+}
+
+.project-section {
+  line-height: 25px;
+  display: flex;
+
+  &:not(:first-child) {
+    margin-top: 120px;
+  }
+
+  img { display: inline-block; }
+
+  .pad-top { margin-top: 20px; }
+
+  .shared-row {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .desc {
+    max-width: 376px;
+    width: 100%;
+
+    h2 {
+      text-align: center;
+      text-transform: uppercase;
+      @include lato-font(700);
+      font-size: 18px;
+      line-height: 22px;
+      margin: 0px 0px 8px 0px;
+      padding: 0px;
+    }
+
+    ol {
+      margin-top: 16px;
+      margin-left: 45px;
+      padding: 0px;
+    }
+    li {
+      margin-top: 16px;
+    }
+  }
+
+  .next-steps {
+    max-width: 510px;
+    text-align:center;
+    line-height: 19px;
+  }
+
+  .left {
+    display: inline-block;
+    margin-right: 48px;
+    order: 1;
+  }
+
+  .right {
+    display: inline-block;
+    order: 2;
+  }
+}
