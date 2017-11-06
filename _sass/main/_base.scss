@@ -43,49 +43,36 @@ h1, h2, h3, h4, h5, h6 {
  * Links
  */
 a {
-  color: $brand-color;
+  color: $text-color;
   text-decoration: none;
 
+  svg > path {
+    fill: $text-color;
+  }
+  svg > g {
+    stroke: $text-color;
+  }
+
   &:visited {
-    color: darken($brand-color, 15%);
+    color: $text-color;
   }
 
   &:hover {
-    color: $text-color;
-    text-decoration: underline;
-  }
+    color: rgba(65, 67, 67, 0.6);
 
-  .social-media-list &:hover {
-    text-decoration: none;
-
-    .username {
-      text-decoration: underline;
+    $svgcolor: #63a2aa;
+    svg > path {
+      fill: $svgcolor;
+    }
+    svg > g {
+      stroke: $svgcolor;
     }
   }
-}
 
-
-/**
- * Wrapper
-.wrapper {
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-between;
-  align-items: center;
-
-  max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit} * 2));
-  max-width:         calc(#{$content-width} - (#{$spacing-unit} * 2));
-  margin-right: auto;
-  margin-left: auto;
-  @extend %clearfix;
-
-  @include media-query($on-desktop) {
-    max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit}));
-    max-width:         calc(#{$content-width} - (#{$spacing-unit}));
+  &:active {
+    color: #63a2aa;
   }
 }
- */
-
 
 
 /**

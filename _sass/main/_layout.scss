@@ -64,7 +64,6 @@
     line-height: 22px;
     text-transform: uppercase;
     font-size: 18px;
-    color: $text-color;
     @include lato-font(400);
 
     // dont apply to mobile
@@ -211,9 +210,6 @@
 
   // shared
   .social-media-icon {
-    svg path {
-      fill: #414343;
-    }
 
     display: inline-block;
     width: 16px;
@@ -226,13 +222,6 @@
   }
 
   .email-icon {
-    svg path {
-      fill: none;
-    }
-
-    svg g {
-      stroke: #414343;
-    }
 
     width: 16px;
     height: 13px;

@@ -1,22 +1,57 @@
-// hide page overlay and unlock scrolling
-$('#page-overlay').click(() => {
-  const isOpen = $('#nav-trigger').is(':checked')
 
-  if (isOpen) {
-    $('#page-overlay').css('display', 'none')
+// hide page overlay and unlock scrolling
+function hidePageOverlay() {
+  $('#page-overlay').css('display', 'none')
+  $('body').css('overflow-y', 'scroll')
+}
+
+function showPageOverlay() {
+  $('#page-overlay').css('display', 'block')
+  $('body').css('overflow-y', 'hidden')
+}
+
+
+// Hooks into HTML elements
+
+// close page overlay if nav menu open
+$('#page-overlay').click(() => {
+  const isNavMenuOpen = $('#nav-trigger').is(':checked')
+
+  if (isNavMenuOpen) {
+    hidePageOverlay()
     $('#nav-trigger').prop('checked', false)
-    $('body').css('overflow-y', 'scroll')
   }
 })
 
 // When nav menu for mobile opened, show page overlay and lock scrolling
 $('#nav-trigger').click(() => {
-  const isOpen = $('#nav-trigger').is(':checked')
+  const isNavMenuOpen = $('#nav-trigger').is(':checked')
 
   // should be triggered because element is input, but check incase anything weird happens where input isn't checked
-  if (isOpen) {
-    $('#page-overlay').css('display', 'block')
-    $('body').css('overflow-y', 'hidden')
+  if (isNavMenuOpen) {
+    showPageOverlay()
     window.scrollTo(0, 0);
   }
+})
+
+
+// Contact modal
+function showContactModal() {
+  $('#contact-modal').css('display', 'flex')
+  showPageOverlay()
+}
+
+function closeContactModal() {
+  $('#contact-modal').css('display', 'none')
+  hidePageOverlay()
+}
+
+$('#contact-nav-link').click(() => {
+  showContactModal()
+})
+$('#contact-close-icon').click(() => {
+  closeContactModal()
+})
+$('#contact-submit-button').click(() => {
+  closeContactModal()
 })
