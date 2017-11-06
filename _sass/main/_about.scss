@@ -1,0 +1,74 @@
+.about-page {
+  display: flex;
+  justify-content: center;
+}
+
+.about-container {
+  max-width: 936px;
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+  //justify-content: center;
+  align-items: center;
+}
+
+.about-header {
+  text-align: center;
+  text-transform: uppercase;
+  @include mont-font(400);
+  font-size: 24px;
+  line-height: 29px;
+  letter-spacing: -0.1px;
+
+  margin: 90px 0px 60px 0px;
+}
+
+.about-images {
+  width: 100%;
+  //display: flex;
+  //justify-content: space-between;
+  //flex-wrap: wrap;
+
+  img {
+    float: left;
+    display: inline-block;
+
+    &:first-child {
+      margin-right: 24px;
+    }
+  }
+}
+
+.about-text {
+  font-size: 20px;
+  line-height: 31px;
+  letter-spacing: -0.1px;
+  margin: 50px 0px;
+}
+
+//TODO this button is similar to contact page button, merge the two (except possibly sizing)
+.about-page button {
+  text-align: center;
+  @include lato-font(400);
+  color: #fbfbfb;
+  font-size: 16px;
+  line-height: 19px;
+  background-color: #414343;
+  box-sizing: border-box;
+  border: 1px solid #414343;
+  width: 163px;
+  height: 47px;
+  border-radius: 2px;
+  outline: none;
+
+  &:hover {
+    color: $hover-color;
+  }
+
+  &:active {
+    color: #414343;
+    background-color: $color;
+  }
+
+}
