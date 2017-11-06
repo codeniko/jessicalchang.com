@@ -10,6 +10,10 @@ function showPageOverlay() {
   $('body').css('overflow-y', 'hidden')
 }
 
+function closeMobileNavMenu() {
+  hidePageOverlay()
+  $('#nav-trigger').prop('checked', false)
+}
 
 // Hooks into HTML elements
 
@@ -18,8 +22,7 @@ $('#page-overlay').click(() => {
   const isNavMenuOpen = $('#nav-trigger').is(':checked')
 
   if (isNavMenuOpen) {
-    hidePageOverlay()
-    $('#nav-trigger').prop('checked', false)
+    closeMobileNavMenu()
   }
 })
 
@@ -47,6 +50,7 @@ function closeContactModal() {
 }
 
 $('#contact-nav-link').click(() => {
+  closeMobileNavMenu()
   showContactModal()
 })
 $('#contact-close-icon').click(() => {
@@ -54,4 +58,11 @@ $('#contact-close-icon').click(() => {
 })
 $('#contact-submit-button').click(() => {
   closeContactModal()
+})
+
+// end of contact modal
+
+
+$('#work-nav-link').click(() => {
+  closeMobileNavMenu()
 })
