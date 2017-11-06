@@ -10,6 +10,11 @@ name: Jessica Chang
 baseurl: "/jessicalchang.com" # the subpath of your site, e.g. /blog
 url: "http://jessicalchang.com" # the base hostname & protocol for your site, e.g. http://example.com
 
+instagram: https://www.instagram.com/jessicalchang/
+dribble: https://dribbble.com/jessicalchang
+pinterest: https://www.pinterest.com/itsjlcx3/
+linkedin: https://www.linkedin.com/in/jessicalchang/
+
 # Build settings
 markdown: kramdown
 # plugins:

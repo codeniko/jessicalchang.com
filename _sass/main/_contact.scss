@@ -71,6 +71,10 @@
 
     // shared
     .social-media-icon {
+      svg path {
+        fill: #fbfbfb;
+      }
+
       @include media-query($on-tablet) {
         width: 12px;
         height: 12px;
@@ -106,8 +110,14 @@
     }
 
     .email-icon {
-      background: url(images/mail-icon-white.svg) no-repeat;
-      background-size: contain;
+      svg path {
+        fill: none;
+      }
+
+      svg g {
+        stroke: #fbfbfb;
+      }
+
       width: 18px;
       height: 15px;
 
@@ -115,26 +125,6 @@
         width: 15px;
         height: 13px;
       }
-    }
-
-    .linkedin-icon {
-      background: url(images/linked-in-white.svg) no-repeat;
-      background-size: contain;
-    }
-
-    .dribbble-icon {
-      background: url(images/dribbble-white.svg) no-repeat;
-      background-size: contain;
-    }
-
-    .pinterest-icon {
-      background: url(images/pinterest-white.svg) no-repeat;
-      background-size: contain;
-    }
-
-    .instagram-icon {
-      background: url(images/instagram-white.svg) no-repeat;
-      background-size: contain;
     }
   }
 }

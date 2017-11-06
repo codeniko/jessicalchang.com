@@ -13,17 +13,27 @@
         <span>{{ site.phone }}</span>
       </div>
 
-      <div class="contact-details-row">
-        <div class="social-media-icon email-icon"></div>
-        <span>{{ site.email }}</span>
-      </div>
+      <a href="mailto:{{ site.email }}" class="contact-details-row">
+          <div class="social-media-icon email-icon">
+            {% include icon-mail.svg %}
+          </div>
+          <span>{{ site.email }}</span>
+      </a>
     </div>
 
     <div class="social-media-list">
-      <div class="social-media-icon margin-excl-first-child linkedin-icon"></div>
-      <div class="social-media-icon margin-excl-first-child dribbble-icon"></div>
-      <div class="social-media-icon margin-excl-first-child pinterest-icon"></div>
-      <div class="social-media-icon margin-excl-first-child instagram-icon"></div>
+      <a href="{{ site.linkedin }}" class="social-media-icon margin-excl-first-child linkedin-icon">
+        {% include icon-linkedin.svg %}
+      </a>
+      <a href="{{ site.dribble }}" class="social-media-icon margin-excl-first-child dribbble-icon">
+        {% include icon-dribbble.svg %}
+      </a>
+      <a href="{{ site.pinterest }}" class="social-media-icon margin-excl-first-child pinterest-icon">
+        {% include icon-pinterest.svg %}
+      </a>
+      <a href="{{ site.instagram }}" class="social-media-icon margin-excl-first-child instagram-icon">
+        {% include icon-instagram.svg %}
+      </a>
     </div>
   </div>
 

@@ -118,7 +118,7 @@
     }
 
     input:checked + label[for="nav-trigger"] {
-      margin-right: $menu-width; 
+      margin-right: $menu-width;
     }
 
     // trigger nav menu close
@@ -211,6 +211,10 @@
 
   // shared
   .social-media-icon {
+    svg path {
+      fill: #414343;
+    }
+
     display: inline-block;
     width: 16px;
     height: 16px;
@@ -222,8 +226,14 @@
   }
 
   .email-icon {
-    background: url(images/mail-icon.svg) no-repeat;
-    background-size: contain;
+    svg path {
+      fill: none;
+    }
+
+    svg g {
+      stroke: #414343;
+    }
+
     width: 16px;
     height: 13px;
 
@@ -231,26 +241,6 @@
       width: 12px;
       height: 10px;
     }
-  }
-
-  .linkedin-icon {
-    background: url(images/linked-in.svg) no-repeat;
-    background-size: contain;
-  }
-
-  .dribbble-icon {
-    background: url(images/dribbble.svg) no-repeat;
-    background-size: contain;
-  }
-
-  .pinterest-icon {
-    background: url(images/pinterest.svg) no-repeat;
-    background-size: contain;
-  }
-
-  .instagram-icon {
-    background: url(images/instagram.svg) no-repeat;
-    background-size: contain;
   }
 
   .phone-icon {

@@ -3,11 +3,21 @@
     <span class="copyright">{{ site.name }} © 2017</span>
 
     <div class="social-media-list">
-      <div class="social-media-icon margin-excl-first-child email-icon"></div>
-      <div class="social-media-icon margin-excl-first-child linkedin-icon"></div>
-      <div class="social-media-icon margin-excl-first-child dribbble-icon"></div>
-      <div class="social-media-icon margin-excl-first-child pinterest-icon"></div>
-      <div class="social-media-icon margin-excl-first-child instagram-icon"></div>
+      <a href="mailto:{{ site.email }}" class="social-media-icon margin-excl-first-child email-icon">
+        {% include icon-mail.svg %}
+      </a>
+      <a href="{{ site.linkedin }}" class="social-media-icon margin-excl-first-child linkedin-icon">
+        {% include icon-linkedin.svg %}
+      </a>
+      <a href="{{ site.dribble }}" class="social-media-icon margin-excl-first-child dribbble-icon">
+        {% include icon-dribbble.svg %}
+      </a>
+      <a href="{{ site.pinterest }}" class="social-media-icon margin-excl-first-child pinterest-icon">
+        {% include icon-pinterest.svg %}
+      </a>
+      <a href="{{ site.instagram }}" class="social-media-icon margin-excl-first-child instagram-icon">
+        {% include icon-instagram.svg %}
+      </a>
     </div>
   </div>
 </footer>
