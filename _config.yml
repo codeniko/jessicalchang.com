@@ -5,10 +5,10 @@ title: Jessica L. Chang Portfolio
 email: jessicalauren718@gmail.com
 location: San Jose, CA
 phone: (646) 469-7942
-description: excerpt for SEO
+description: Jessica L. Chang UX/UI Design portfolio
 name: Jessica Chang
-baseurl: "/jessicalchang.com" # the subpath of your site, e.g. /blog
-url: "http://jessicalchang.com" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "http://www.jessicalchang.com" # the base hostname & protocol for your site, e.g. http://example.com
 
 instagram: https://www.instagram.com/jessicalchang/
 dribble: https://dribbble.com/jessicalchang
