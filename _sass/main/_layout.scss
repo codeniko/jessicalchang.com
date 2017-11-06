@@ -226,6 +226,13 @@
 
     width: 16px;
     height: 13px;
+    position: relative;
+
+    // fix droopy email icon since height is smaller than width
+    svg {
+      position: absolute;
+      top: 0px;
+    }
 
     @include media-query($on-mobile) {
       width: 12px;
