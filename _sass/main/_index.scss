@@ -184,7 +184,7 @@
 
   &:hover {
     opacity: 1;
-    background-color: rgba(65, 67, 67, 0.51);
+    background-color: overlay-value();
   }
 
   @include media-query($on-mobile) {

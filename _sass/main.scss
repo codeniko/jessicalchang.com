@@ -74,6 +74,11 @@ $on-desktop:       1200px !default;
   position: relative;
 }
 
+// default alpha 0.51 for things overlaying over components
+@function overlay-value($alpha: 0.51) {
+  @return rgba(65, 67, 67, $alpha)
+}
+
 // Import partials.
 @import
   "normalize.css",

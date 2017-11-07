@@ -61,7 +61,7 @@ a {
   }
 
   &:hover {
-    color: rgba(65, 67, 67, 0.6);
+    color: overlay-value(0.6);
 
     $svgcolor: #63a2aa;
     svg > path {
