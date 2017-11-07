@@ -142,34 +142,59 @@
 }
 
 .featured-sections {
-}
-
-.section-row {
-  display: flex;
-  justify-content: center;
-  position: relative;
-
-  a {
-    display: inline-block;
-    width: 100%;
-    height: 100%;
+  .section-row {
     display: flex;
     justify-content: center;
+    //text-align: center;
     position: relative;
+
+    a {
+      position: relative;
+    }
+
+    img {
+      display: inline-block;
+    }
   }
 }
 
-.featured-zeit {
-  @include bg-image('images/zeit-home.jpg', 75%, 536px, null);
-
-  @media only screen and (min-width: $on-tablet + 1) {
-    &:hover {
-      @include bg-image('images/zeit-home-hover.jpg', 75%, 536px, null);
-    }
-  }
-
+.featured-work {
   @include media-query($on-mobile) {
     max-width: 295px;
   }
+}
 
+.featured-work-desc {
+  color: #fbfbfb;
+  font-size: 24px;
+  line-height: 29px;
+  letter-spacing: -0.1px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  @include lato-font(400);
+  opacity: 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &:hover {
+    opacity: 1;
+    background-color: rgba(65, 67, 67, 0.51);
+  }
+
+  @include media-query($on-mobile) {
+    display: none;
+  }
+
+  .featured-work-header {
+    font-size: 36px;
+    line-height: 44px;
+    @include lato-font(700);
+    margin-bottom: 18px;
+  }
 }
