@@ -1,8 +1,12 @@
 <header class="site-header" role="banner">
   {% assign default_paths = site.pages | map: "path" %}
   {% assign page_paths = site.header_pages | default: default_paths %}
-
-  <a class="site-logo" href="{{ "/" | relative_url }}"></a>
+  <a class="home-anchor" href="{{ "/" | relative_url }}">
+    <div class="f fm">
+      <div class="site-logo"></div>
+      <span class="site-header-text"><span>J</span>essica<span> </span>L Chang</span>
+    </div>
+  </a>
 
   {% if page_paths %}
     <nav class="site-nav">
@@ -16,6 +20,8 @@
         <a id="work-nav-link" class="nav-link" href="{{ '/' | relative_url }}#featured-work">Work</a>
         <a class="nav-link" href="{{ '/about' | relative_url }}">About</a>
         <a id="contact-nav-link" class="nav-link" href="#contact">Contact</a>
+
+        <img src="{{ '/assets/images/exit-icon.svg' | relative_url }}" id="navmenu-close-icon">
       </div>
     </nav>
   {% endif %}

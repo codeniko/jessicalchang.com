@@ -17,8 +17,17 @@ function closeMobileNavMenu() {
 
 // Hooks into HTML elements
 
-// close page overlay if nav menu open
+// close mobile navmenu and page overlay if nav menu open
 $('#page-overlay').click(() => {
+  const isNavMenuOpen = $('#nav-trigger').is(':checked')
+
+  if (isNavMenuOpen) {
+    closeMobileNavMenu()
+  }
+})
+
+// close mobile navmenu and page overlay if nav menu open
+$('#navmenu-close-icon').click(() => {
   const isNavMenuOpen = $('#nav-trigger').is(':checked')
 
   if (isNavMenuOpen) {

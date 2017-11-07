@@ -86,3 +86,20 @@ a {
   display: table;
   clear: both;
 }
+
+
+
+
+/**
+ * Flex shorthands
+ */
+.f { display: flex; }
+
+// flex middle vertical align (assuming flow-direction:row)
+.fm { align-items: center; }
+
+// flex center horizontal (assuming flow-direction:row)
+.fc { justify-content: center; }
+
+.frow { flex-direction: row; }
+.fcol { flex-direction: column; }

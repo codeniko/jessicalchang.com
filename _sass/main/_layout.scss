@@ -11,7 +11,7 @@
  * Site header
  */
 .site-header {
-  padding: 30px 40px;
+  padding: 36px 40px 35px 40px;
   max-height: 111px;
 
   display: flex;
@@ -19,27 +19,51 @@
   justify-content: space-between;
   align-items: center;
 
-  @include media-query(640px) {
-    padding: 24px 28px;
+  @include media-query($on-tablet) {
+    padding: 36px 25px 35px 25px;
   }
 
   @include media-query($on-mobile) {
-    padding: 18px 15px;
+    padding: 18px 15px 17px 15px;
   }
 }
 
 .site-logo {
   display: inline-block;
-  @include bg-image-fixed('images/logo.svg', 42px, 51px);
-
-  @include media-query(640px) {
-    width: 33px;
-    height: 40px;
-  }
+  @include bg-image-fixed('images/logo.svg', 20px, 40px);
 
   @include media-query($on-mobile) {
-    width: 25px;
-    height: 30px;
+    width: 16px;
+    height: 33px;
+  }
+}
+
+.site-header-text {
+  display: inline-block;
+  padding-left: 10px;
+  @include raleway-font(500);
+  font-size: 18px;
+  line-height: 21px;
+  text-transform: uppercase;
+
+  // weird extra spacing
+  span {
+    letter-spacing: 0.2px;
+  }
+
+  @include media-query($on-tablet) {
+    display: none;
+  }
+}
+
+.home-anchor {
+  // block normal anchor hover and active states
+  &:hover {
+    color: $text-color;
+  }
+
+  &:active {
+    color: $text-color;
   }
 }
 
@@ -59,29 +83,26 @@
     display: none;
   }
 
+  #navmenu-close-icon {
+    display: none;
+    position: absolute;
+    top: 15px;
+    left: 18px;
+    width: 16px;
+    height: 16px;
+  }
+
   .nav-link {
 
-    line-height: 22px;
+    line-height: 17px;
     text-transform: uppercase;
-    font-size: 18px;
+    font-size: 14px;
     @include lato-font(400);
 
     // dont apply to mobile
     @media screen and (min-width: $on-mobile + 1) {
-      &:not(:last-child) {
-        margin-right: 38px;
-      }
-    }
-
-    @include media-query(640px) {
-      line-height: 20px;
-      font-size: 15px;
-
-      // dont apply to mobile
-      @media screen and (min-width: $on-mobile + 1) {
-        &:not(:last-child) {
-          margin-right: 25px;
-        }
+      &:not(:first-child) {
+        margin-left: 50px;
       }
     }
 
@@ -89,12 +110,14 @@
     @include media-query($on-mobile) {
       line-height: 22px;
       font-size: 18px;
-      margin-top: 20px;
+      margin-top: 40px;
+
+      &:first-child { margin-top: 51px; }
     }
   }
 
   @include media-query($on-mobile) {
-    $menu-width: 200px;
+    $menu-width: 282px;
 
     label[for="nav-trigger"] {
       display: flex;
@@ -107,6 +130,10 @@
       cursor: pointer;
     }
 
+    #navmenu-close-icon {
+      display: block;
+    }
+
     .home-nav-link {
       display: inline;
     }
@@ -116,9 +143,6 @@
       display: block;
     }
 
-    input:checked + label[for="nav-trigger"] {
-      margin-right: $menu-width;
-    }
 
     // trigger nav menu close
     input ~ .trigger {
