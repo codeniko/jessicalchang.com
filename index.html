@@ -3,18 +3,22 @@ layout: default
 assetPath: /assets/images/
 ---
 <div class="index-page">
-  <div class="index-image-preload"></div>
-  <div class="hero-image">
-    <div class="padding"></div>
+  <div class="hero-container">
+    <div class="top-bg"></div>
+    <div class="bottom-bg"></div>
+
     <div class="hero-text-container">
-      <span class="home-hello">HELLO —</span>
+      <span class="home-hello">HELLO</span>
       <span class="home-desc">
         I’m Jessica Chang.<br>
         I’m a UX Designer based in
         San Jose, CA.
       </span>
     </div>
-    <a href="#featured-work"><div class="scroll-down"></div></a>
+
+    <a href="#featured-work" class="scroll-down">
+      {% include icon-scroll.svg %}
+    </a>
 
   </div>
 
