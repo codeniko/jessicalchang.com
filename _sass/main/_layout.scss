@@ -218,9 +218,6 @@
 }
 
 .social-media-list {
-  display: flex;
-  align-items: center;
-
   .margin-excl-first-child {
     &:not(:first-child) {
       margin-left: 13px;
@@ -238,25 +235,17 @@
 
     display: inline-block;
     width: 16px;
-    height: 16px;
+    height: fit-content;
 
     @include media-query($on-mobile) {
       width: 12px;
-      height: 12px;
     }
   }
 
   .email-icon {
-
     width: 16px;
     height: 13px;
     position: relative;
-
-    // fix droopy email icon since height is smaller than width
-    svg {
-      position: absolute;
-      top: 1px;
-    }
 
     @include media-query($on-mobile) {
       width: 12px;
@@ -286,4 +275,9 @@
 .page-content {
   width: 100%;
   background-color: #fbfbfb;
+
+  // default page font
+  @include lato-font(300);
+  font-size: 16px;
+  line-height: 19px;
 }
