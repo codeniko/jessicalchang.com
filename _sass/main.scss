@@ -35,7 +35,7 @@ $on-desktop:       1200px !default;
   font-size: $base-font-size * $ratio;
 }
 
-@mixin raleway-font($weight) {
+@mixin raleway-font($weight: 400) {
   font-family: 'Raleway', sans-serif;
   font-weight: $weight;
 }

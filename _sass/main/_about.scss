@@ -1,42 +1,84 @@
+// increase tablet width
+$on-tablet: 885px;
+
 .about-page {
   display: flex;
   justify-content: center;
 }
 
 .about-container {
-  max-width: 936px;
-  box-sizing: border-box;
+  max-width: 880px;
+  //box-sizing: border-box;
+  padding: 0px 20px;
 
   display: flex;
   flex-direction: column;
   //justify-content: center;
   align-items: center;
+  overflow: hidden;
+
+  @include media-query($on-tablet) { max-width: 664px; }
+  @include media-query($on-mobile) {
+    max-width: 334px;
+    padding: 0;
+  }
 }
 
 .about-header {
   text-align: center;
   text-transform: uppercase;
-  @include mont-font(400);
-  font-size: 24px;
-  line-height: 29px;
+  @include mont-font();
+  font-size: 22px;
+  line-height: 27px;
   letter-spacing: -0.1px;
+  margin: 90px 0px 50px 0px;
 
-  margin: 90px 0px 60px 0px;
+  @include media-query($on-tablet) {
+    font-size: 20px;
+    line-height: 24px;
+    margin: 86px 0px 50px 0px;
+  }
+
+  @include media-query($on-mobile) {
+    font-size: 16px;
+    line-height: 19px;
+    margin: 60px 0px 40px 0px;
+  }
 }
 
 .about-images {
   width: 100%;
-  //display: flex;
-  //justify-content: space-between;
-  //flex-wrap: wrap;
+  white-space: nowrap;
+  text-align: center;
+
+  $weirdDistBetweenImages: 3px;
 
   img {
-    float: left;
     display: inline-block;
+    max-height: 426px;
+  }
 
-    &:first-child {
-      margin-right: 24px;
-    }
+  .img1 {
+    margin-right: 21px - $weirdDistBetweenImages;
+    max-width: 414px;
+  }
+  .img2 {
+    max-width: 436px;
+  }
+
+  @include media-query($on-tablet) {
+    .img1, .img2 { max-width: 320px; }
+    .img1 { margin-right: 24px - $weirdDistBetweenImages; }
+  }
+
+  @include media-query(700px) {
+    .img1, .img2 { max-width: 200px; }
+    .img1 { margin-right: 15px - $weirdDistBetweenImages; }
+  }
+
+  @include media-query($on-mobile) {
+    .img1, .img2 { max-width: 165px; }
+    .img1 { margin-right: 15px - $weirdDistBetweenImages; }
   }
 }
 
@@ -44,13 +86,25 @@
   font-size: 20px;
   line-height: 31px;
   letter-spacing: -0.1px;
-  margin: 50px 0px;
+  margin: 60px 0px;
+  white-space: wrap;
+
+  @include media-query($on-tablet) {
+    font-size: 18px;
+    letter-spacing: 0px;
+  }
+
+  @include media-query($on-mobile) {
+    font-size: 14px;
+    line-height: 28px;
+    margin: 36px 0px 60px 0px;
+  }
 }
 
 //TODO this button is similar to contact page button, merge the two (except possibly sizing)
 .about-page button {
   text-align: center;
-  @include lato-font(400);
+  @include lato-font();
   color: #fbfbfb;
   font-size: 16px;
   line-height: 19px;
