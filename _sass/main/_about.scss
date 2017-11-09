@@ -125,4 +125,18 @@ $on-tablet: 885px;
     background-color: $color;
   }
 
+  @include media-query($on-tablet) {
+    width: 140px;
+    height: 40px;
+    font-size: 14px;
+    line-height: 17px;
+  }
+
+  @include media-query($on-mobile) {
+    width: 117px;
+    height: 37px;
+    font-size: 12px;
+    line-height: 15px;
+  }
+
 }

@@ -21,7 +21,7 @@
         <a class="nav-link" href="{{ '/about' | relative_url }}">About</a>
         <a id="contact-nav-link" class="nav-link" href="#contact">Contact</a>
 
-        <img src="{{ '/assets/images/exit-icon.svg' | relative_url }}" id="navmenu-close-icon">
+        <div id="navmenu-close-icon">{% include icon-exit.svg %}</div>
       </div>
     </nav>
   {% endif %}

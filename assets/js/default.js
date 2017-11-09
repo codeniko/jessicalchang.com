@@ -17,13 +17,14 @@ function closeMobileNavMenu() {
 
 // Hooks into HTML elements
 
-// close mobile navmenu and page overlay if nav menu open
+// close mobile navmenu, contact form, and page overlay
 $('#page-overlay').click(() => {
   const isNavMenuOpen = $('#nav-trigger').is(':checked')
 
   if (isNavMenuOpen) {
     closeMobileNavMenu()
   }
+  closeContactModal()
 })
 
 // close mobile navmenu and page overlay if nav menu open
@@ -63,6 +64,9 @@ $('#contact-nav-link').click(() => {
   showContactModal()
 })
 $('#contact-close-icon').click(() => {
+  closeContactModal()
+})
+$('#contact-close-icon-2').click(() => {
   closeContactModal()
 })
 $('#contact-submit-button').click(() => {
