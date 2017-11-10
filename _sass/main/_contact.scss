@@ -16,7 +16,10 @@ $on-mobile: 610px;
   align-items: center;
   flex-direction: row;
 
-  @include media-query($on-mobile) { flex-direction: column; }
+  @include media-query($on-mobile) {
+    flex-direction: column;
+    margin-top: 10px; // give some margin to the top for small devices. Otherwise top section including close button is cut off
+  }
 }
 
 .contact-info {

@@ -15,6 +15,20 @@ function closeMobileNavMenu() {
   $('#nav-trigger').prop('checked', false)
 }
 
+function sendEmail(mailObj) {
+  return Email.send(
+    "nikotestingabc@yahoo.com",
+    "niko@niko.rocks",
+    "This is a subject",
+    "this is the body",
+    {
+      token: 'b1d95a12-4005-43bc-b19a-cbdcb87e6da3',
+      callback: (result) => {
+        console.log('result:', result)
+      }
+    }
+}
+
 // Hooks into HTML elements
 
 // close mobile navmenu, contact form, and page overlay
