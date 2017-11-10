@@ -26,7 +26,7 @@ function sendEmail(mailObj) {
       callback: (result) => {
         console.log('result:', result)
       }
-    }
+    })
 }
 
 // Hooks into HTML elements
