@@ -1,3 +1,59 @@
+// Fetch helpers
+function checkStatus(response) {
+  if (response.ok) {
+    return response
+  } else {
+    const error = new Error(response.statusText)
+    error.response = response
+    error.status = response.status
+    throw error
+  }
+}
+
+function parseJson(response) {
+  return response.json()
+}
+
+function parseText(response) {
+  return response.text()
+}
+// End of fetch helpers
+
+
+function sendEmail() {
+  const endpoint = 'https://us-central1-jessica-portfolio.cloudfunctions.net/sendMail'
+  const reqOptions = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json',
+    },
+    body: JSON.stringify({
+      firstName: $('#first-name').val(),
+      lastName: $('#last-name').val(),
+      fromEmail: $('#email').val(),
+      subject: $('#subject').val(),
+      message: $('#message').val(),
+    }),
+  }
+
+  fetch(endpoint, reqOptions)
+    .then(checkStatus)
+    .then(parseJson)
+    .then(response => {
+      console.info('response', response)
+      if (response.error) {
+        console.error('Received error on server side', response.error)
+        alert('Sorry, we were unable to send the message at this time. Please try again!')
+      } else {
+        closeContactModal()
+      }
+    })
+    .catch(e => {
+      console.error('Received error', e)
+      alert('Sorry, we were unable to send the message at this time. Please try again!')
+    })
+}
 
 // hide page overlay and unlock scrolling
 function hidePageOverlay() {
@@ -13,20 +69,6 @@ function showPageOverlay() {
 function closeMobileNavMenu() {
   hidePageOverlay()
   $('#nav-trigger').prop('checked', false)
-}
-
-function sendEmail(mailObj) {
-  return Email.send(
-    "nikotestingabc@yahoo.com",
-    "niko@niko.rocks",
-    "This is a subject",
-    "this is the body",
-    {
-      token: 'b1d95a12-4005-43bc-b19a-cbdcb87e6da3',
-      callback: (result) => {
-        console.log('result:', result)
-      }
-    })
 }
 
 // Hooks into HTML elements
@@ -70,6 +112,7 @@ function showContactModal() {
 
 function closeContactModal() {
   $('#contact-modal').css('display', 'none')
+  $('#contact-form')[0].reset() // clear form
   hidePageOverlay()
 }
 
@@ -84,7 +127,7 @@ $('#contact-close-icon-2').click(() => {
   closeContactModal()
 })
 $('#contact-submit-button').click(() => {
-  closeContactModal()
+  sendEmail()
 })
 
 // end of contact modal

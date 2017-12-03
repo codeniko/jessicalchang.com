@@ -13,6 +13,16 @@
 
   <script src="{{ '/assets/js/jquery-3.2.1.min.js' | relative_url }}"></script>
   <script src="{{ '/assets/js/default.js' | relative_url }}"></script>
-  <script src="https://smtpjs.com/smtp.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.7.0/firebase.js"></script>
+  <script>
+    firebase.initializeApp({
+      apiKey: "AIzaSyBgp_KRgfMq65P0hXniRbKhZZ-bNJzbWG4",
+      authDomain: "jessica-portfolio.firebaseapp.com",
+      databaseURL: "https://jessica-portfolio.firebaseio.com",
+      projectId: "jessica-portfolio",
+      storageBucket: "jessica-portfolio.appspot.com",
+      messagingSenderId: "224818894768",
+    })
+  </script>
 
 </html>
