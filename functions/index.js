@@ -40,7 +40,7 @@ function sendMail(req, res) {
 exports.sendMail = functions.https.onRequest((req, res) => {
   console.info(`Received ${req.method} request from ${req.ip}`)
 
-  res.header('Access-Control-Allow-Origin', 'http://www.jessicalchang.com,https://www.jessicalchang.com')
+  res.header('Access-Control-Allow-Origin', 'http://www.jessicalchang.com')
   res.header('Access-Control-Allow-Methods', 'POST,OPTIONS')
   res.header('Access-Control-Allow-Headers', 'Content-Type,Accept')
 
