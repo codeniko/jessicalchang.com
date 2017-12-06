@@ -105,6 +105,14 @@ $('#nav-trigger').click(() => {
 
 
 // Contact modal
+const formIDs = [
+  '#first-name',
+  '#last-name',
+  '#subject',
+  '#message',
+  '#email',
+]
+
 function showContactModal() {
   $('#contact-modal').css('display', 'flex')
   showPageOverlay()
@@ -113,7 +121,34 @@ function showContactModal() {
 function closeContactModal() {
   $('#contact-modal').css('display', 'none')
   $('#contact-form')[0].reset() // clear form
+  // reset error labels and error colors in form
+  formIDs.forEach(id => {
+    $(`${id}-error`).css('display', 'none')
+    //$(`${id}-label`).removeClass('error-color')
+  })
   hidePageOverlay()
+}
+
+function validateFormInput(id) {
+  const value = $(id).val()
+  const isValid = id === '#email' ? value.match(/^.+\@.+\..+$/) : value !== ''
+  $(`${id}-error`).css('display', isValid ? 'none' : 'block')
+  /*
+  if (isValid)
+    $(`${id}-label`).removeClass('error-color')
+  else
+    $(`${id}-label`).addClass('error-color')
+    */
+  return isValid
+}
+
+function validateContactForm() {
+  const hasError = formIDs.map(validateFormInput).some(r => !r)
+
+  console.debug('error in form?', hasError)
+
+  if (!hasError)
+    sendEmail()
 }
 
 $('#contact-nav-link').click(() => {
@@ -127,7 +162,7 @@ $('#contact-close-icon-2').click(() => {
   closeContactModal()
 })
 $('#contact-submit-button').click(() => {
-  sendEmail()
+  validateContactForm()
 })
 
 // end of contact modal

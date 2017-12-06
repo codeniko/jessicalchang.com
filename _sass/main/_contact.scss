@@ -226,11 +226,29 @@ $on-mobile: 610px;
     height: 338px;
   }
 
+  .error-color {
+    color: #d0021b;
+  }
+
+  .error-label {
+    @extend .error-color;
+    font-size: 14px;
+    letter-spacing: 0px;
+    line-height: 17px;
+    position: absolute;
+    margin-top: 8px;
+  }
+
+  #first-name-error, #last-name-error, #email-error, #subject-error, #message-error {
+    display: none;
+  }
+
   .form-row {
     & > .form-group {
       margin: 0px;
     }
     margin-right: 31.5px;
+    position: relative;
 
     @include media-query($on-tablet) { margin-right: 26px; }
     @include media-query($on-mobile) { margin-right: 0px; } //TODO validate
