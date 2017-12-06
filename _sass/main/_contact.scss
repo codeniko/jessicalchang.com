@@ -237,6 +237,12 @@ $on-mobile: 610px;
     line-height: 17px;
     position: absolute;
     margin-top: 8px;
+
+    @include media-query($on-tablet) {
+      font-size: 12px;
+      line-height: 15px;
+      margin-top: 4px;
+    }
   }
 
   #first-name-error, #last-name-error, #email-error, #subject-error, #message-error {
