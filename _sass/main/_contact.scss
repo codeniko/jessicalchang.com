@@ -16,6 +16,7 @@ $on-mobile: 610px;
   align-items: center;
   flex-direction: row;
   width: 100%; // needed so that modal will resize as viewport gets smaller. If omitted, modal stays same size and overflows outside viewport
+  max-width: fit-content; // similar to above, but allows us to click to the left or right of the modal to close it
 
   @include media-query($on-mobile) {
     flex-direction: column;
