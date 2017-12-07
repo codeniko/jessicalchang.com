@@ -15,6 +15,7 @@ $on-mobile: 610px;
   justify-content: center;
   align-items: center;
   flex-direction: row;
+  width: 100%; // needed so that modal will resize as viewport gets smaller. If omitted, modal stays same size and overflows outside viewport
 
   @include media-query($on-mobile) {
     flex-direction: column;

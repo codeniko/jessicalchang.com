@@ -86,8 +86,9 @@ $mf-error-color: #d9534f !default;
         border-bottom: ($mf-font-size / 16) solid $mf-border-color;
         display: block;
 
+        // needed for prevent under line from disappearing on some fields
         @include media-query($on-mobile) {
-          border-bottom: 0.83px solid $mf-border-color;
+          border-bottom: 0.96px solid $mf-border-color;
         }
 
         &::before {
