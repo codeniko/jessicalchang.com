@@ -3,12 +3,12 @@
   {% include head.html %}
   <body>
     <div id="page-overlay"></div>
-    {% include contact.html %}
     {% include header.html %}
     <main class="page-content" aria-label="Content">
       {{ content }}
     </main>
     {% include footer.html %}
+    {% include contact.html %}
   </body>
 
   <script src="{{ '/assets/js/jquery-3.2.1.min.js' | relative_url }}"></script>
