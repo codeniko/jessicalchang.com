@@ -1,3 +1,18 @@
+// feature support / polyfills
+function browserSupportsAllFeatures() {
+  return window.Promise && window.fetch && [].map && [].some
+}
+
+function loadScript(src, done) {
+  var js = document.createElement('script')
+  js.src = src
+  js.onload = function() { done() }
+  js.onerror = function() {
+    done(new Error('Failed to load script ' + src))
+  }
+  document.head.appendChild(js)
+}
+
 // Fetch helpers
 function checkStatus(response) {
   if (response.ok) {
@@ -171,3 +186,10 @@ $('#contact-submit-button').click(function() {
 $('#work-nav-link').click(function() {
   closeMobileNavMenu()
 })
+
+
+
+// polyfill if on older browser that doesn't support necessary features
+if (!browserSupportsAllFeatures()) {
+  loadScript('https://cdn.polyfill.io/v2/polyfill.min.js?features=Promise,fetch,Array.prototype.map,Array.prototype.some', metrics)
+}
