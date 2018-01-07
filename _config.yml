@@ -9,7 +9,7 @@ description: Jessica L. Chang UX/UI design portfolio, based in Bay Area/Silicon 
 name: Jessica Chang
 author: Jessica Chang
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://www.jessicalchang.com" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://www.jessicalchang.com" # the base hostname & protocol for your site, e.g. http://example.com
 keywords: "Jessica Chang,portfolio,ux design,ui design,designer,design,web design,silicon valley,bay area,sf bay area"
 
 instagram: https://www.instagram.com/jessicalchang/
