@@ -25,8 +25,21 @@ social:
     - https://www.pinterest.com/itsjlcx3/
     - https://www.linkedin.com/in/jessicalchang/
 
+collections:
+  projects:
+    output: true
+
 # Build settings
 markdown: kramdown
 plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
+
+exclude:
+  - debug.html
+  - README.md
+  - LICENSE
+  - '*.sh'
+  - 'Gemfile*'
+  - functions
+  - firebase.json

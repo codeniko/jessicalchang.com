@@ -1,3 +1,3 @@
 #!/bin/bash
 
-bundle exec jekyll build --verbose
+JEKYLL_ENV=production bundle exec jekyll build --verbose --strict_front_matter
