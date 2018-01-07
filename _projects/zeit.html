@@ -4,108 +4,106 @@ title: Zeit
 description: Jessica L. Chang UX/UI design portfolio. Introducing Zeit&#58; a fresh, modern, and responsive ecommerce website for time traveling. Book trips back in time to historical events. Made for UX Academy.
 assetPath: /assets/images/projects/zeit/
 ---
+{% include paginate.liquid %}
 
 <div class="project-page">
   <div class="project-container">
-    <div class="project-description">
-      <h2>{{ page.title }}</h2>
-      <div class="desc-line">
-        <label>Client:</label> Client: Zeit (UX Academy Phase I)
-      </div>
-      <div class="desc-line">
-        <label>Role:</label> User Experience Designer
-      </div>
-      <div class="desc-line">
-        <label>Challenge:</label> Design a responsive ecommerce website that is easy to use and allows customers to browse through different trips and details.
-      </div>
-      <div class="desc-line">
-        <label>Branding:</label> Modern and Fresh; Classical and Historical
+    <div class="project-section">
+      <div class="inner">
+        <div class="pagination">
+          <a class="prev" href="{{ prevProject.url }}">{% include previous-arrow.svg %} Previous</a>
+          <a class="next" href="{{ nextProject.url }}">Next {% include next-arrow.svg %}</a>
+        </div>
+
+        <div class="project-description-container">
+          <span class="project-title">{{ page.title }}</span>
+          <span class="project-description">Responsive time travel tourism website</span>
+          <div class="two-col-container pad-top">
+            <div class="left desc">
+              <span>Zeit is an easy to use time travel tourism website that makes browsing and booking trips a breeze. View trip details, select activities and filter via interests for an unique and personalized travel experience.</span>
+              <span class="zeit-prototype">You can view the prototype <a href="https://invis.io/SFDULTJJC" target="_blank">here</a>.</span>
+            </div>
+            <div class="right">
+              <a href="{{ page.assetPath }}laptop-showcase@3x.png" target="_blank"><img src="{{ page.assetPath }}laptop-showcase.png" width="545" height="318"></a>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
-    <div class="project-container"> <!-- ughhh -->
-      <div class="project-section">
-        <div class="left">
-          <a href="{{ page.assetPath }}responsive-mockup@3x.png" target="_blank"><img src="{{ page.assetPath }}responsive-mockup.png" width="521" height="336"></a>
+    <div class="project-section">
+      <div class="inner">
+        <h2>IDENTIFYING THE USER + PROBLEM</h2>
+        <span>I conducted a competitive analysis and user interviews to understand the user and the current travel booking process. After collecting observations, I created an empathy map and storyboard to synthesize the data and identify the needs and frustrations of the user.</span>
+        <div class="labeled-image-container">
+          <a href="{{ page.assetPath }}competitive-analysis@3x.png" target="_blank"><img src="{{ page.assetPath }}competitive-analysis.png" width="776" height="261"></a>
+          <span>Competitive Analysis</span>
         </div>
-        <div class="right desc">
-          <h2>Overview</h2>
-          The human race has been dreaming about time travel for ages. Now it’s finally possible through Zeit, a subsidiary of Richard Branson’s Virgin empire. With the help of Elon Musk, Virgin has been able to make time travel available to all.  Zeit is looking to create a new brand and build a responsive ecommerce website where they can sell travel packages to different times.
-        </div>
-      </div>
-
-      <div class="project-section">
-        <div class="right">
-          <a href="{{ page.assetPath }}research-ramp-up@3x.jpg" target="_blank"><img src="{{ page.assetPath }}research-ramp-up.jpg" width="512" height="168"></a>
-          <div class="shared-row pad-top">
-            <a href="{{ page.assetPath }}rohan@3x.jpg" target="_blank"><img src="{{ page.assetPath }}rohan.jpg" width="244" height="192"></a>
-            <a href="{{ page.assetPath }}ben@3x.jpg" target="_blank"><img src="{{ page.assetPath }}ben.jpg" width="235" height="192"></a>
-          </div>
-        </div>
-        <div class="left desc">
-          <h2>Research</h2>
-          Due to the innovative nature of Zeit, prior time travel experience from users was unavailable. It came down to understanding what core information was needed. What are some pain points of booking ordinary travel? How do users currently book travel? Why do users choose certain destinations over others. To answer those questions, I conducted competitive analysis with companies in similar industries and user interviews.
+        <div class="labeled-image-container">
+          <a href="{{ page.assetPath }}persona@3x.png" target="_blank"><img src="{{ page.assetPath }}persona.png" width="774" height="424"></a>
+          <span>Persona</span>
         </div>
       </div>
+    </div>
 
-      <div class="project-section">
-        <div class="left">
-          <a href="{{ page.assetPath }}design-lab-persona-development-v-2@3x.jpg" target="_blank"><img src="{{ page.assetPath }}design-lab-persona-development-v-2.jpg" width="509" height="297"></a>
-          <a href="{{ page.assetPath }}user-flow-2@3x.jpg" target="_blank"><img src="{{ page.assetPath }}user-flow-2.jpg" width="508" height="410" class="pad-top"></a>
+    <div class="project-section">
+      <div class="inner">
+        <h2>INFORMATION ARCHITECTURE</h2>
+        <span>Next, I determined the overlapping goals between business and the user as well as any technical challenges that may arise. From there, I created and prioritized a feature roadmap and developed the information architecture of the site which included a sitemap and user flow.</span>
+        <div class="labeled-image-container">
+          <a href="{{ page.assetPath }}business-and-user-goals@3x.png" target="_blank"><img src="{{ page.assetPath }}business-and-user-goals.png" width="776" height="348"></a>
+          <span>Business + User Goals</span>
         </div>
-        <div class="right desc">
-          <h2>Define</h2>
-          Using tools like storyboarding and empathy maps, I found the following key takeaways that led me to my persona:
-          <ol>
-            <li> Users need to research and book activities beforehand.</li>
-            <li> Users are interested in learning about the history
-              and culture of the destination</li>
-            <li> Users value friends inputs</li>
-            <li> Traveling out of the country comes with many
-          frustrations like language barrier, unfamiliarity with
-          location and rules.</li>
-          </ol>
-
-          From there, I started thinking about information architecture and user flows. I conducted a card sorting activity, created a site map and built out the task and user flows.
+        <div class="labeled-image-container">
+          <a href="{{ page.assetPath }}user-flow@3x.png" target="_blank"><img src="{{ page.assetPath }}user-flow.png" width="776" height="622"></a>
+          <span>User Flow</span>
         </div>
       </div>
+    </div>
 
-      <div class="project-section">
-        <div class="right">
-          <a href="{{ page.assetPath }}wireframe@3x.jpg" target="_blank"><img src="{{ page.assetPath }}wireframe.jpg" width="425" height="493"></a>
-          <a href="{{ page.assetPath }}responsive-design@3x.png" target="_blank"><img src="{{ page.assetPath }}responsive-design.png" width="512" height="461" class="pad-top"></a>
+    <div class="project-section">
+      <div class="inner">
+        <h2>RESPONSIVE WIREFRAMING</h2>
+        <span>After building out the information architecture, I created low-fidelity wireframes of each screen and eventually upgraded those sketches to mid-fidelity and high-fidelity responsive wireframes. </span>
+        <div class="labeled-image-container">
+          <a href="{{ page.assetPath }}mid-fidelity-wireframe@3x.png" target="_blank"><img src="{{ page.assetPath }}mid-fidelity-wireframe.png" width="776" height="1078"></a>
+          <span>Mid-Fidelity Responsive Wireframe</span>
         </div>
-        <div class="left desc">
-          <h2>Design</h2>
-          In the design phase, I focused on four areas:
-          <ol>
-            <li>Wireframing</li>
-            <li>Responseive Design</li>
-            <li>Branding</li>
-            <li>UI Design</li>
-          </ol>
+        <div class="labeled-image-container">
+          <a href="{{ page.assetPath }}high-fidelity-wireframes@3x.jpg" target="_blank"><img src="{{ page.assetPath }}high-fidelity-wireframes.jpg" width="774" height="1053"></a>
+          <span>High-Fidelity Responsive Wireframe</span>
         </div>
       </div>
+    </div>
 
-      <div class="project-section">
-        <div class="left">
-          <a href="{{ page.assetPath }}invision-update@3x.jpg" target="_blank"><img src="{{ page.assetPath }}invision-update.jpg" width="511" height="383"></a>
-        </div>
-        <div class="right desc">
-          <h2>Test</h2>
-          To test, I primarily used Invision but also experimented with POP by Marvel in the early stages of my wireframes and responsive design. I conducted usability testing with Invision and was able to include a few of the participants from the user research stage.
-        </div>
-      </div>
-
-      <div class="project-section">
-        <div class="desc next-steps">
-          <h2>Next steps</h2>
-          Based on the feedback from the usability testing, I created an affinity map and made some high-priority changes. The next steps were to use Zeplin and create a redline document to handoff to engineers.<br><br>
-
-          This was a great project to not only learn the UX process but also to understand the research and development challenges of a product in an innovative space.
+    <div class="project-section">
+      <div class="inner">
+        <h2>BRANDING + UI DESIGN</h2>
+        <span>To design the logo and the user interface components, I chose a few adjectives that I wanted the brand to reflect. From there, I researched design patterns, created a set of icons, a style tile and finally a UI Kit that best represented the brand message of Zeit.</span>
+        <div class="labeled-image-container">
+          <a href="{{ page.assetPath }}style-tile@3x.png" target="_blank"><img src="{{ page.assetPath }}style-tile.png" width="773" height="1815"></a>
+          <span>Style Tile</span>
         </div>
       </div>
+    </div>
 
+    <div class="project-section">
+      <div class="inner">
+        <h2>PROTOTYPING + ITERATING</h2>
+        <span>To prototype, I used Invision and conducted an usability test with some participants from the initial user interviews and new participants. I then created an affinity map to organize the feedback and data which led me to a set of patterns that I prioritized and included in my next iteration.</span>
+        <div class="labeled-image-container">
+          <a href="{{ page.assetPath }}affinity-map@3x.png" target="_blank"><img src="{{ page.assetPath }}affinity-map.png" width="776" height="796"></a>
+          <span>Affinity Map</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-section">
+      <div class="inner">
+        <h2>NEXT STEPS + CHALLENGES</h2>
+        <span class="next-steps-pad-bottom">My next step consisted of creating a redlining document to handoff to developers. For this, I used Zeplin to created a comprehensive styleguide and included all the necessary assets.</span>
+        <span>In terms of challenges, research was the one that stood out the most. Being in an innovative space, like time travel, there weren’t users that had prior experience so I had to focus on what core information I was really looking for. In the competitive analysis, I stuck to travel companies and services, but looking back, I should have included companies that thrived in innovation like SpaceX or Tesla. As with all challenges, I’ve learned something new that I will be able to apply in future projects. </span>
+      </div>
     </div>
 
   </div>

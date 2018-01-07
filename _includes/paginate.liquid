@@ -1,0 +1,14 @@
+{% for c in site.projects %}
+  {% assign collectionLength = forloop.length | minus: 1 %}
+{% endfor %}
+
+{% if page.next == null %}
+  {% assign nextProject = site.projects[0] %}
+{% else %}
+  {% assign nextProject = page.next %}
+{% endif %}
+{% if page.previous == null %}
+  {% assign prevProject = site.projects[collectionLength] %}
+{% else %}
+  {% assign prevProject = page.previous %}
+{% endif %}
