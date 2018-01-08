@@ -12,7 +12,11 @@
     {% include libraries.html %}
     <script>
       <!--
-      {% include scripts.js %}
+      {% if jekyll.environment == 'production' %}
+        {% include scripts.min.js %}
+      {% else %}
+        {% include scripts.js %}
+      {% endif %}
       -->
     </script>
   </body>

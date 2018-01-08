@@ -138,8 +138,8 @@ function closeContactModal() {
   $('#contact-form')[0].reset() // clear form
   // reset error labels and error colors in form
   formIDs.forEach(function(id) {
-    $(`${id}-error`).css('display', 'none')
-    //$(`${id}-label`).removeClass('error-color')
+    $(id + '-error').css('display', 'none')
+    //$(id + '-label').removeClass('error-color')
   })
   hidePageOverlay()
 }
@@ -150,9 +150,9 @@ function validateFormInput(id) {
   $(id + '-error').css('display', isValid ? 'none' : 'block')
   /*
   if (isValid)
-    $(`${id}-label`).removeClass('error-color')
+    $(id + '-label').removeClass('error-color')
   else
-    $(`${id}-label`).addClass('error-color')
+    $(id + '-label').addClass('error-color')
     */
   return isValid
 }
