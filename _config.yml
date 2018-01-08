@@ -29,11 +29,20 @@ collections:
   projects:
     output: true
 
+prototypePath: /prototypes/
+
 # Build settings
 markdown: kramdown
 plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
+
+defaults:
+  -
+    scope:
+      path: 'prototypes'
+    values:
+      sitemap: false
 
 exclude:
   - README.md

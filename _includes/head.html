@@ -11,4 +11,8 @@
   {% if site.github.pages_env == 'dotcom' %}
     {% include google-analytics.html %}
   {% endif %}
+
+  {% if page.redirect %}
+    <meta http-equiv="refresh" content="0; URL={{page.redirect}}">
+  {% endif %}
 </head>
