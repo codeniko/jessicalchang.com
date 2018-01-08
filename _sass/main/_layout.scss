@@ -179,7 +179,6 @@
 .site-footer {
   display: flex;
   justify-content: center;
-  padding-top: 100px;
   background-color: #fbfbfb;
 }
 
@@ -282,4 +281,17 @@
   @include lato-font(300);
   font-size: 16px;
   line-height: 19px;
+}
+
+.pad-top { padding-top: 100px; }
+.pad-bottom { padding-bottom: 100px; }
+
+// constant padding to bottom of page content, just before footer
+.page {
+  @extend .pad-bottom;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
 }

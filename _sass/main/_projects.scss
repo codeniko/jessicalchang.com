@@ -1,8 +1,7 @@
 // assuming fontsize is default, in base
 
 .project-page {
-  display: flex;
-  justify-content: center;
+  padding-bottom: 0px;
 }
 
 .project-container {
@@ -96,7 +95,7 @@
   padding: 70px 0px 100px 0px;
 }
 .project-section:last-child {
-  padding: 100px 0px 0px 0px;
+  padding: 100px 0px 100px 0px;
 }
 
 // alternating background colors
