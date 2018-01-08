@@ -1,2 +1,2 @@
 #!/bin/bash
-firebase deploy --only hosting
+./build.sh && firebase deploy --only hosting
