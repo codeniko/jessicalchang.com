@@ -39,8 +39,17 @@
     display: flex;
     flex-direction: column;
     padding-top: 100px;
-    max-width: 776px;
+    width: 776px;
     align-self: center;
+
+    .logo-iterations {
+      display: block;
+      align-self: center;
+
+      a:not(:first-child) {
+        margin-left: 88px;
+      }
+    }
 
     & > a {
       display: block;
@@ -122,6 +131,7 @@
   line-height: 31px;
   font-size: 20px;
   display: flex;
+  justify-content: center;
 
   .desc {
     max-width: 376px;
@@ -134,7 +144,6 @@
 
   .left {
     display: inline-block;
-    margin-right: 21px;
     order: 1;
   }
 
@@ -144,9 +153,22 @@
   }
 
   img { display: inline-block; }
+
+
+  .labeled-image-container {
+    width: auto;
+    padding-top: 0px;
+  }
 }
 
-.zeit-prototype {
+// margin in two col project description
+.col-margin-zeit { margin-right: 21px; }
+.col-margin-rr { margin-right: 58px; }
+// margin in two col rr iterating project section
+.col-margin-rr-iterating-right { margin-right: 50px; }
+.col-margin-rr-iterating-bottom { margin-bottom: 50px; }
+
+.prototype-container {
   margin-top: 50px;
   a {
     color: #3f99de;

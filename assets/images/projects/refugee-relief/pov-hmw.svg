@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="777" height="488" viewBox="0 0 777 488">
+    <g fill="none" fill-rule="evenodd">
+        <path stroke="#979797" d="M.5.5h776v487H.5z"/>
+        <text fill="#414343" font-family="Lato-Regular, Lato" font-size="16" letter-spacing=".033">
+            <tspan x="33" y="28">Insight</tspan>
+        </text>
+        <text fill="#414343" font-family="Lato-Regular, Lato" font-size="16" letter-spacing=".033">
+            <tspan x="248" y="28">Need</tspan>
+        </text>
+        <text fill="#414343" font-family="Lato-Regular, Lato" font-size="16" letter-spacing=".033">
+            <tspan x="455" y="28">POV</tspan>
+        </text>
+        <text fill="#414343" font-family="Lato-Regular, Lato" font-size="16" letter-spacing=".033">
+            <tspan x="646" y="28">HMW</tspan>
+        </text>
+        <text fill="#414343" font-family="Lato-Regular, Lato" font-size="12" letter-spacing=".025">
+            <tspan x="13" y="78"> It’s important to be able to </tspan> <tspan x="13" y="93">find and provide resources </tspan> <tspan x="13" y="108">easily and quickly. </tspan>
+        </text>
+        <text fill="#414343" font-family="Lato-Regular, Lato" font-size="12" letter-spacing=".025">
+            <tspan x="13" y="191">Finding the right volunteer </tspan> <tspan x="13" y="206">opportunities in terms of </tspan> <tspan x="13" y="221">interest, schedules, etc is a </tspan> <tspan x="13" y="236">challenge. </tspan>
+        </text>
+        <text fill="#414343" font-family="Lato-Regular, Lato" font-size="12" letter-spacing=".025">
+            <tspan x="13" y="308">Basic needs like housing, </tspan> <tspan x="13" y="323">language services and </tspan> <tspan x="13" y="338">securing jobs are essential.</tspan>
+        </text>
+        <text fill="#414343" font-family="Lato-Regular, Lato" font-size="12" letter-spacing=".025">
+            <tspan x="13" y="408">There is typically a training or </tspan> <tspan x="13" y="423">phone screen for volunteers </tspan> <tspan x="13" y="438">while refugees already go </tspan> <tspan x="13" y="453">through an extensive one by </tspan> <tspan x="13" y="468">the US gov.</tspan>
+        </text>
+        <text fill="#414343" font-family="Lato-Regular, Lato" font-size="12" letter-spacing=".025">
+            <tspan x="204" y="78">Users need to be able to </tspan> <tspan x="204" y="93">easily navigate and use the </tspan> <tspan x="204" y="108">platform.</tspan>
+        </text>
+        <text fill="#414343" font-family="Lato-Regular, Lato" font-size="12" letter-spacing=".025">
+            <tspan x="204" y="191">Users need to identify </tspan> <tspan x="204" y="206">specific availability, skills, </tspan> <tspan x="204" y="221">languages, etc. </tspan>
+        </text>
+        <text fill="#414343" font-family="Lato-Regular, Lato" font-size="12" letter-spacing=".025">
+            <tspan x="204" y="308">Users need to be aware </tspan> <tspan x="204" y="323">those resources and find </tspan> <tspan x="204" y="338">them as soon as possible. </tspan>
+        </text>
+        <text fill="#414343" font-family="Lato-Regular, Lato" font-size="12" letter-spacing=".025">
+            <tspan x="204" y="408">Users need to be verified </tspan> <tspan x="204" y="423">before interacting with </tspan> <tspan x="204" y="438">refugees. </tspan>
+        </text>
+        <text fill="#414343" font-family="Lato-Regular, Lato" font-size="12" letter-spacing=".025">
+            <tspan x="408" y="78">Greg needs to be able to </tspan> <tspan x="408" y="93">easily navigate and use the </tspan> <tspan x="408" y="108">platform so he can be </tspan> <tspan x="408" y="123">efficient with his time spent </tspan> <tspan x="408" y="138">on the platform. </tspan>
+        </text>
+        <text fill="#414343" font-family="Lato-Regular, Lato" font-size="12" letter-spacing=".025">
+            <tspan x="408" y="191">Greg needs to identify his </tspan> <tspan x="408" y="206">specific availability, skills, </tspan> <tspan x="408" y="221">languages, etc. in order to </tspan> <tspan x="408" y="236">best connect with the needs </tspan> <tspan x="408" y="251">of the refugees. </tspan>
+        </text>
+        <text fill="#414343" font-family="Lato-Regular, Lato" font-size="12" letter-spacing=".025">
+            <tspan x="408" y="408">Greg needs to be verified </tspan> <tspan x="408" y="423">before interacting with </tspan> <tspan x="408" y="438">refugees as a security </tspan> <tspan x="408" y="453">measure. </tspan>
+        </text>
+        <text fill="#414343" font-family="Lato-Regular, Lato" font-size="12" letter-spacing=".025">
+            <tspan x="594" y="78">How might we create the </tspan> <tspan x="594" y="93">platform so it’s easy to </tspan> <tspan x="594" y="108">navigate and usable for Greg </tspan> <tspan x="594" y="123">so his time is spent </tspan> <tspan x="594" y="138">efficiently? </tspan>
+        </text>
+        <text fill="#414343" font-family="Lato-Regular, Lato" font-size="12" letter-spacing=".025">
+            <tspan x="594" y="191">How might we advertise </tspan> <tspan x="594" y="206">Greg’s skills and what he has </tspan> <tspan x="594" y="221">to offer as clear as possible?</tspan>
+        </text>
+        <text fill="#414343" font-family="Lato-Regular, Lato" font-size="12" letter-spacing=".025">
+            <tspan x="594" y="308">How might we categorize </tspan> <tspan x="594" y="323">essential resources and make </tspan> <tspan x="594" y="338">them more noticeable to </tspan> <tspan x="594" y="353">Greg?</tspan>
+        </text>
+        <text fill="#414343" font-family="Lato-Regular, Lato" font-size="12" letter-spacing=".025">
+            <tspan x="594" y="408">How might we make Greg’s </tspan> <tspan x="594" y="423">verification process simple </tspan> <tspan x="594" y="438">and secure?</tspan>
+        </text>
+        <text fill="#414343" font-family="Lato-Regular, Lato" font-size="12" letter-spacing=".025">
+            <tspan x="408" y="308">Greg needs to be aware of </tspan> <tspan x="408" y="323">those resources as essentials </tspan> <tspan x="408" y="338">so he if applicable he can </tspan> <tspan x="408" y="353">supply those resources. </tspan>
+        </text>
+        <path stroke="#979797" d="M.5.5h776v46H.5z"/>
+    </g>
+</svg>
