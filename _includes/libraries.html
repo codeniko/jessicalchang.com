@@ -1,1 +1,4 @@
 <script src="{{ '/assets/js/jquery-3.2.1.slim.min.js' | relative_url }}"></script>
+{% if page.url == '/' %}
+  <script src="{{ '/assets/js/typed.min.js' | relative_url }}"></script>
+{% endif %}

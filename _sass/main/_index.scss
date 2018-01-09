@@ -13,17 +13,22 @@
     width: 936px;
   }
 
-  .typing-container {
+  .typed-container {
     margin-bottom: 60px;
     font-size: 50px;
     line-height: 60px;
   }
 
-  .typing-text { @include lato-font(700); }
-  .typing-cursor {
+  .typed-text, .typed-pretext { @include lato-font(700); }
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity:0; }
+  }
+  .typed-cursor {
     position: relative;
-    left: -9px;
     top: -5px;
+    left: -6px;
+    animation: blink .7s infinite;
   }
 
   .long-intro {

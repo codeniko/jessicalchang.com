@@ -187,6 +187,24 @@ $('#work-nav-link').click(function() {
   closeMobileNavMenu()
 })
 
+if (Typed) {
+  var typed = new Typed('.typed-text', {
+    strings: [
+      "a creator.",
+      "a designer.",
+      "a problem-solver.",
+      "an adventurer."
+    ],
+    typeSpeed: 70,
+    backSpeed: 50,
+    startDelay: 0,
+    backDelay: 1500,
+    smartBackspace: true,
+    loop:true,
+    showCursor: false,
+    autoInsertCss: true,
+  })
+}
 
 
 // polyfill if on older browser that doesn't support necessary features
