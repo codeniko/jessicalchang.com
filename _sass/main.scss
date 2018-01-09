@@ -25,6 +25,9 @@ $on-mobile:        480px !default;
 $on-tablet:        840px !default;
 $on-desktop:       1200px !default;
 
+$color: #fbfbfb;
+$hover-color: #63a2aa;
+
 @mixin media-query($device) {
   @media screen and (max-width: $device) {
     @content;

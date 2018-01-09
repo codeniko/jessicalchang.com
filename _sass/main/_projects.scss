@@ -1,7 +1,7 @@
 // assuming fontsize is default, in base
 
 .project-page {
-  padding-bottom: 0px;
+  background-color: #fff;
 }
 
 .project-container {
@@ -26,6 +26,10 @@
       height: 11px;
     }
   }
+
+  .pagination-bottom {
+    padding-top: 100px;
+  }
 }
 
 .project-section {
@@ -33,6 +37,8 @@
   padding: 100px 0px;
   display: flex;
   justify-content: center;
+  background-color: #fbfbfb;
+  width: 100%;
 
   .labeled-image-container {
     display: flex;
@@ -89,19 +95,35 @@
 
     & > .next-steps-pad-bottom { padding-bottom: 15px; }
   }
+
+  // extends the one in layout
+  .two-col-container {
+    line-height: 31px;
+    font-size: 20px;
+    justify-content: center;
+
+    .desc {
+      max-width: 376px;
+      width: 100%;
+    }
+
+    .labeled-image-container {
+      width: auto;
+      padding-top: 0px;
+    }
+  }
 }
 
 .project-section:first-child {
   padding: 70px 0px 100px 0px;
 }
 .project-section:last-child {
-  padding: 100px 0px 100px 0px;
+  padding: 100px 0px 70px 0px;
 }
 
 // alternating background colors
 .project-section:nth-child(even) {
   background-color: #fff;
-  width: 100%;
 }
 
 .project-description-container {
@@ -123,40 +145,6 @@
     display: block;
     font-size: 22px;
     line-height: 27px;
-  }
-}
-
-.two-col-container {
-  line-height: 31px;
-  font-size: 20px;
-  display: flex;
-  justify-content: center;
-
-  .desc {
-    max-width: 376px;
-    width: 100%;
-  }
-
-  .desc span {
-    display: block;
-  }
-
-  .left {
-    display: inline-block;
-    order: 1;
-  }
-
-  .right {
-    display: inline-block;
-    order: 2;
-  }
-
-  img { display: inline-block; }
-
-
-  .labeled-image-container {
-    width: auto;
-    padding-top: 0px;
   }
 }
 

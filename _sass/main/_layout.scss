@@ -11,8 +11,9 @@
  * Site header
  */
 .site-header {
-  padding: 36px 40px 35px 40px;
-  max-height: 111px;
+  padding: 0px 40px;
+  height: 94px;
+  background-color: #fff;
 
   display: flex;
   flex-flow: row nowrap;
@@ -20,11 +21,11 @@
   align-items: center;
 
   @include media-query($on-tablet) {
-    padding: 36px 25px 35px 25px;
+    padding: 0px 25px;
   }
 
   @include media-query($on-mobile) {
-    padding: 18px 15px 17px 15px;
+    padding: 0px 15px;
   }
 }
 
@@ -179,13 +180,14 @@
 .site-footer {
   display: flex;
   justify-content: center;
-  background-color: #fbfbfb;
+  background-color: #fff;
+  padding-top: 50px;
 }
 
 .footer-container {
   box-sizing: border-box;
   border-top: 1px solid overlay-value(0.25);
-  height: 66px;
+  height: 76px;
   padding-top: 10px;
   max-width: 936px;
   width: 100%;
@@ -286,12 +288,46 @@
 .pad-top { padding-top: 100px; }
 .pad-bottom { padding-bottom: 100px; }
 
-// constant padding to bottom of page content, just before footer
 .page {
-  @extend .pad-bottom;
 }
 
 .center {
   display: flex;
   justify-content: center;
+}
+
+
+
+.two-col-container {
+  display: flex;
+  justify-content: space-between;
+
+/*
+.desc {
+  max-width: 376px;
+  width: 100%;
+}
+*/
+
+  .desc span {
+    display: block;
+  }
+
+  .left {
+    display: block;
+    order: 1;
+  }
+
+  .right {
+    display: block;
+    order: 2;
+  }
+
+  img { display: inline-block; }
+
+
+  .labeled-image-container {
+    width: auto;
+    padding-top: 0px;
+  }
 }

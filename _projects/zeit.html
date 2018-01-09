@@ -103,8 +103,15 @@ assetPath: /assets/images/projects/zeit/
         <h2>NEXT STEPS + CHALLENGES</h2>
         <span class="next-steps-pad-bottom">My next step consisted of creating a redlining document to handoff to developers. For this, I used Zeplin to created a comprehensive styleguide and included all the necessary assets.</span>
         <span>In terms of challenges, research was the one that stood out the most. Being in an innovative space, like time travel, there weren’t users that had prior experience so I had to focus on what core information I was really looking for. In the competitive analysis, I stuck to travel companies and services, but looking back, I should have included companies that thrived in innovation like SpaceX or Tesla. As with all challenges, I’ve learned something new that I will be able to apply in future projects. </span>
+
+        <div class="pagination pagination-bottom">
+          <a class="prev" href="{{ prevProject.url }}">{% include previous-arrow.svg %} Previous</a>
+          <a class="next" href="{{ nextProject.url }}">Next {% include next-arrow.svg %}</a>
+        </div>
+
       </div>
     </div>
+
 
   </div>
 </div>
