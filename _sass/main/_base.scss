@@ -62,12 +62,11 @@ a {
   &:hover {
     color: overlay-value(0.6);
 
-    $svgcolor: #63a2aa;
     svg > path {
-      fill: $svgcolor;
+      fill: $accent-color;
     }
     svg > g {
-      stroke: $svgcolor;
+      stroke: $accent-color;
     }
   }
 
