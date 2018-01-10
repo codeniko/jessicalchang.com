@@ -29,32 +29,32 @@ $on-mobile: 610px;
   line-height: 22px;
   @include lato-font(300);
   background-color: #414343;
-  color: $color;
+  color: $light-text-color;
   padding: 32px 29px 35px 29px;
   height: 503px;
   width: 357px;
   position: relative;
 
   a {
-    color: $color;
+    color: $light-text-color;
     svg > path {
-      fill: $color;
+      fill: $light-text-color;
     }
     svg > g {
-      stroke: $color;
+      stroke: $light-text-color;
     }
     &:visited {
-      color: $color;
+      color: $light-text-color;
     }
     &:hover {
-      color: $hover-color;
+      color: $accent-color;
 
       svg > path {
-        fill: $hover-color;
+        fill: $accent-color;
       }
 
       .email-icon svg > g {
-        stroke: $hover-color;
+        stroke: $accent-color;
       }
     }
   }
@@ -306,27 +306,10 @@ $on-mobile: 610px;
   }
 
   button {
-    text-align: center;
-    @include lato-font();
-    color: #fbfbfb;
     font-size: 16px;
     line-height: 19px;
-    background-color: #414343;
-    box-sizing: border-box;
-    border: 1px solid #414343;
     width: 82px;
     height: 33px;
-    border-radius: 2px;
-    outline: none;
-
-    &:hover {
-      color: $hover-color;
-    }
-
-    &:active {
-      color: #414343;
-      background-color: $color;
-    }
 
     @include media-query($on-tablet) {
       width: 77px;

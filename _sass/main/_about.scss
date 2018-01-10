@@ -4,7 +4,7 @@ $on-tablet: 885px;
 .about-container {
   max-width: 880px;
   //box-sizing: border-box;
-  padding: 0px 20px;
+  padding: 70px 20px 100px;
 
   display: flex;
   flex-direction: column;
@@ -26,7 +26,7 @@ $on-tablet: 885px;
   font-size: 22px;
   line-height: 27px;
   letter-spacing: -0.1px;
-  margin: 90px 0px 50px 0px;
+  margin-bottom: 70px;
 
   @include media-query($on-tablet) {
     font-size: 20px;
@@ -81,7 +81,7 @@ $on-tablet: 885px;
   font-size: 20px;
   line-height: 31px;
   letter-spacing: -0.1px;
-  margin: 60px 0px;
+  margin: 70px 0px 100px;
   white-space: wrap;
 
   @include media-query($on-tablet) {
@@ -96,29 +96,11 @@ $on-tablet: 885px;
   }
 }
 
-//TODO this button is similar to contact page button, merge the two (except possibly sizing)
 .about-page button {
-  text-align: center;
-  @include lato-font();
-  color: #fbfbfb;
-  font-size: 16px;
-  line-height: 19px;
-  background-color: #414343;
-  box-sizing: border-box;
-  border: 1px solid #414343;
-  width: 163px;
-  height: 47px;
-  border-radius: 2px;
-  outline: none;
-
-  &:hover {
-    color: $hover-color;
-  }
-
-  &:active {
-    color: #414343;
-    background-color: $color;
-  }
+  font-size: 15px;
+  line-height: 18px;
+  width: 143px;
+  height: 40px;
 
   @include media-query($on-tablet) {
     width: 140px;

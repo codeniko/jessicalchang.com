@@ -60,11 +60,11 @@
 .home-anchor {
   // block normal anchor hover and active states
   &:hover {
-    color: $text-color;
+    color: $dark-text-color;
   }
 
   &:active {
-    color: $text-color;
+    color: $dark-text-color;
   }
 }
 
@@ -322,5 +322,31 @@
   .labeled-image-container {
     width: auto;
     padding-top: 0px;
+  }
+}
+
+
+button {
+  text-align: center;
+  width: 133px;
+  height: 33px;
+  font-size: 13px;
+  line-height: 16px;
+  letter-spacing: 0px;
+  border-radius: 2px;
+  background-color: $accent-color;
+  box-sizing: border-box;
+  color: $button-color;
+  outline: none;
+  border: 0px;
+  @include lato-font();
+
+  &:hover {
+    color: $button-hover-color;
+  }
+
+  &:active {
+    color: $button-color;
+    background-color: $button-hover-bg-color;
   }
 }

@@ -88,29 +88,6 @@
       }
 
       a { width: fit-content; }
-
-      button {
-        width: 133px;
-        height: 33px;
-        font-size: 13px;
-        line-height: 16px;
-        letter-spacing: 0px;
-        border-radius: 2px;
-        background-color: #414343;
-        box-sizing: border-box;
-        color: #fbfbfb;
-        outline: none;
-        @include lato-font();
-
-        &:hover {
-          color: $hover-color;
-        }
-
-        &:active {
-          color: #414343;
-          background-color: $color;
-        }
-      }
     }
   }
 
