@@ -1,119 +1,113 @@
 // increase tablet width
 $on-tablet: 885px;
 
-.about-container {
-  max-width: 880px;
-  //box-sizing: border-box;
-  padding: 70px 20px 100px;
+.about-page {
+  .about-container {
+    max-width: 880px;
+    margin: 70px 20px 100px;
+    box-sizing: border-box;
 
-  display: flex;
-  flex-direction: column;
-  //justify-content: center;
-  align-items: center;
-  overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
 
-  @include media-query($on-tablet) { max-width: 664px; }
-  @include media-query($on-mobile) {
-    max-width: 334px;
-    padding: 0;
+    @include media-query($on-tablet) { max-width: 664px; }
+    @include media-query($on-mobile) {
+      max-width: 334px;
+      padding: 0;
+    }
   }
-}
 
-.about-header {
-  text-align: center;
-  text-transform: uppercase;
-  @include mont-font();
-  font-size: 22px;
-  line-height: 27px;
-  letter-spacing: -0.1px;
-  margin-bottom: 70px;
+  .about-header {
+    text-align: center;
+    text-transform: uppercase;
+    @include mont-font();
+    font-size: 22px;
+    line-height: 27px;
+    letter-spacing: -0.1px;
+    margin-bottom: 70px;
 
-  @include media-query($on-tablet) {
+    @include media-query($on-tablet) {
+      font-size: 20px;
+      line-height: 24px;
+      margin: 86px 0px 50px 0px;
+    }
+
+    @include media-query($on-mobile) {
+      font-size: 16px;
+      line-height: 19px;
+      margin: 60px 0px 40px 0px;
+    }
+  }
+
+  .about-images {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+
+    img {
+      max-height: 426px;
+    }
+
+    .img1 {
+      max-width: 414px;
+    }
+    .img2 {
+      max-width: 436px;
+    }
+
+    @include media-query($on-tablet) {
+      .img1, .img2 { max-width: 320px; }
+    }
+
+    @include media-query(700px) {
+      .img1, .img2 { max-width: 200px; }
+    }
+
+    @include media-query($on-mobile) {
+      .img1, .img2 { max-width: 165px; }
+    }
+  }
+
+  .about-text {
     font-size: 20px;
-    line-height: 24px;
-    margin: 86px 0px 50px 0px;
+    line-height: 31px;
+    letter-spacing: -0.1px;
+    margin: 70px 0px 100px;
+    white-space: wrap;
+
+    @include media-query($on-tablet) {
+      font-size: 18px;
+      letter-spacing: 0px;
+    }
+
+    @include media-query($on-mobile) {
+      font-size: 14px;
+      line-height: 28px;
+      margin: 36px 0px 60px 0px;
+    }
   }
 
-  @include media-query($on-mobile) {
-    font-size: 16px;
-    line-height: 19px;
-    margin: 60px 0px 40px 0px;
-  }
-}
-
-.about-images {
-  width: 100%;
-  white-space: nowrap;
-  text-align: center;
-
-  $weirdDistBetweenImages: 3px;
-
-  img {
-    display: inline-block;
-    max-height: 426px;
-  }
-
-  .img1 {
-    margin-right: 21px - $weirdDistBetweenImages;
-    max-width: 414px;
-  }
-  .img2 {
-    max-width: 436px;
-  }
-
-  @include media-query($on-tablet) {
-    .img1, .img2 { max-width: 320px; }
-    .img1 { margin-right: 24px - $weirdDistBetweenImages; }
-  }
-
-  @include media-query(700px) {
-    .img1, .img2 { max-width: 200px; }
-    .img1 { margin-right: 15px - $weirdDistBetweenImages; }
-  }
-
-  @include media-query($on-mobile) {
-    .img1, .img2 { max-width: 165px; }
-    .img1 { margin-right: 15px - $weirdDistBetweenImages; }
-  }
-}
-
-.about-text {
-  font-size: 20px;
-  line-height: 31px;
-  letter-spacing: -0.1px;
-  margin: 70px 0px 100px;
-  white-space: wrap;
-
-  @include media-query($on-tablet) {
-    font-size: 18px;
-    letter-spacing: 0px;
-  }
-
-  @include media-query($on-mobile) {
-    font-size: 14px;
-    line-height: 28px;
-    margin: 36px 0px 60px 0px;
-  }
-}
-
-.about-page button {
-  font-size: 15px;
-  line-height: 18px;
-  width: 143px;
-  height: 40px;
-
-  @include media-query($on-tablet) {
-    width: 140px;
+  button {
+    font-size: 15px;
+    line-height: 18px;
+    width: 143px;
     height: 40px;
-    font-size: 14px;
-    line-height: 17px;
-  }
 
-  @include media-query($on-mobile) {
-    width: 117px;
-    height: 37px;
-    font-size: 12px;
-    line-height: 15px;
-  }
+    @include media-query($on-tablet) {
+      width: 140px;
+      height: 40px;
+      font-size: 14px;
+      line-height: 17px;
+    }
 
+    @include media-query($on-mobile) {
+      width: 117px;
+      height: 37px;
+      font-size: 12px;
+      line-height: 15px;
+    }
+  }
 }
