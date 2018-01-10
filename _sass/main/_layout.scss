@@ -31,7 +31,7 @@
 
 .site-logo {
   display: inline-block;
-  @include bg-image-fixed('images/logo.svg', 20px, 40px);
+  @include bg-image-fixed('images/logo.svg', 19px, 38px);
 
   @include media-query($on-mobile) {
     width: 16px;
@@ -41,7 +41,7 @@
 
 .site-header-text {
   display: inline-block;
-  padding-left: 10px;
+  padding-left: 12px;
   @include raleway-font(500);
   font-size: 18px;
   line-height: 21px;
