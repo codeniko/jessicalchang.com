@@ -317,12 +317,28 @@
   }
 
   img { display: inline-block; }
+}
 
+.three-col-container {
+  display: flex;
+  justify-content: space-between;
 
-  .labeled-image-container {
-    width: auto;
-    padding-top: 0px;
+  .left {
+    display: block;
+    order: 1;
   }
+
+  .middle {
+    display: block;
+    order: 2;
+  }
+
+  .right {
+    display: block;
+    order: 3;
+  }
+
+  img { display: inline-block; }
 }
 
 
