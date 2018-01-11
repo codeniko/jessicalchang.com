@@ -1,147 +1,141 @@
 ---
-layout: default
+layout: project
 title: Spotify
 description: Jessica L. Chang UX/UI design portfolio.
 assetPath: /assets/images/projects/spotify/
 ---
 {% include paginate.liquid %}
 
-<div class="page project-page center">
-  <div class="project-container">
-    <div class="project-section no-pad-bottom">
-      <div class="inner">
-        <div class="pagination">
-          <a class="prev" href="{{ prevProject.url }}">{% include previous-arrow.svg %} Previous</a>
-          <a class="next" href="{{ nextProject.url }}">Next {% include next-arrow.svg %}</a>
-        </div>
+<div class="project-section no-pad-bottom">
+  <div class="inner">
+    <div class="pagination">
+      <a class="prev" href="{{ prevProject.url }}">{% include previous-arrow.svg %} Previous</a>
+      <a class="next" href="{{ nextProject.url }}">Next {% include next-arrow.svg %}</a>
+    </div>
 
-        <div class="project-description-container">
-          <span class="project-title">{{ page.title }}</span>
-          <span class="project-description">Responsive digital music streaming service</span>
-          <div class="two-col-container pad-top">
-            <div class="left desc">
-              <span>Spotify is a digital music, podcast, and video streaming service that gives you access to millions of songs and other content from artists all over the world. Share and connect with friends through music.</span>
-              <span class="prototype-container">You can view the prototype <a href="{{ site.prototypePath }}spotify.html" target="_blank">here</a>.</span>
-            </div>
-            <div class="right">
-              <a href="{{ page.assetPath }}overview-proto@3x.png" target="_blank"><img src="{{ page.assetPath }}overview-proto.png" width="425" height="435"></a>
-            </div>
-          </div>
+    <div class="project-description-container">
+      <span class="project-title">{{ page.title }}</span>
+      <span class="project-description">Responsive digital music streaming service</span>
+      <div class="two-col-container pad-top">
+        <div class="left desc">
+          <span>Spotify is a digital music, podcast, and video streaming service that gives you access to millions of songs and other content from artists all over the world. Share and connect with friends through music.</span>
+          <span class="prototype-container">You can view the prototype <a href="{{ site.prototypePath }}spotify.html" target="_blank">here</a>.</span>
+        </div>
+        <div class="right">
+          <a href="{{ page.assetPath }}overview-proto@3x.png" target="_blank"><img src="{{ page.assetPath }}overview-proto.png" width="425" height="435"></a>
         </div>
       </div>
     </div>
+  </div>
+</div>
 
-    <div class="project-section">
-      <div class="inner">
-        <h2>THE PROBLEM</h2>
-        <span>Spotify, a leader in the music streaming service, wanted to improve engagement and retention in the app by expanding their social capabilities. They had implemented messaging capabilities earlier in 2017 but removed it due to low engagement. As always, I started by conducting research and trying to understand the different users of Spotify. Based on secondary research and user interviews, there were two distinct users.</span>
-        <div class="labeled-image-container">
-          <a href="{{ page.assetPath }}shawn@3x.jpg" target="_blank"><img src="{{ page.assetPath }}shawn.jpg" width="776" height="487"></a>
-          <span>Primary Persona</span>
+<div class="project-section">
+  <div class="inner">
+    <h2>THE PROBLEM</h2>
+    <span>Spotify, a leader in the music streaming service, wanted to improve engagement and retention in the app by expanding their social capabilities. They had implemented messaging capabilities earlier in 2017 but removed it due to low engagement. As always, I started by conducting research and trying to understand the different users of Spotify. Based on secondary research and user interviews, there were two distinct users.</span>
+    <div class="labeled-image-container">
+      <a href="{{ page.assetPath }}shawn@3x.jpg" target="_blank"><img src="{{ page.assetPath }}shawn.jpg" width="776" height="487"></a>
+      <span>Primary Persona</span>
+    </div>
+    <div class="labeled-image-container">
+      <a href="{{ page.assetPath }}emily@3x.jpg" target="_blank"><img src="{{ page.assetPath }}emily.jpg" width="776" height="467"></a>
+      <span>Secondary Persona</span>
+    </div>
+  </div>
+</div>
+
+<div class="project-section">
+  <div class="inner">
+    <h2>BRAINSTORMING</h2>
+    <span>To satisfy the needs of the primary persona, I created Point-Of-View Statements and How Might We Questions to reframe the problem and generate solutions and ideas. I started with a session of 30 Circles to put myself in a more creative thinking space and then I did rounds of Mind-Mapping and Crazy Eights.</span>
+    <div class="labeled-image-container">
+      <a href="{{ page.assetPath }}brainstorming@3x.png" target="_blank"><img src="{{ page.assetPath }}brainstorming.png" width="775" height="747"></a>
+      <span>Brainstorming</span>
+    </div>
+  </div>
+</div>
+
+<div class="project-section">
+  <div class="inner">
+    <h2>PROTOTYPING</h2>
+    <span>After determining the solutions, prioritizing the feature roadmap and outlining the existing information architecture, it was time to prototype. I started with low-fidelity wireframes as usual but moved quickly onto high-fidelity wireframes because the UI and branding was already available. This also helped gage if the prototypes had the same look and feel of Spotify when it came to usability testing.</span>
+    <div class="labeled-image-container spotify-protos">
+      <div class="three-col-container center">
+        <div class="left">
+          <a href="{{ page.assetPath }}proto-1@3x.png" target="_blank"><img src="{{ page.assetPath }}proto-1.png" width="265" height="496"></a>
         </div>
-        <div class="labeled-image-container">
-          <a href="{{ page.assetPath }}emily@3x.jpg" target="_blank"><img src="{{ page.assetPath }}emily.jpg" width="776" height="467"></a>
-          <span>Secondary Persona</span>
+        <div class="middle">
+          <a href="{{ page.assetPath }}proto-2@3x.png" target="_blank"><img src="{{ page.assetPath }}proto-2.png" width="265" height="496"></a>
+        </div>
+        <div class="right">
+          <a href="{{ page.assetPath }}proto-3@3x.png" target="_blank"><img src="{{ page.assetPath }}proto-3.png" width="265" height="496"></a>
         </div>
       </div>
-    </div>
-
-    <div class="project-section">
-      <div class="inner">
-        <h2>BRAINSTORMING</h2>
-        <span>To satisfy the needs of the primary persona, I created Point-Of-View Statements and How Might We Questions to reframe the problem and generate solutions and ideas. I started with a session of 30 Circles to put myself in a more creative thinking space and then I did rounds of Mind-Mapping and Crazy Eights.</span>
-        <div class="labeled-image-container">
-          <a href="{{ page.assetPath }}brainstorming@3x.png" target="_blank"><img src="{{ page.assetPath }}brainstorming.png" width="775" height="747"></a>
-          <span>Brainstorming</span>
+      <div class="three-col-container center pad-top">
+        <div class="left">
+          <a href="{{ page.assetPath }}proto-4@3x.png" target="_blank"><img src="{{ page.assetPath }}proto-4.png" width="265" height="496"></a>
+        </div>
+        <div class="middle">
+          <a href="{{ page.assetPath }}proto-5@3x.png" target="_blank"><img src="{{ page.assetPath }}proto-5.png" width="265" height="496"></a>
+        </div>
+        <div class="right">
+          <a href="{{ page.assetPath }}proto-6@3x.png" target="_blank"><img src="{{ page.assetPath }}proto-6.png" width="265" height="496"></a>
         </div>
       </div>
-    </div>
-
-    <div class="project-section">
-      <div class="inner">
-        <h2>PROTOTYPING</h2>
-        <span>After determining the solutions, prioritizing the feature roadmap and outlining the existing information architecture, it was time to prototype. I started with low-fidelity wireframes as usual but moved quickly onto high-fidelity wireframes because the UI and branding was already available. This also helped gage if the prototypes had the same look and feel of Spotify when it came to usability testing.</span>
-        <div class="labeled-image-container spotify-protos">
-          <div class="three-col-container center">
-            <div class="left">
-              <a href="{{ page.assetPath }}proto-1@3x.png" target="_blank"><img src="{{ page.assetPath }}proto-1.png" width="265" height="496"></a>
-            </div>
-            <div class="middle">
-              <a href="{{ page.assetPath }}proto-2@3x.png" target="_blank"><img src="{{ page.assetPath }}proto-2.png" width="265" height="496"></a>
-            </div>
-            <div class="right">
-              <a href="{{ page.assetPath }}proto-3@3x.png" target="_blank"><img src="{{ page.assetPath }}proto-3.png" width="265" height="496"></a>
-            </div>
-          </div>
-          <div class="three-col-container center pad-top">
-            <div class="left">
-              <a href="{{ page.assetPath }}proto-4@3x.png" target="_blank"><img src="{{ page.assetPath }}proto-4.png" width="265" height="496"></a>
-            </div>
-            <div class="middle">
-              <a href="{{ page.assetPath }}proto-5@3x.png" target="_blank"><img src="{{ page.assetPath }}proto-5.png" width="265" height="496"></a>
-            </div>
-            <div class="right">
-              <a href="{{ page.assetPath }}proto-6@3x.png" target="_blank"><img src="{{ page.assetPath }}proto-6.png" width="265" height="496"></a>
-            </div>
-          </div>
-          <div class="two-col-container center pad-top">
-            <div class="left">
-              <a href="{{ page.assetPath }}proto-7@3x.png" target="_blank"><img src="{{ page.assetPath }}proto-7.png" width="265" height="496"></a>
-            </div>
-            <div class="right">
-              <a href="{{ page.assetPath }}proto-8@3x.png" target="_blank"><img src="{{ page.assetPath }}proto-8.png" width="265" height="496"></a>
-            </div>
-          </div>
-          <div class="two-col-container center pad-top">
-            <div class="left">
-              <a href="{{ page.assetPath }}proto-9@3x.png" target="_blank"><img src="{{ page.assetPath }}proto-9.png" width="265" height="496"></a>
-            </div>
-            <div class="right">
-              <a href="{{ page.assetPath }}proto-10@3x.png" target="_blank"><img src="{{ page.assetPath }}proto-10.png" width="265" height="496"></a>
-            </div>
-          </div>
-          <span>High-Fidelity Wireframes - Iteration 1</span>
+      <div class="two-col-container center pad-top">
+        <div class="left">
+          <a href="{{ page.assetPath }}proto-7@3x.png" target="_blank"><img src="{{ page.assetPath }}proto-7.png" width="265" height="496"></a>
+        </div>
+        <div class="right">
+          <a href="{{ page.assetPath }}proto-8@3x.png" target="_blank"><img src="{{ page.assetPath }}proto-8.png" width="265" height="496"></a>
         </div>
       </div>
-    </div>
-
-    <div class="project-section">
-      <div class="inner">
-        <h2>USABILITY TESTING</h2>
-        <span>Once I had my high-fidelity wireframes, I used POP by Marvel to prototype and conduct my usability test. From the feedback of the participants, I prioritized a list of improvements and implemented those that were high-priority and feasible within the time constraint.</span>
-        <div class="labeled-image-container">
-          <a href="{{ page.assetPath }}affinity-map@3x.png" target="_blank"><img src="{{ page.assetPath }}affinity-map.png" width="776" height="788"></a>
-          <span>Affinity Map</span>
+      <div class="two-col-container center pad-top">
+        <div class="left">
+          <a href="{{ page.assetPath }}proto-9@3x.png" target="_blank"><img src="{{ page.assetPath }}proto-9.png" width="265" height="496"></a>
+        </div>
+        <div class="right">
+          <a href="{{ page.assetPath }}proto-10@3x.png" target="_blank"><img src="{{ page.assetPath }}proto-10.png" width="265" height="496"></a>
         </div>
       </div>
+      <span>High-Fidelity Wireframes - Iteration 1</span>
     </div>
+  </div>
+</div>
 
-    <div class="project-section">
-      <div class="inner">
-        <h2>ITERATING</h2>
-        <span>For the second iteration, I kept playlists personal by default, removed unnecessary prompts, and included more gestures and interactions commonly seen in the Spotify app. </span>
-        <div class="labeled-image-container">
-          <a href="{{ page.assetPath }}iterating-screens@3x.png" target="_blank"><img src="{{ page.assetPath }}iterating-screens.png" width="776" height="527"></a>
-          <span>Affinity Map</span>
-        </div>
-      </div>
+<div class="project-section">
+  <div class="inner">
+    <h2>USABILITY TESTING</h2>
+    <span>Once I had my high-fidelity wireframes, I used POP by Marvel to prototype and conduct my usability test. From the feedback of the participants, I prioritized a list of improvements and implemented those that were high-priority and feasible within the time constraint.</span>
+    <div class="labeled-image-container">
+      <a href="{{ page.assetPath }}affinity-map@3x.png" target="_blank"><img src="{{ page.assetPath }}affinity-map.png" width="776" height="788"></a>
+      <span>Affinity Map</span>
     </div>
+  </div>
+</div>
 
-    <div class="project-section">
-      <div class="inner pad-spans">
-        <h2>CHALLENGES</h2>
-        <span>The biggest challenge in this project was brainstorming ideas and research. Studies have shown that people are bad at predicting future behaviours and/or preferences so asking them directly was not an option. However, experimenting with exercises like 30 Circles, Mind-mapping and Crazy Eights was very helpful. I found the first few times were surprisingly difficult and I tended to overthink my sketches but after more tries, I started to get the purpose of the exercise. In the future, I would love to learn more ideating techniques and being able to brainstorm within a team. </span>
-        <span>The second challenge was ensuring that the feature embeds well within the current Spotify app and was consistent in branding. Spotify has a distinct and existing brand so it was important to become familiar with their guidelines and patterns. For example, I noticed that Spotify has a fairly minimalist UI design and there isn’t a heavy usage of icons so that was something I kept in mind while designing.</span>
-        <span>This was a great project to learn about ideation and how challenging innovation can be especially in short sprints. It takes a lot of brainstorming and creative thinking. I also learned about following and integrating with an existing brand and app. This meant making sure everything fit smoothly within the app, not only the UI but also the Information Architecture.</span>
-
-        <div class="pagination pagination-bottom">
-          <a class="prev" href="{{ prevProject.url }}">{% include previous-arrow.svg %} Previous</a>
-          <a class="next" href="{{ nextProject.url }}">Next {% include next-arrow.svg %}</a>
-        </div>
-
-      </div>
+<div class="project-section">
+  <div class="inner">
+    <h2>ITERATING</h2>
+    <span>For the second iteration, I kept playlists personal by default, removed unnecessary prompts, and included more gestures and interactions commonly seen in the Spotify app. </span>
+    <div class="labeled-image-container">
+      <a href="{{ page.assetPath }}iterating-screens@3x.png" target="_blank"><img src="{{ page.assetPath }}iterating-screens.png" width="776" height="527"></a>
+      <span>Affinity Map</span>
     </div>
+  </div>
+</div>
 
+<div class="project-section">
+  <div class="inner pad-spans">
+    <h2>CHALLENGES</h2>
+    <span>The biggest challenge in this project was brainstorming ideas and research. Studies have shown that people are bad at predicting future behaviours and/or preferences so asking them directly was not an option. However, experimenting with exercises like 30 Circles, Mind-mapping and Crazy Eights was very helpful. I found the first few times were surprisingly difficult and I tended to overthink my sketches but after more tries, I started to get the purpose of the exercise. In the future, I would love to learn more ideating techniques and being able to brainstorm within a team. </span>
+    <span>The second challenge was ensuring that the feature embeds well within the current Spotify app and was consistent in branding. Spotify has a distinct and existing brand so it was important to become familiar with their guidelines and patterns. For example, I noticed that Spotify has a fairly minimalist UI design and there isn’t a heavy usage of icons so that was something I kept in mind while designing.</span>
+    <span>This was a great project to learn about ideation and how challenging innovation can be especially in short sprints. It takes a lot of brainstorming and creative thinking. I also learned about following and integrating with an existing brand and app. This meant making sure everything fit smoothly within the app, not only the UI but also the Information Architecture.</span>
+
+    <div class="pagination pagination-bottom">
+      <a class="prev" href="{{ prevProject.url }}">{% include previous-arrow.svg %} Previous</a>
+      <a class="next" href="{{ nextProject.url }}">Next {% include next-arrow.svg %}</a>
+    </div>
 
   </div>
 </div>
