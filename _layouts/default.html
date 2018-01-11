@@ -7,8 +7,9 @@
     <main class="page-content" aria-label="Content">
       {{ content }}
     </main>
-    {% include footer.html %}
-    {% include contact.html %}
+    {% if page.url != '/contact.html' %}
+      {% include footer.html %}
+    {% endif %}
     {% include libraries.html %}
     <script>
       <!--

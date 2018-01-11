@@ -198,7 +198,6 @@ a.home-anchor {
       svg > path { fill: $accent-color; }
       svg > g { stroke: $accent-color; }
     }
-
   }
 }
 
@@ -312,6 +311,11 @@ a.home-anchor {
 .center {
   display: flex;
   justify-content: center;
+}
+.cross-center {
+  display: flex;
+  align-items: center;
+  align-content: center;
 }
 
 
