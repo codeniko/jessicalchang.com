@@ -44,6 +44,7 @@
     line-height: 16px;
     letter-spacing: 0.3px;
     @include lato-font(700);
+    @include anchor-color($dark-text-color, none);
 
     & > span {
       position:relative;
@@ -99,7 +100,7 @@
 
 // alternating background colors
 .alternating-section {
-  background-color: #fbfbfb;
+  background-color: $light-text-color;
   width: 100%;
   display: flex;
   justify-content: center;

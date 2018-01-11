@@ -16,8 +16,15 @@
       display: flex;
       justify-content: space-between;
 
-      svg > path {
-        fill: none;
+      svg > path { fill: none; }
+
+      a, a:visited {
+        color: $dark-text-color;
+        svg > path { stroke: $dark-text-color; }
+      }
+      a:hover, a:active {
+        color: $darker-accent-color;
+        svg > path { stroke: $darker-accent-color; }
       }
 
       .prev svg, .next svg {
@@ -36,7 +43,7 @@
     padding: 100px 0px;
     display: flex;
     justify-content: center;
-    background-color: #fbfbfb;
+    background-color: $light-text-color;
     width: 100%;
 
     .labeled-image-container {
@@ -157,7 +164,6 @@
   .prototype-container {
     margin-top: 50px;
     a {
-      color: #3f99de;
       @include lato-font();
     }
   }

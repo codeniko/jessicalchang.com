@@ -13,9 +13,17 @@ $dark-text-color:  #414343 !default;
 $light-text-color: #fbfbfb;
 
 $accent-color: #3d96ec;
-$button-color: #fbfbfb;
+$darker-accent-color: #296cac;
+
+$button-color: $light-text-color;
 $button-hover-color: $button-color;
-$button-hover-bg-color: $accent-color;
+$button-hover-bg-color: $darker-accent-color;
+$button-active-color: $accent-color;
+$button-active-bg-color: #fbfbfb;
+
+$anchor-color: $accent-color;
+$anchor-hover-color: $darker-accent-color;
+$anchor-active-color: $darker-accent-color;
 
 @mixin media-query($device) {
   @media screen and (max-width: $device) {
@@ -36,6 +44,26 @@ $button-hover-bg-color: $accent-color;
 @mixin mont-font($weight: 400) {
   font-family: 'Montserrat', sans-serif;
   font-weight: $weight;
+}
+
+// set all pseudo states for anchor tag to specified color
+// DEFAULT: $dark-text-color to blend with page text
+@mixin anchor-color($color: $dark-text-color, $fill: $color) {
+    color: $color;
+    svg > path { fill: $fill; }
+    svg > g { stroke: $color; }
+
+    &:visited {
+      color: $color;
+      svg > path { fill: $fill; }
+      svg > g { stroke: $color; }
+    }
+
+    &:hover, &:active {
+      color: $color;
+      svg > path { fill: $fill; }
+      svg > g { stroke: $color; }
+    }
 }
 
 // responsive background image that maintains height/width ratio

@@ -24,12 +24,12 @@ $mf-active-color: darken($mf-border-color, 10%) !default;
 $mf-focus-color: #337ab7 !default;
 $mf-error-color: #d9534f !default;
 */
-  $mf-input-color: #414343 !default;
+  $mf-input-color: $dark-text-color !default;
   $mf-border-color: rgba(65, 67, 67, 0.6) !default;
   $mf-label-color: rgba(65, 67, 67, 0.6) !default;
   $mf-active-color: darken($mf-border-color, 10%) !default;
   $mf-focus-color: rgba(65, 67, 67, 0.6) !default;
-  $mf-label-focus-color: #414343 !default;
+  $mf-label-focus-color: $dark-text-color !default;
   $mf-error-color: #d0021b !default;
 
   // Animation

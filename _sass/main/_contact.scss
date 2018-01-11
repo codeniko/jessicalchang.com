@@ -28,7 +28,7 @@ $on-mobile: 610px;
   font-size: 18px;
   line-height: 22px;
   @include lato-font(300);
-  background-color: #414343;
+  background-color: $dark-text-color;
   color: $light-text-color;
   padding: 32px 29px 35px 29px;
   height: 503px;
@@ -204,7 +204,7 @@ $on-mobile: 610px;
   height: 503px;
   width: 603px;
   padding: 54px 22px 22px 46px;
-  background-color: #fbfbfb;
+  background-color: $light-text-color;
   line-height: 19px;
   position: relative;
   @include lato-font(300);
@@ -347,7 +347,7 @@ $on-mobile: 610px;
 #contact-close-icon-2 {
   @extend #contact-close-icon;
 
-  svg g { stroke: #fbfbfb; }
+  svg g { stroke: $light-text-color; }
 
   display: none;
   // use close icon in contact-info div

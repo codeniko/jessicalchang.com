@@ -57,15 +57,11 @@
   }
 }
 
-.home-anchor {
+a.home-anchor {
   // block normal anchor hover and active states
-  &:hover {
-    color: $dark-text-color;
-  }
+  color: $dark-text-color;
+  &:active, &:hover, &:visited { color: $dark-text-color; }
 
-  &:active {
-    color: $dark-text-color;
-  }
 }
 
 // encapsulates nav-links set
@@ -93,8 +89,11 @@
     height: 16px;
   }
 
-  .nav-link {
-
+  a.nav-link {
+    color: $dark-text-color;
+    &:visited { color: $dark-text-color; }
+    &:active { color: $accent-color; }
+    &:hover { color: $darker-accent-color; }
     line-height: 17px;
     text-transform: uppercase;
     font-size: 14px;
@@ -159,7 +158,7 @@
       right: 0px;
       top: 0px;
       height: 100%;
-      background-color: #fbfbfb;
+      background-color: $light-text-color;
       box-shadow: -5px 1px 10px 0 overlay-value(0.38);
 
       display: flex;
@@ -182,6 +181,25 @@
   justify-content: center;
   background-color: #fff;
   padding-top: 50px;
+
+  a.social-media-icon {
+    color: $dark-text-color;
+    svg > path { fill: $dark-text-color; }
+    svg > g { stroke: $dark-text-color; }
+
+    &:visited {
+      color: $dark-text-color;
+      svg > path { fill: $dark-text-color; }
+      svg > g { stroke: $dark-text-color; }
+    }
+
+    &:hover, &:active {
+      color: $accent-color;
+      svg > path { fill: $accent-color; }
+      svg > g { stroke: $accent-color; }
+    }
+
+  }
 }
 
 .footer-container {
@@ -277,7 +295,7 @@
  */
 .page-content {
   width: 100%;
-  background-color: #fbfbfb;
+  background-color: $light-text-color;
 
   // default page font
   @include lato-font(300);
@@ -359,10 +377,11 @@ button {
 
   &:hover {
     color: $button-hover-color;
+    background-color: $button-hover-bg-color;
   }
 
   &:active {
-    color: $button-color;
-    background-color: $button-hover-bg-color;
+    color: $button-active-color;
+    background-color: $button-active-bg-color;
   }
 }

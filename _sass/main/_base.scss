@@ -45,33 +45,28 @@ h1, h2, h3, h4, h5, h6 {
  * Links
  */
 a {
-  color: $dark-text-color;
+  color: $anchor-color;
   text-decoration: none;
 
-  svg > path {
-    fill: $dark-text-color;
-  }
-  svg > g {
-    stroke: $dark-text-color;
-  }
+  svg > path { fill: $anchor-color; }
+  svg > g { stroke: $anchor-color; }
 
   &:visited {
-    color: $dark-text-color;
+    color: $anchor-color;
+    svg > path { fill: $anchor-color; }
+    svg > g { stroke: $anchor-color; }
   }
 
   &:hover {
-    color: overlay-value(0.6);
-
-    svg > path {
-      fill: $accent-color;
-    }
-    svg > g {
-      stroke: $accent-color;
-    }
+    color: $anchor-hover-color;
+    svg > path { fill: $anchor-hover-color; }
+    svg > g { stroke: $anchor-hover-color; }
   }
 
   &:active {
-    color: #63a2aa;
+    color: $anchor-active-color;
+    svg > path { fill: $anchor-active-color; }
+    svg > g { stroke: $anchor-active-color; }
   }
 }
 
