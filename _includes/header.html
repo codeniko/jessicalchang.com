@@ -17,7 +17,7 @@
 
       <div class="trigger">
         <a class="nav-link home-nav-link {% if page.url == '/' %} nav-current {% endif %}" href="{{ '/' | relative_url }}">Home</a>
-        <a id="work-nav-link" class="nav-link" href="{{ '/' | relative_url }}#work">Work</a>
+        <a id="work-nav-link" class="nav-link {% if page.url contains '/projects/' %} nav-current {% endif %}" href="{{ '/' | relative_url }}#work">Work</a>
         <a class="nav-link {% if page.url == '/about.html' %} nav-current {% endif %}" href="{{ '/about.html' | relative_url }}">About</a>
         <a class="nav-link {% if page.url == '/contact.html' %} nav-current {% endif %}" href="{{ '/contact.html' | relative_url }}">Contact</a>
 
