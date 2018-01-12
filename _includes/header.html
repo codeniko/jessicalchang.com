@@ -16,10 +16,10 @@
       </label>
 
       <div class="trigger">
-        <a class="nav-link home-nav-link" href="{{ '/' | relative_url }}">Home</a>
-        <a id="work-nav-link" class="nav-link" href="{{ '/' | relative_url }}#featured-work">Work</a>
-        <a class="nav-link" href="{{ '/about.html' | relative_url }}">About</a>
-        <a class="nav-link" href="{{ '/contact.html' | relative_url }}">Contact</a>
+        <a class="nav-link home-nav-link {% if page.url == '/' %} nav-current {% endif %}" href="{{ '/' | relative_url }}">Home</a>
+        <a id="work-nav-link" class="nav-link" href="{{ '/' | relative_url }}#work">Work</a>
+        <a class="nav-link {% if page.url == '/about.html' %} nav-current {% endif %}" href="{{ '/about.html' | relative_url }}">About</a>
+        <a class="nav-link {% if page.url == '/contact.html' %} nav-current {% endif %}" href="{{ '/contact.html' | relative_url }}">Contact</a>
 
         <div id="navmenu-close-icon">{% include icon-exit.svg %}</div>
       </div>

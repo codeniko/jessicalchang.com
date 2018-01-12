@@ -1,3 +1,5 @@
+$header-height: 94px;
+
 #page-overlay {
   display: none;
   position: fixed;
@@ -12,8 +14,15 @@
  */
 .site-header {
   padding: 0px 40px;
-  height: 94px;
+  height: $header-height;
   background-color: #fff;
+  box-sizing: border-box;
+  z-index: 30;
+
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  overflow: hidden;
 
   display: flex;
   flex-flow: row nowrap;
@@ -87,6 +96,10 @@ a.home-anchor {
     left: 18px;
     width: 16px;
     height: 16px;
+  }
+
+  .trigger a.nav-link.nav-current {
+    color: $accent-color;
   }
 
   a.nav-link {
@@ -295,6 +308,7 @@ a.home-anchor {
 .page-content {
   width: 100%;
   background-color: $light-text-color;
+  margin-top: $header-height;
 
   // default page font
   @include lato-font(300);

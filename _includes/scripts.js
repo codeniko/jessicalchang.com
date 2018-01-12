@@ -207,6 +207,35 @@ if (Typed) {
 }
 
 
+function highlightWorksNavLink() {
+  worksNavLinkHighlighted = true
+  $('.home-nav-link').removeClass('nav-current')
+  $('#work-nav-link').addClass('nav-current')
+}
+function highlightHomeNavLink() {
+  worksNavLinkHighlighted = false
+  $('.home-nav-link').addClass('nav-current')
+  $('#work-nav-link').removeClass('nav-current')
+}
+
+var path = window.location.pathname
+var worksNavLinkHighlighted = false
+if (path === '/') {
+  var worksPos = $('#featured-work')[0].scrollHeight
+
+  // home nav link is highlighted by default
+  // handle if page refreshed and is already prescrolled to works section
+  if (document.scrollingElement.scrollTop >= worksPos)
+    highlightWorksNavLink()
+
+  $(document).scroll(function() {
+    if (document.scrollingElement.scrollTop >= worksPos && !worksNavLinkHighlighted)
+      highlightWorksNavLink()
+    else if (document.scrollingElement.scrollTop < worksPos && worksNavLinkHighlighted)
+      highlightHomeNavLink()
+  })
+}
+
 // polyfill if on older browser that doesn't support necessary features
 if (!browserSupportsAllFeatures()) {
   loadScript('https://cdn.polyfill.io/v2/polyfill.min.js?features=Promise,fetch,Array.prototype.map,Array.prototype.some', metrics)
