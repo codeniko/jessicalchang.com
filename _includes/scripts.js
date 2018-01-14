@@ -93,7 +93,7 @@ function closeMobileNavMenu() {
 
 // Hooks into HTML elements
 
-// close mobile navmenu, contact form, and page overlay
+// close mobile navmenu, and page overlay
 $('#page-overlay').click(function() {
   var isNavMenuOpen = $('#nav-trigger').is(':checked')
 
@@ -123,7 +123,7 @@ $('#nav-trigger').click(function() {
 })
 
 
-// Contact modal
+// Contact page
 var formIDs = [
   '#first-name',
   '#last-name',
