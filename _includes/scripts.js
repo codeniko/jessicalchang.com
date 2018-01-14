@@ -57,15 +57,17 @@ function sendEmail() {
     .then(parseJson)
     .then(function(response) {
       console.info('response', response)
+      hideContactSpinner()
+      resetContactForm()
+
       if (response.error) {
         console.error('Received error on server side', response.error)
         alert('Sorry, we were unable to send the message at this time. Please try again!')
-      } else {
-        closeContactModal()
       }
     })
     .catch(function(e) {
       console.error('Received error', e)
+      hideContactSpinner()
       alert('Sorry, we were unable to send the message at this time. Please try again!')
     })
 }
@@ -95,7 +97,6 @@ $('#page-overlay').click(function() {
   if (isNavMenuOpen) {
     closeMobileNavMenu()
   }
-  closeContactModal()
 })
 
 // close mobile navmenu and page overlay if nav menu open
@@ -128,20 +129,23 @@ var formIDs = [
   '#email'
 ]
 
-function showContactModal() {
-  $('#contact-modal').css('display', 'flex')
-  showPageOverlay()
+function showContactSpinner() {
+  $('#contact-submit-button-text').css('display', 'none')
+  $('#contact-spinner').css('display', 'block')
 }
 
-function closeContactModal() {
-  $('#contact-modal').css('display', 'none')
+function hideContactSpinner() {
+  $('#contact-spinner').css('display', 'none')
+  $('#contact-submit-button-text').css('display', 'inline-block')
+}
+
+function resetContactForm() {
   $('#contact-form')[0].reset() // clear form
   // reset error labels and error colors in form
   formIDs.forEach(function(id) {
     $(id + '-error').css('display', 'none')
     //$(id + '-label').removeClass('error-color')
   })
-  hidePageOverlay()
 }
 
 function validateFormInput(id) {
@@ -162,20 +166,12 @@ function validateContactForm() {
 
   console.debug('error in form?', hasError)
 
-  if (!hasError)
+  if (!hasError) {
+    showContactSpinner()
     sendEmail()
+  }
 }
 
-$('#contact-nav-link').click(function() {
-  closeMobileNavMenu()
-  showContactModal()
-})
-$('#contact-close-icon').click(function() {
-  closeContactModal()
-})
-$('#contact-close-icon-2').click(function() {
-  closeContactModal()
-})
 $('#contact-submit-button').click(function() {
   validateContactForm()
 })

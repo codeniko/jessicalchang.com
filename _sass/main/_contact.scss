@@ -10,7 +10,6 @@ $on-mobile: 610px;
     margin-top: 10px; // give some margin to the top for small devices. Otherwise top section including close button is cut off
   }
 
-
   .contact-info {
     display: inline-block;
     box-sizing: border-box;
@@ -305,5 +304,10 @@ $on-mobile: 610px;
       }
     }
   }
-}
 
+  #contact-spinner {
+    display: none;
+    width: 20px;
+    height: 20px;
+  }
+}
