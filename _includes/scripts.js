@@ -58,11 +58,14 @@ function sendEmail() {
     .then(function(response) {
       console.info('response', response)
       hideContactSpinner()
-      resetContactForm()
 
       if (response.error) {
         console.error('Received error on server side', response.error)
         alert('Sorry, we were unable to send the message at this time. Please try again!')
+      } else {
+        resetContactForm()
+        $('#contact-form').css('display', 'none')
+        $('#contact-form-success').css('display', 'inline-block')
       }
     })
     .catch(function(e) {
