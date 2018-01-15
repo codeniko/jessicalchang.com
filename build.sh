@@ -7,9 +7,11 @@
 minify=1
 
 if [ $minify -eq 1 ]; then
-  js='_includes'
+  js='_includes/scripts'
   echo 'Uglifying javascripts...'
-  uglifyjs $js/scripts.js > $js/scripts.min.js
+  uglifyjs -m reserved $js/nquery.js $js/shared.js > $js/main.min.js
+  uglifyjs -m reserved $js/contact.js > $js/contact.min.js
+  uglifyjs -m reserved $js/index.js > $js/index.min.js
 fi
 
 JEKYLL_ENV=production bundle exec jekyll build --verbose --strict_front_matter
@@ -28,4 +30,4 @@ if [ $? -eq 0 ] && [ $minify -eq 1 ]; then
 fi
 
 echo 'Cleaning up...'
-rm $js/scripts.min.js
+rm $js/*.min.js

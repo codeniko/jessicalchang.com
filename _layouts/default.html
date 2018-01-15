@@ -14,9 +14,14 @@
     <script>
       <!--
       {% if jekyll.environment == 'production' %}
-        {% include scripts.min.js %}
+        {% include scripts/main.min.js %}
+        {% if page.url == '/contact.html' %} {% include scripts/contact.min.js %} {% endif %}
+        {% if page.url == '/' %} {% include scripts/index.min.js %} {% endif %}
       {% else %}
-        {% include scripts.js %}
+        {% include scripts/nquery.js %}
+        {% include scripts/shared.js %}
+        {% if page.url == '/contact.html' %} {% include scripts/contact.js %} {% endif %}
+        {% if page.url == '/' %} {% include scripts/index.js %} {% endif %}
       {% endif %}
       -->
     </script>
