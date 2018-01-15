@@ -10,18 +10,22 @@ description: Jessica L. Chang UX/UI design portfolio
     <span class="contact-desc">Thanks for taking the time to stop by. Feel free to reach out and drop me a line. I’d love to chat!</span>
     <div class="contact-details social-media-list">
       <div class="contact-details-row">
-        <div class="social-media-icon location-icon"></div>
+        <div class="social-media-icon location-icon">
+          {% include icon-location.svg %}
+        </div>
         <span>{{ site.location }}</span>
       </div>
 
       <div class="contact-details-row">
-        <div class="social-media-icon phone-icon"></div>
+        <div class="social-media-icon phone-icon">
+          {% include icon-phone.svg %}
+        </div>
         <span>{{ site.phone }}</span>
       </div>
 
       <a href="mailto:{{ site.email }}" class="contact-details-row">
           <div class="social-media-icon email-icon">
-            {% include icon-mail.svg %}
+            {% include icon-mail-dark.svg %}
           </div>
           <span>{{ site.email }}</span>
       </a>

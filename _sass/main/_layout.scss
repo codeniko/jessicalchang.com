@@ -182,7 +182,7 @@ a.home-anchor {
       right: 0px;
       top: 0px;
       height: 100%;
-      background-color: $light-text-color;
+      background-color: #fff;
       box-shadow: -5px 1px 10px 0 overlay-value(0.38);
 
       display: flex;
@@ -297,20 +297,6 @@ a.home-anchor {
       width: 12px;
       height: 10px;
     }
-  }
-
-  .phone-icon {
-    background: url(images/phone-icon.png) no-repeat;
-    background-size: contain;
-    width: 19px;
-    height: 19px;
-  }
-
-  .location-icon {
-    background: url(images/location-icon.png) no-repeat;
-    background-size: contain;
-    width: 22px;
-    height: 22px;
   }
 }
 
