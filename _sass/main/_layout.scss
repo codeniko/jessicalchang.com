@@ -331,6 +331,10 @@ a.home-anchor {
   align-items: center;
   align-content: center;
 }
+.center-middle {
+  @extend .center;
+  @extend .cross-center;
+}
 
 
 
@@ -403,4 +407,9 @@ button {
     color: $button-active-color;
     background-color: $button-active-bg-color;
   }
+}
+
+a.button {
+  @extend button;
+  @extend .center-middle;
 }
