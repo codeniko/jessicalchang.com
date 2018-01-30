@@ -52,7 +52,7 @@ $header-height: 94px;
 
 .site-header-text {
   display: inline-block;
-  padding-left: 12px;
+  padding-left: 11px;
   @include raleway-font(500);
   font-size: 18px;
   line-height: 21px;
@@ -63,7 +63,7 @@ $header-height: 94px;
     letter-spacing: 0.2px;
   }
 
-  @include media-query($on-tablet) {
+  @include media-query(552px) {
     display: none;
   }
 }
@@ -233,12 +233,11 @@ a.home-anchor {
   border-top: 1px solid overlay-value(0.25);
   height: 76px;
   padding-top: 10px;
-  max-width: 936px;
+  max-width: $max-footer-width;
   width: 100%;
 
   @include media-query($on-tablet) {
-    max-width: 617px;
-    height: 56px;
+    max-width: $max-footer-width-tablet;
   }
 
   @include media-query($on-mobile) {

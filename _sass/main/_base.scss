@@ -28,8 +28,11 @@ body {
  * Images
  */
 img {
-  max-width: 100%;
   vertical-align: middle;
+
+  // responsive images
+  height: auto;
+  max-width: 100%;
 }
 
 

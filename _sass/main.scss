@@ -1,7 +1,12 @@
 @charset "utf-8";
 
 // Define defaults for each variable.
-$max-page-width: 1440px;
+$max-page-width: 1440px !default;
+$max-page-width-tablet: 768px !default;
+$max-footer-width: 936px !default;
+$max-footer-width-tablet: 718px !default;
+
+$page-margin: 12px !default;
 
 $base-font-weight: 400 !default;
 $background-color: #fff !default;

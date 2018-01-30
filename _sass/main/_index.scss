@@ -10,7 +10,16 @@
   .intro-container {
     padding-top: 130px;
     padding-bottom: 100px;
-    width: 936px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    & > div {
+      width: $max-footer-width;
+      margin: 0px $page-margin;
+
+      @include media-query($on-tablet) { width: $max-footer-width-tablet; }
+    }
   }
 
   .typed-container {
@@ -65,7 +74,10 @@
   }
 
   .two-col-container {
-    width: 936px;
+    width: $max-footer-width;
+    margin: 0px $page-margin;
+
+    @include media-query($on-tablet) { width: $max-footer-width-tablet; }
 
     .desc {
       display: flex;
@@ -79,6 +91,11 @@
         line-height: 32px;
         @include lato-font(700);
         letter-spacing: 0.5px;
+
+        @include media-query($on-tablet) {
+          font-size: 24px;
+          line-height: 29px;
+        }
       }
 
       span {
@@ -86,12 +103,24 @@
         line-height: 30px;
         margin: 15px 0px 50px 0px;
         width: 400px;
+
+        @include media-query($on-tablet) {
+          font-size: 18px;
+          width: 311px;
+        }
       }
     }
   }
 
   .spotify-section {
     padding: 59px 0px;
+    @include media-query($on-tablet) { padding: 57px 0px; }
+  }
+
+  @include media-query($on-tablet) {
+    .spotify-section img { width: 373px; }
+    .heem-section img, .rr-section img { width: 385px; }
+    .spotify-section img { width: 390px; }
   }
 }
 
