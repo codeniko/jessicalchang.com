@@ -1,4 +1,5 @@
 $header-height: 94px;
+$header-height-mobile: 65px;
 
 #page-overlay {
   display: none;
@@ -37,6 +38,8 @@ $header-height: 94px;
   @include media-query($on-mobile) {
     padding: 0px 15px;
     position: static;
+    // note - header is not fixed on mobile
+    height: $header-height-mobile;
   }
 }
 
@@ -46,7 +49,7 @@ $header-height: 94px;
 
   @include media-query($on-mobile) {
     width: 16px;
-    height: 33px;
+    height: 32px;
   }
 }
 
@@ -63,8 +66,9 @@ $header-height: 94px;
     letter-spacing: 0.2px;
   }
 
-  @include media-query(552px) {
-    display: none;
+  @include media-query($on-mobile) {
+    font-size: 16px;
+    line-height: 19px;
   }
 }
 
@@ -125,11 +129,11 @@ a.home-anchor {
 
     // menu items after opening menu from hamburger button
     @include media-query($on-mobile) {
-      line-height: 22px;
-      font-size: 18px;
-      margin-top: 40px;
+      line-height: 19px;
+      font-size: 16px;
+      margin-top: 50px;
 
-      &:first-child { margin-top: 51px; }
+      &:first-child { margin-top: 60px; }
     }
   }
 
@@ -152,7 +156,7 @@ a.home-anchor {
     }
 
     .mobile-menu-icon {
-      @include bg-image-fixed('images/hamburger-menu.svg', 23px, 17px);
+      @include bg-image-fixed('images/hamburger-menu.svg', 21px, 15px);
       display: block;
     }
 
@@ -209,6 +213,8 @@ a.home-anchor {
   background-color: #fff;
   padding-top: 50px;
 
+  @include media-query($on-mobile) { padding-top: 30px; }
+
   a.social-media-icon {
     color: $dark-text-color;
     svg > path { fill: $dark-text-color; }
@@ -241,8 +247,8 @@ a.home-anchor {
   }
 
   @include media-query($on-mobile) {
-    max-width: 295px;
-    height: 38px;
+    max-width: $max-footer-width-mobile;
+    height: 53px;
   }
 
   display: flex;
@@ -309,6 +315,9 @@ a.home-anchor {
   background-color: $light-text-color;
   margin-top: $header-height;
 
+  // header is not fixed on mobile
+  @include media-query($on-mobile) { margin-top: 0px; }
+
   // default page font
   @include lato-font(300);
   font-size: 16px;
@@ -316,7 +325,10 @@ a.home-anchor {
 }
 
 .pad-top { padding-top: 100px; }
-.pad-bottom { padding-bottom: 100px; }
+.pad-bottom {
+  padding-bottom: 100px;
+  @include media-query($on-mobile) { padding-bottom: 90px; }
+}
 
 .page {
 }
@@ -405,6 +417,13 @@ button {
   &:active {
     color: $button-active-color;
     background-color: $button-active-bg-color;
+  }
+
+  @include media-query($on-mobile) {
+    width: 104px;
+    height: 28px;
+    font-size: 10px;
+    line-height: 12px;
   }
 }
 
