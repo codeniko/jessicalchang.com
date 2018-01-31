@@ -1,10 +1,11 @@
-// increase tablet width
-$on-tablet: 885px;
+$page-width: 880px;
+$page-width-tablet: 664px;
+$page-width-mobile: 344px;
 
 .about-page {
   .about-container {
-    max-width: 880px;
-    margin: 70px 20px 100px;
+    max-width: $page-width;
+    margin: 70px $page-margin 100px;
     box-sizing: border-box;
 
     display: flex;
@@ -12,10 +13,12 @@ $on-tablet: 885px;
     align-items: center;
     overflow: hidden;
 
-    @include media-query($on-tablet) { max-width: 664px; }
+    @include media-query($on-tablet) {
+      max-width: $page-width-tablet;
+    }
     @include media-query($on-mobile) {
-      max-width: 334px;
-      padding: 0;
+      margin: 60px $page-margin;
+      max-width: $page-width-mobile;
     }
   }
 
@@ -31,43 +34,30 @@ $on-tablet: 885px;
     @include media-query($on-tablet) {
       font-size: 20px;
       line-height: 24px;
-      margin: 86px 0px 50px 0px;
     }
 
     @include media-query($on-mobile) {
       font-size: 16px;
       line-height: 19px;
-      margin: 60px 0px 40px 0px;
+      margin-bottom: 50px;
     }
   }
 
   .about-images {
-    width: 100%;
+    width: $page-width;
     display: flex;
     justify-content: space-between;
-
-
-    img {
-      max-height: 426px;
-    }
-
-    .img1 {
-      max-width: 414px;
-    }
-    .img2 {
-      max-width: 436px;
-    }
+    align-items: center;
 
     @include media-query($on-tablet) {
-      .img1, .img2 { max-width: 320px; }
+      width: $page-width-tablet;
+      .img1, .img2 { max-width: 320px; height: 329px; }
     }
-
-    @include media-query(700px) {
-      .img1, .img2 { max-width: 200px; }
-    }
-
     @include media-query($on-mobile) {
-      .img1, .img2 { max-width: 165px; }
+      width: $page-width-mobile;
+      justify-content: center;
+      .img1 { max-width: 223px; height: auto; }
+      .img2 { display: none; }
     }
   }
 
@@ -80,13 +70,14 @@ $on-tablet: 885px;
 
     @include media-query($on-tablet) {
       font-size: 18px;
+      line-height: 31px;
       letter-spacing: 0px;
     }
 
     @include media-query($on-mobile) {
       font-size: 14px;
-      line-height: 28px;
-      margin: 36px 0px 60px 0px;
+      line-height: 26px;
+      margin: 50px 0px 60px;
     }
   }
 
@@ -96,16 +87,9 @@ $on-tablet: 885px;
     width: 143px;
     height: 40px;
 
-    @include media-query($on-tablet) {
-      width: 140px;
-      height: 40px;
-      font-size: 14px;
-      line-height: 17px;
-    }
-
     @include media-query($on-mobile) {
-      width: 117px;
-      height: 37px;
+      width: 120px;
+      height: 34px;
       font-size: 12px;
       line-height: 15px;
     }

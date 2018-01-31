@@ -212,6 +212,7 @@ a.home-anchor {
   justify-content: center;
   background-color: #fff;
   padding-top: 50px;
+  margin: 0px $page-margin;
 
   @include media-query($on-mobile) { padding-top: 30px; }
 
