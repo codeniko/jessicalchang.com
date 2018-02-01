@@ -183,5 +183,5 @@ $mf-error-color: #d9534f !default;
 }
 
 @include material-design(16px, 14px, 55px);
-@include media-query($on-tablet) { @include material-design(14px, 12px, 37px); }
-@include media-query($on-mobile) { @include material-design(12px, 12px); }
+//@include media-query($on-tablet) { @include material-design(14px, 12px, 37px); }
+@include media-query($on-mobile) { @include material-design(12px, 12px, 36px); }

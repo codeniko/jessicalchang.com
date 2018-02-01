@@ -5,103 +5,105 @@ description: Jessica L. Chang UX/UI design portfolio
 ---
 
 <div class="page contact-page center">
-  <div class="contact-info">
-    <span class="contact-header-text">SAY HI</span>
-    <span class="contact-desc">Thanks for taking the time to stop by. Feel free to reach out and drop me a line. I’d love to chat!</span>
-    <div class="contact-details social-media-list">
-      <div class="contact-details-row">
-        <div class="social-media-icon location-icon">
-          {% include icon-location.svg %}
-        </div>
-        <span>{{ site.location }}</span>
-      </div>
-
-      <div class="contact-details-row">
-        <div class="social-media-icon phone-icon">
-          {% include icon-phone.svg %}
-        </div>
-        <span>{{ site.phone }}</span>
-      </div>
-
-      <a href="mailto:{{ site.email }}" class="contact-details-row">
-          <div class="social-media-icon email-icon">
-            {% include icon-mail-dark.svg %}
+  <div>
+    <div class="contact-info">
+      <span class="contact-header-text">SAY HI</span>
+      <span class="contact-desc">Thanks for taking the time to stop by. Feel free to reach out and drop me a line. I’d love to chat!</span>
+      <div class="contact-details social-media-list">
+        <div class="contact-details-row">
+          <div class="social-media-icon location-icon">
+            {% include icon-location.svg %}
           </div>
-          <span>{{ site.email }}</span>
-      </a>
-    </div>
-
-    <div class="social-media-list bottom-social-media-list">
-      <a href="{{ site.linkedin }}" class="social-media-icon margin-excl-first-child linkedin-icon">
-        {% include icon-linkedin.svg %}
-      </a>
-      <a href="{{ site.dribble }}" class="social-media-icon margin-excl-first-child dribbble-icon">
-        {% include icon-dribbble.svg %}
-      </a>
-      <a href="{{ site.pinterest }}" class="social-media-icon margin-excl-first-child pinterest-icon">
-        {% include icon-pinterest.svg %}
-      </a>
-      <a href="{{ site.instagram }}" class="social-media-icon margin-excl-first-child instagram-icon">
-        {% include icon-instagram.svg %}
-      </a>
-    </div>
-  </div>
-
-  <form id="contact-form" class="material-design">
-    <div class="form-row flex-row">
-      <div class="form-group form-col-2">
-        <input type="text" required="required" id="first-name" onfocusout="validateFormInput('#first-name')">
-        <label class="control-label" for="input" id="first-name-label">FIRST NAME *</label><i class="bar"></i>
-        <span class="error-label" id="first-name-error">Field cannot be empty.</span>
-      </div>
-
-      <div class="form-group form-col-2">
-        <input type="text" required="required" id="last-name" onfocusout="validateFormInput('#last-name')">
-        <label class="control-label" for="input" id="last-name-label">LAST NAME*</label><i class="bar"></i>
-        <span class="error-label" id="last-name-error">Field cannot be empty.</span>
-      </div>
-    </div>
-
-    <div class="form-group form-row">
-      <input type="text" required="required" id="email" onfocusout="validateFormInput('#email')">
-      <label class="control-label" for="input" id="email-label">EMAIL ADDRESS *</label><i class="bar"></i>
-        <span class="error-label" id="email-error">Invalid email address.</span>
-    </div>
-
-    <div class="form-group form-row form-col-1">
-      <input type="text" required="required" id="subject" onfocusout="validateFormInput('#subject')">
-      <label class="control-label" for="input" id="subject-label">SUBJECT *</label><i class="bar"></i>
-        <span class="error-label" id="subject-error">Field cannot be empty.</span>
-    </div>
-
-    <div class="form-group form-row">
-      <input type="text" required="required" id="message" onfocusout="validateFormInput('#message')">
-      <label class="control-label" for="input" id="message-label">MESSAGE *</label><i class="bar"></i>
-        <span class="error-label" id="message-error">Field cannot be empty.</span>
-    </div>
-
-    <div class="submit-row">
-      <span><span class="asterisk">*</span> Required Fields</span>
-      <button type="button" id="contact-submit-button">
-        <span id="contact-submit-button-text">SEND</span>
-        <div class="spinner" id="contact-spinner">
-          <div class="spinner1 spinner-node"></div>
-          <div class="spinner2 spinner-node"></div>
-          <div class="spinner3 spinner-node"></div>
-          <div class="spinner4 spinner-node"></div>
-          <div class="spinner5 spinner-node"></div>
-          <div class="spinner6 spinner-node"></div>
-          <div class="spinner7 spinner-node"></div>
-          <div class="spinner8 spinner-node"></div>
-          <div class="spinner9 spinner-node"></div>
-          <div class="spinner10 spinner-node"></div>
-          <div class="spinner11 spinner-node"></div>
-          <div class="spinner12 spinner-node"></div>
+          <span>{{ site.location }}</span>
         </div>
-      </button>
+
+        <div class="contact-details-row">
+          <div class="social-media-icon phone-icon">
+            {% include icon-phone.svg %}
+          </div>
+          <span>{{ site.phone }}</span>
+        </div>
+
+        <a href="mailto:{{ site.email }}" class="contact-details-row">
+            <div class="social-media-icon email-icon">
+              {% include icon-mail-dark.svg %}
+            </div>
+            <span>{{ site.email }}</span>
+        </a>
+      </div>
+
+      <div class="social-media-list bottom-social-media-list">
+        <a href="{{ site.linkedin }}" class="social-media-icon margin-excl-first-child linkedin-icon">
+          {% include icon-linkedin.svg %}
+        </a>
+        <a href="{{ site.dribble }}" class="social-media-icon margin-excl-first-child dribbble-icon">
+          {% include icon-dribbble.svg %}
+        </a>
+        <a href="{{ site.pinterest }}" class="social-media-icon margin-excl-first-child pinterest-icon">
+          {% include icon-pinterest.svg %}
+        </a>
+        <a href="{{ site.instagram }}" class="social-media-icon margin-excl-first-child instagram-icon">
+          {% include icon-instagram.svg %}
+        </a>
+      </div>
     </div>
 
-  </form>
+    <form id="contact-form" class="material-design">
+      <div class="form-row flex-row">
+        <div class="form-group form-col-2">
+          <input type="text" required="required" id="first-name" onfocusout="validateFormInput('#first-name')">
+          <label class="control-label" for="input" id="first-name-label">FIRST NAME *</label><i class="bar"></i>
+          <span class="error-label" id="first-name-error">Field cannot be empty.</span>
+        </div>
 
-  <div id="contact-form-success"><h2>Thanks!</h2>Talk to you soon!</div>
+        <div class="form-group form-col-2">
+          <input type="text" required="required" id="last-name" onfocusout="validateFormInput('#last-name')">
+          <label class="control-label" for="input" id="last-name-label">LAST NAME*</label><i class="bar"></i>
+          <span class="error-label" id="last-name-error">Field cannot be empty.</span>
+        </div>
+      </div>
+
+      <div class="form-group form-row">
+        <input type="text" required="required" id="email" onfocusout="validateFormInput('#email')">
+        <label class="control-label" for="input" id="email-label">EMAIL ADDRESS *</label><i class="bar"></i>
+          <span class="error-label" id="email-error">Invalid email address.</span>
+      </div>
+
+      <div class="form-group form-row form-col-1">
+        <input type="text" required="required" id="subject" onfocusout="validateFormInput('#subject')">
+        <label class="control-label" for="input" id="subject-label">SUBJECT *</label><i class="bar"></i>
+          <span class="error-label" id="subject-error">Field cannot be empty.</span>
+      </div>
+
+      <div class="form-group form-row">
+        <input type="text" required="required" id="message" onfocusout="validateFormInput('#message')">
+        <label class="control-label" for="input" id="message-label">MESSAGE *</label><i class="bar"></i>
+          <span class="error-label" id="message-error">Field cannot be empty.</span>
+      </div>
+
+      <div class="submit-row">
+        <span><span class="asterisk">*</span> Required Fields</span>
+        <button type="button" id="contact-submit-button">
+          <span id="contact-submit-button-text">SEND</span>
+          <div class="spinner" id="contact-spinner">
+            <div class="spinner1 spinner-node"></div>
+            <div class="spinner2 spinner-node"></div>
+            <div class="spinner3 spinner-node"></div>
+            <div class="spinner4 spinner-node"></div>
+            <div class="spinner5 spinner-node"></div>
+            <div class="spinner6 spinner-node"></div>
+            <div class="spinner7 spinner-node"></div>
+            <div class="spinner8 spinner-node"></div>
+            <div class="spinner9 spinner-node"></div>
+            <div class="spinner10 spinner-node"></div>
+            <div class="spinner11 spinner-node"></div>
+            <div class="spinner12 spinner-node"></div>
+          </div>
+        </button>
+      </div>
+
+    </form>
+
+    <div id="contact-form-success"><h2>Thanks!</h2>Talk to you soon!</div>
+  </div>
 </div>
