@@ -1,3 +1,4 @@
-{% if page.url == '/' %}
-  <script src="{{ '/assets/js/typed.min.js' | relative_url }}"></script>
-{% endif %}
+{% comment %}
+Anything in here will be included in all pages and will be fetched by browser.
+If you are looking to inline a library, place file into _includes/libraries/
+{% endcomment %}

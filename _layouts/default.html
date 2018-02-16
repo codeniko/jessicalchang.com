@@ -21,7 +21,10 @@
         {% include scripts/nquery.js %}
         {% include scripts/shared.js %}
         {% if page.url == '/contact.html' %} {% include scripts/contact.js %} {% endif %}
-        {% if page.url == '/' %} {% include scripts/index.js %} {% endif %}
+        {% if page.url == '/' %}
+          {% include libraries/typed.min.js %}
+          {% include scripts/index.js %}
+        {% endif %}
       {% endif %}
       -->
     </script>
