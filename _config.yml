@@ -1,16 +1,17 @@
 # Site settings
 # accessible in the templates via {{ site.myvariable }}.
 
-title: Jessica L. Chang UX/UI Design Portfolio
 email: jessicalauren718@gmail.com
 location: San Jose, CA
 phone: (646) 469-7942
-description: Jessica L. Chang UX/UI design portfolio, based in Bay Area/Silicon Valley
+title: Jessica Chang
+description: Jessica L. Chang UX/UI designer based in San Jose, California (Bay Area/Silicon Valley)
 name: Jessica Chang
 author: Jessica Chang
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://www.jessicalchang.com" # the base hostname & protocol for your site, e.g. http://example.com
-keywords: "Jessica Chang,portfolio,ux design,ui design,designer,design,web design,silicon valley,bay area,sf bay area"
+keywords: "Jessica Chang,ux,ui,ux/ui designer,designer,design,ux designer,ui designer,web design,silicon valley,bay area,sf bay area,portfolio"
+page_title_suffixed: true
 
 instagram: https://www.instagram.com/jessicalchang/
 dribble: https://dribbble.com/jessicalchang
