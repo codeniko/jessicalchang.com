@@ -7,6 +7,8 @@
 
 minify=1
 tidy=1
+open_log=1
+LOG_FILE='build.log'
 
 if [ $minify -eq 1 ]; then
   js='_includes/scripts'
@@ -35,9 +37,13 @@ fi
 # Tidy up the generated html file and print results to a log file
 if [ $tidy -eq 1 ]; then
   echo 'Tidying up generated HTML files.'
-  find _site -name '*.html' -exec bash -c 'file="$0"; echo "------------Tidying $file-------------"; tidy --merge-divs no --merge-spans no --enclose-block-text no --enclose-text no --coerce-endtags no --hide-comments yes --wrap 0 --tidy-mark no --drop-empty-elements no --drop-empty-paras no -indent -modify "$file" 2>&1 | grep -E "Warning:|Error:|Tidy found|No warnings or errors"; echo ""' {} \; > build.log
+  find _site -name '*.html' -exec bash -c 'file="$0"; echo "------------Tidying $file-------------"; tidy --merge-divs no --merge-spans no --enclose-block-text no --enclose-text no --coerce-endtags no --hide-comments yes --wrap 0 --tidy-mark no --drop-empty-elements no --drop-empty-paras no -indent -modify "$file" 2>&1 | grep -E "Warning:|Error:|Tidy found|No warnings or errors"; echo ""' {} \; > "$LOG_FILE"
 fi
 
 
 echo 'Cleaning up...'
 rm $js/*.min.js
+
+if [ $open_log -eq 1 ]; then
+  less "$LOG_FILE"
+fi
