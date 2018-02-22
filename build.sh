@@ -3,8 +3,10 @@
 # Requirements
 # uglifyjs - https://github.com/mishoo/UglifyJS2
 # minify - https://github.com/tdewolff/minify/tree/master/cmd/minify
+# tidy-html5 v5.7.3 - https://github.com/htacg/tidy-html5 
 
 minify=1
+tidy=1
 
 if [ $minify -eq 1 ]; then
   js='_includes/scripts'
@@ -29,6 +31,13 @@ if [ $? -eq 0 ] && [ $minify -eq 1 ]; then
   fi
 
 fi
+
+# Tidy up the generated html file and print results to a log file
+if [ $tidy -eq 1 ]; then
+  echo 'Tidying up generated HTML files.'
+  find _site -name '*.html' -exec bash -c 'file="$0"; echo "------------Tidying $file-------------"; tidy --merge-divs no --merge-spans no --enclose-block-text no --enclose-text no --coerce-endtags no --hide-comments yes --wrap 0 --tidy-mark no --drop-empty-elements no --drop-empty-paras no -indent -modify "$file" 2>&1 | grep -E "Warning:|Error:|Tidy found|No warnings or errors"; echo ""' {} \; > build.log
+fi
+
 
 echo 'Cleaning up...'
 rm $js/*.min.js

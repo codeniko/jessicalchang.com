@@ -52,3 +52,4 @@ exclude:
   - 'Gemfile*'
   - functions
   - firebase.json
+  - build.log
