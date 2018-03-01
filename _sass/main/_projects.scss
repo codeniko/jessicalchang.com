@@ -155,6 +155,16 @@
       font-size: 22px;
       line-height: 27px;
     }
+
+    .two-col-container.two-col-align-left {
+      justify-content: flex-start;
+      .spotify-margin-left {
+        margin-left: 66px;
+      }
+      .heem-margin-left {
+        margin-left: 78px;
+      }
+    }
   }
 
   // margin in two col rr iterating project section
