@@ -79,7 +79,8 @@
     }
 
     .inner {
-      max-width: 936px;
+      width: 936px;
+      margin: 0px $page-margin;
       box-sizing: border-box;
       display: flex;
       flex-direction: column;
@@ -136,7 +137,7 @@
   }
 
   .project-description-container {
-    width: 942px;
+    max-width: 942px;
     margin-top: 70px;
     letter-spacing: -0.1px;
 
