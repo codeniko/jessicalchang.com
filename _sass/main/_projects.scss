@@ -1,4 +1,8 @@
 // assuming fontsize is default, in base
+$on-mobile: 682px;
+$common-padding: 100px;
+$common-padding-mobile: 40px;
+$other-common-padding-mobile: 60px;
 
 .project-page {
   background-color: #fff;
@@ -10,7 +14,10 @@
     align-items: center;
     width: 100%;
 
-    .pad-top { padding-top: 100px; }
+    .pad-top {
+      padding-top: $common-padding;
+      @include media-query($on-mobile) { padding-top: $other-common-padding-mobile; }
+    }
 
     .pagination {
       display: flex;
@@ -34,23 +41,29 @@
     }
 
     .pagination-bottom {
-      padding-top: 100px;
+      padding-top: $common-padding;
+      @include media-query($on-mobile) { padding-top: $common-padding-mobile; }
     }
   }
 
   .project-section {
     letter-spacing: -0.1px;
-    padding: 100px 0px;
+    padding: $common-padding 0px;
     display: flex;
     justify-content: center;
     background-color: $light-text-color;
     width: 100%;
 
+    @include media-query($on-mobile) {
+      padding: $common-padding-mobile 0px;
+    }
+
     .labeled-image-container {
       display: flex;
       flex-direction: column;
-      padding-top: 100px;
-      width: 776px;
+      padding-top: $common-padding;
+      @include media-query($on-mobile) { padding-top: $common-padding-mobile; }
+      max-width: 776px;
       align-self: center;
 
       .logo-iterations {
@@ -109,6 +122,10 @@
       .desc {
         max-width: 376px;
         width: 100%;
+
+        @include media-query($on-mobile) {
+          max-width: 100%;
+        }
       }
 
       .labeled-image-container {
@@ -124,11 +141,15 @@
   }
 
   .project-section:first-child {
-    padding: 70px 0px 100px 0px;
-    &.no-pad-bottom { padding-bottom: 0px; }
+    padding: 70px 0px $common-padding 0px;
+    @include media-query($on-mobile) { padding: $common-padding-mobile 0px; }
+    &.no-pad-bottom {
+      padding-bottom: 0px;
+    }
   }
   .project-section:last-child {
-    padding: 100px 0px 70px 0px;
+    padding: $common-padding 0px 70px 0px;
+    @include media-query($on-mobile) { padding: $common-padding-mobile 0px 40px 0px; }
   }
 
   // alternating background colors
@@ -159,11 +180,40 @@
 
     .two-col-container.two-col-align-left {
       justify-content: flex-start;
+
+      img {
+        max-width: 243px;
+      }
       .spotify-margin-left {
         margin-left: 66px;
       }
       .heem-margin-left {
         margin-left: 78px;
+      }
+
+      @include media-query($on-mobile) {
+        .spotify-margin-left {
+          margin-left: 0px;
+          margin-top: 20px;
+        }
+        .heem-margin-left {
+          margin-left: 0px;
+          margin-top: 20px;
+        }
+      }
+    }
+
+    @include media-query($on-mobile) {
+      margin-top: $common-padding-mobile;
+
+      .two-col-container {
+        flex-direction: column;
+        align-items: center;
+        img {
+          max-width: 400px; // this and width need to be paired to make it dynamic as page width changes
+          width: 100%;
+          margin-top: 40px; // double margin top to compensate for .two-col-align-left items' margin-top that wont be applied here
+        }
       }
     }
   }
@@ -184,7 +234,7 @@
   }
 
   .labeled-image-container.spotify-protos {
-    width: 801px;
+    max-width: 801px;
   }
   .spotify-protos .left, .spotify-protos .middle {
     margin-right: 3px;
