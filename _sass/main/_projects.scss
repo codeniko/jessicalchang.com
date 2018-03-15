@@ -181,9 +181,6 @@ $other-common-padding-mobile: 60px;
     .two-col-container.two-col-align-left {
       justify-content: flex-start;
 
-      img {
-        max-width: 243px;
-      }
       .spotify-margin-left {
         margin-left: 66px;
       }
@@ -192,6 +189,9 @@ $other-common-padding-mobile: 60px;
       }
 
       @include media-query($on-mobile) {
+        img {
+          max-width: 243px;
+        }
         .spotify-margin-left {
           margin-left: 0px;
           margin-top: 20px;
