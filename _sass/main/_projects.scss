@@ -178,33 +178,20 @@ $other-common-padding-mobile: 60px;
       line-height: 27px;
     }
 
+    // Used if we don't want to have space-between the two columns and a custom margin instead. Define classes for images with margin-left
     .two-col-container.two-col-align-left {
       justify-content: flex-start;
-
-      .spotify-margin-left {
-        margin-left: 66px;
-      }
-      .heem-margin-left {
-        margin-left: 78px;
-      }
-
-      @include media-query($on-mobile) {
-        img {
-          max-width: 243px;
-        }
-        .spotify-margin-left {
-          margin-left: 0px;
-          margin-top: 20px;
-        }
-        .heem-margin-left {
-          margin-left: 0px;
-          margin-top: 20px;
-        }
-      }
     }
 
     @include media-query($on-mobile) {
       margin-top: $common-padding-mobile;
+
+      // Classify high images as .high-image. This will set lower max-width so mobile image isn't crazy tall. Needs to be paired with .two-col-container so we can be sure its max-width for img tag is overridden
+      .two-col-container.high-image {
+        img {
+          max-width: 243px;
+        }
+      }
 
       .two-col-container {
         flex-direction: column;
@@ -212,7 +199,7 @@ $other-common-padding-mobile: 60px;
         img {
           max-width: 400px; // this and width need to be paired to make it dynamic as page width changes
           width: 100%;
-          margin-top: 40px; // double margin top to compensate for .two-col-align-left items' margin-top that wont be applied here
+          margin-top: 40px;
         }
       }
     }
