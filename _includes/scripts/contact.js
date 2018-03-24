@@ -7,7 +7,7 @@ var formIDs = [
 ]
 
 function sendEmail() {
-  var endpoint = 'https://us-central1-jessica-portfolio.cloudfunctions.net/sendMail'
+  var endpoint = window.config.functions_endpoint + '/sendMail'
   var reqOptions = {
     method: 'POST',
     headers: {
@@ -23,6 +23,8 @@ function sendEmail() {
     })
   }
 
+  var alertMsg = 'Sorry, we were unable to send the message at this time. Please try again or email ' + window.config.email + ' directly.'
+
   fetch(endpoint, reqOptions)
     .then(checkStatus)
     .then(parseJson)
@@ -32,7 +34,7 @@ function sendEmail() {
 
       if (response.error) {
         console.error('Received error on server side', response.error)
-        alert('Sorry, we were unable to send the message at this time. Please try again!')
+        alert(alertMsg)
       } else {
         resetContactForm()
         $('#contact-form').css('display', 'none')
@@ -42,7 +44,7 @@ function sendEmail() {
     .catch(function(e) {
       console.error('Received error', e)
       hideContactSpinner()
-      alert('Sorry, we were unable to send the message at this time. Please try again!')
+      alert(alertMsg)
     })
 }
 

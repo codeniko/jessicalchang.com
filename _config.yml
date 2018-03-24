@@ -1,7 +1,7 @@
 # Site settings
 # accessible in the templates via {{ site.myvariable }}.
 
-email: jessicalauren718@gmail.com
+email: hello@jessicalchang.com
 location: San Jose, CA
 phone: (646) 469-7942
 title: Jessica Chang
@@ -12,6 +12,7 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://www.jessicalchang.com" # the base hostname & protocol for your site, e.g. http://example.com
 keywords: "Jessica Chang,ux,ui,ux/ui designer,designer,design,ux designer,ui designer,web design,silicon valley,bay area,sf bay area,portfolio"
 page_title_suffixed: true
+functions_endpoint: 'https://us-central1-jessica-portfolio.cloudfunctions.net'
 
 instagram: https://www.instagram.com/jessicalchang/
 dribble: https://dribbble.com/jessicalchang
