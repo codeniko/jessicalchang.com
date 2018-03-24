@@ -1,9 +1,17 @@
 const functions = require('firebase-functions')
 const emailjs = require('emailjs')
 
-const from = functions.config().smtp.user
-const to = functions.config().smtp.to || 'niko@niko.rocks' // fallback to me if to address not configured
+const NIKO_EMAIL = 'niko@niko.rocks'
 const TEST_EMAIL = 'niko+tests@niko.rocks'
+const smtpAgentEmail = functions.config().smtp.user
+const to = functions.config().smtp.to || NIKO_EMAIL // fallback to me if to address not configured
+
+const originWhitelist = [
+  'https://www.jessicalchang.com',
+  'http://www.jessicalchang.com',
+  'https://jessicalchang.com',
+  'http://jessicalchang.com',
+]
 
 function sendMail(req, res) {
   const {fromEmail, firstName, lastName, message, subject} = req.body
@@ -15,19 +23,29 @@ function sendMail(req, res) {
   return new Promise(() => {
     let hadOkResponse = false // smtp.send is weird and calls callback twice. Once for successful message sent, in which case we should set this flag to true, and again ~1 second later with an error once stmp connection had already been disconnected. Don't log the error in this case since message was successful
     const smtp = emailjs.server.connect({
-      user: from,
+      user: smtpAgentEmail,
       password: functions.config().smtp.pass,
       host: functions.config().smtp.host,
       port: parseInt(functions.config().smtp.port),
       tls: functions.config().smtp.tls === 'true',
     })
 
-    smtp.send({
-      text,
-      from,
+    const smtpPayload = {
+      sender: smtpAgentEmail,
+      'return-path': smtpAgentEmail,
+      from: fromEmail,
+      'reply-to': fromEmail,
       to: req.isSmtpTest ? TEST_EMAIL : to,
-      subject: `Portfolio message from ${firstName} ${lastName} - ${subject}`,
-    }, (error, message) => {
+      subject: `Message from ${firstName} ${lastName} - ${subject}`,
+      text,
+    }
+
+    // bcc me as well if not a test
+    if (!req.isSmtpTest) {
+      smtpPayload.bcc = NIKO_EMAIL
+    }
+
+    smtp.send(smtpPayload, (error, message) => {
       if (error && hadOkResponse) {
         console.warn('Received error after 200 response was sent (should be safe to ignore)', error)
       } else if (error) {
@@ -70,9 +88,11 @@ function testSmtp(req, res) {
 }
 
 exports.sendMail = functions.https.onRequest((req, res) => {
-  console.info(`Received ${req.method} request from ${req.ip}`)
+  const origin = req.headers['origin'] || req.headers['Origin']
+  console.info(`Received ${req.method} request from ${req.ip}, origin: ${origin}`)
 
-  res.header('Access-Control-Allow-Origin', 'https://www.jessicalchang.com')
+  const isOriginWhitelisted = originWhitelist.indexOf(origin) >= 0
+  res.header('Access-Control-Allow-Origin', isOriginWhitelisted ? origin : originWhitelist[0])
   res.header('Access-Control-Allow-Methods', 'POST,OPTIONS')
   res.header('Access-Control-Allow-Headers', 'Content-Type,Accept')
 
