@@ -22,14 +22,14 @@ var worksPos = $('#featured-work')[0].scrollHeight
 
 // home nav link is highlighted by default
 // handle if page refreshed and is already prescrolled to works section
-if (document.scrollingElement.scrollTop >= worksPos)
+if (document.scrollingElement && document.scrollingElement.scrollTop >= worksPos)
   highlightWorksNavLink()
 
 
 // Hooks
 document.onscroll = function() {
-  if (document.scrollingElement.scrollTop >= worksPos && !worksNavLinkHighlighted)
+  if (document.scrollingElement && document.scrollingElement.scrollTop >= worksPos && !worksNavLinkHighlighted)
     highlightWorksNavLink()
-  else if (document.scrollingElement.scrollTop < worksPos && worksNavLinkHighlighted)
+  else if (document.scrollingElement && document.scrollingElement.scrollTop < worksPos && worksNavLinkHighlighted)
     highlightHomeNavLink()
 }

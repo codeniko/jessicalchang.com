@@ -9,9 +9,11 @@ function browserSupportsAllFeatures() {
 function loadScript(src, done) {
   var js = document.createElement('script')
   js.src = src
-  js.onload = function() { done() }
-  js.onerror = function() {
-    done(new Error('Failed to load script ' + src))
+  if (done) {
+    js.onload = function() { done() }
+    js.onerror = function() {
+      done(new Error('Failed to load script ' + src))
+    }
   }
   document.head.appendChild(js)
 }
@@ -106,5 +108,6 @@ function highlightHomeNavLink() {
 
 // polyfill if on older browser that doesn't support necessary features
 if (!browserSupportsAllFeatures()) {
-  loadScript('https://cdn.polyfill.io/v2/polyfill.min.js?features=Promise,fetch,Array.prototype.map,Array.prototype.some', metrics)
+  loadScript('https://cdn.polyfill.io/v2/polyfill.min.js?features=Promise,fetch,Array.prototype.map,Array.prototype.some')
+  log.info('Fetching/loading polyfill')
 }
