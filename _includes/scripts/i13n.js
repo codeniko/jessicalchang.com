@@ -6,6 +6,9 @@ window.i13n = {
   },
 
   beaconMessage: function(level, message) {
+    if (level === 'warn' || level === 'error') {
+      i13n.logExceptionToGtag(message, false)
+    }
     i13n.beacon({
       type: 'message',
       level: level,
@@ -14,12 +17,23 @@ window.i13n = {
   },
 
   // log to ga as well as beacon
-  logException: function(level, message, fatal) {
+  logException: function(exception) {
+    i13n.logExceptionToGtag(exception, true)
+    i13n.beacon({
+      type: 'exception',
+      exception: exception
+    })
+  },
+
+  logExceptionToGtag: function(messageOrException, fatal) {
+    var message = messageOrException
+    if (typeof messageOrException === 'object') {
+      message = JSON.stringify(messageOrException)
+    }
     gtag('event', 'exception', {
       description: message,
       fatal: fatal || false
     })
-    i13n.beaconMessage(level, message)
   },
 
   // log to ga as well as beacon
@@ -89,6 +103,7 @@ window.i13n = {
       payload.useragent = navigator.userAgent
       payload.platform = navigator.platform
     }
+    payload.url = window.location.href
     return payload
   }
 }

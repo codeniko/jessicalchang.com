@@ -2,20 +2,30 @@
 <!--
 {% include libraries/loglevel.min.js %}
 function setupLogger() {
+  // loggly and loglevel should be loaded by this point. Set handlers for each
+  // log level and a handler to window.onerror
+  var existingErrorHandler = window.onerror
+  window.onerror = function (msg, url, line, col, err){
+    i13n.logException({
+      message: msg,
+      lineno: line,
+      colno: col,
+      stack: err ? err.stack : 'n/a'
+    })
+    if (typeof existingErrorHandler === 'function') {
+      existingErrorHandler.apply(window, arguments)
+    }
+  }
+
   var originalFactory = log.methodFactory
   log.methodFactory = function(methodName, logLevel, loggerName) {
     var defaultHandler = originalFactory(methodName, logLevel, loggerName)
-    var isException = methodName === 'warn' || methodName === 'error'
-    if (isException || methodName === 'info') {
+    if (methodName === 'warn' || methodName === 'error' || methodName === 'info') {
       return function() {
         var messages = []
         for (var i = 0; i < arguments.length; i++) { messages.push(arguments[i]) }
         defaultHandler.apply(undefined, messages)
-        if (isException) {
-          i13n.logException(methodName, messages.join(' '))
-        } else {
-          i13n.beaconMessage(methodName, messages.join(' '))
-        }
+        i13n.beaconMessage(methodName, messages.join(' '))
       }
     } else {
       return defaultHandler

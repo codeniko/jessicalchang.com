@@ -22,7 +22,7 @@ linkedin: https://www.linkedin.com/in/jessicalchang/
 loggly:
   tag: jessicalchang.com
   key: 7c195f80-32e3-4204-8a08-c04d8bd7e08c
-  send_console_errors: true
+  send_console_errors: false
 
 social:
   name: Jessica Chang
