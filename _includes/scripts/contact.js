@@ -25,17 +25,23 @@ function sendEmail() {
 
   var alertMsg = 'Sorry, we were unable to send the message at this time. Please try again or email ' + window.config.email + ' directly.'
 
+  log.info('Submitting contact form')
+  i13n.timerStart('submit-contact-form')
   fetch(endpoint, reqOptions)
+    .then(function(response) {
+      i13n.timerStop('submit-contact-form')
+      return response
+    })
     .then(checkStatus)
     .then(parseJson)
     .then(function(response) {
-      log.info('contact submission server response', response)
       hideContactSpinner()
 
       if (response.error) {
         log.error('Received error on server side', response.error)
         alert(alertMsg)
       } else {
+        log.info('contact submission server response', response)
         resetContactForm()
         $('#contact-form').css('display', 'none')
         $('#contact-form-success').css('display', 'inline-block')
