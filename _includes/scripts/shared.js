@@ -18,6 +18,18 @@ function loadScript(src, done) {
   document.head.appendChild(js)
 }
 
+// polyfill if client has older browser that doesn't support necessary features
+if (!browserSupportsAllFeatures()) {
+  log.info('Fetching polyfills')
+  i13n.timerStart('fetch-polyfills')
+  loadScript('https://cdn.polyfill.io/v2/polyfill.min.js?features=Promise,fetch,Array.prototype.map,Array.prototype.some', function(e) {
+    i13n.timerStop('fetch-polyfills')
+    if (e) {
+      log.error('Error loading polyfills.', e)
+    }
+  })
+}
+
 // Fetch helpers
 function checkStatus(response) {
   if (response.ok) {
@@ -104,10 +116,4 @@ function highlightHomeNavLink() {
   worksNavLinkHighlighted = false
   $('.home-nav-link').addClass('nav-current')
   $('#work-nav-link').removeClass('nav-current')
-}
-
-// polyfill if on older browser that doesn't support necessary features
-if (!browserSupportsAllFeatures()) {
-  loadScript('https://cdn.polyfill.io/v2/polyfill.min.js?features=Promise,fetch,Array.prototype.map,Array.prototype.some')
-  log.info('Fetching/loading polyfill')
 }

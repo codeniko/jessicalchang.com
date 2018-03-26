@@ -1,6 +1,7 @@
 // mixin to beacon google analytics and loggly events
 window.i13n = {
   beacon: function(payload) {
+    i13n.appendClientInfo(payload)
     _LTracker.push(payload)
   },
 
@@ -67,19 +68,27 @@ window.i13n = {
       log.warn("Timing metric '" + metric + "' already started")
     }
     log.debug('timer started for:', metric)
-    timer[metric] = +new Date()
+    timer[metric] = performance.now()
   },
 
   timerStop: function(metric) {
-    var stopTime = +new Date()
+    var stopTime = performance.now()
     var startTime = i13n._timer[metric]
     if (!startTime) {
       log.warn("Timing metric '" + metric + "' wasn't started")
       return
     }
-    var diff = stopTime - startTime
+    var diff = Math.round(stopTime - startTime)
     i13n._timer[metric] = undefined
     log.debug('timer stopped for:', metric, 'time=' + diff)
     i13n.timing(metric, diff)
+  },
+
+  appendClientInfo: function(payload) {
+    if (navigator) {
+      payload.useragent = navigator.userAgent
+      payload.platform = navigator.platform
+    }
+    return payload
   }
 }
