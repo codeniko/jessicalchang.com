@@ -1,6 +1,9 @@
 # [jessicalchang.com](https://www.jessicalchang.com)
 Custom responsive portfolio website using Jekyll
 
+## Healthchecks/Status
+[status.jessicalchang.com](https://status.jessicalchang.com)
+
 ## Log management
 [nfeld.loggly.com](https://nfeld.loggly.com)
 
