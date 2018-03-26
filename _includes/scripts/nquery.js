@@ -1,5 +1,5 @@
 // simple class name or id element selector helper to avoid using jquery
-function $(selector) {
+function $(selector, stubIfNoElement) {
   if (typeof selector !== 'string' || selector.length === 0)
     return undefined
 
@@ -19,9 +19,19 @@ function $(selector) {
       elements = e
   }
 
-  if (elements.length === 0)
-    return undefined
+  if (elements.length === 0) {
+    if (stubIfNoElement) {
+      elements.push({
+        className: '',
+        value: ''
+      })
+    } else {
+      log.warn('nqeury: element not found, selector=' + selector)
+      return undefined
+    }
+  }
 
+  // get array of classes that first element contains
   var classList = (function() {
     // cross browser support
     return this.className.split(' ')

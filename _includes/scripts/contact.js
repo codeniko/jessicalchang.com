@@ -29,11 +29,11 @@ function sendEmail() {
     .then(checkStatus)
     .then(parseJson)
     .then(function(response) {
-      console.info('response', response)
+      log.info('contact submission server response', response)
       hideContactSpinner()
 
       if (response.error) {
-        console.error('Received error on server side', response.error)
+        log.error('Received error on server side', response.error)
         alert(alertMsg)
       } else {
         resetContactForm()
@@ -42,7 +42,7 @@ function sendEmail() {
       }
     })
     .catch(function(e) {
-      console.error('Received error', e)
+      log.error('Exception submitting contact form', e)
       hideContactSpinner()
       alert(alertMsg)
     })
@@ -77,7 +77,7 @@ function validateFormInput(id) {
 function validateContactForm() {
   var hasError = formIDs.map(validateFormInput).some(function(r) { return !r })
 
-  console.debug('error in form?', hasError)
+  log.debug('error in form?', hasError)
 
   if (!hasError) {
     showContactSpinner()

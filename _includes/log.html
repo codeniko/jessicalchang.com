@@ -1,0 +1,48 @@
+<script>
+<!--
+{% include libraries/loglevel.min.js %}
+function setupLogger() {
+  var originalFactory = log.methodFactory
+  log.methodFactory = function(methodName, logLevel, loggerName) {
+    var defaultHandler = originalFactory(methodName, logLevel, loggerName)
+    var isException = methodName === 'warn' || methodName === 'error'
+    if (isException || methodName === 'info') {
+      return function() {
+        var messages = []
+        for (var i = 0; i < arguments.length; i++) { messages.push(arguments[i]) }
+        defaultHandler.apply(undefined, messages)
+        if (isException) {
+          i13n.logException(methodName, messages.join(' '))
+        } else {
+          i13n.beaconMessage(methodName, messages.join(' '))
+        }
+      }
+    } else {
+      return defaultHandler
+    }
+  }
+}
+{% if jekyll.environment == 'production' %}
+  {% include libraries/loggly.min.js %}
+  var _LTracker = _LTracker || []
+  _LTracker.push({
+    logglyKey: '{{site.loggly.key}}',
+    sendConsoleErrors: {{site.loggly.send_console_errors}},
+    tag: '{{site.loggly.tag}}'
+  })
+  {% include scripts/i13n.min.js %}
+  setupLogger()
+  log.setLevel(log.levels.INFO)
+{% else %}
+  // stub for loggly, print what's pushed
+  var _LTracker = {
+    push: function(payload) {
+      log.debug('beacon:', payload)
+    }
+  }
+  {% include scripts/i13n.js %}
+  setupLogger()
+  log.setLevel(log.levels.TRACE)
+{% endif %}
+-->
+</script>

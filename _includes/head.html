@@ -7,19 +7,15 @@
   <link rel="icon" type="image/png" href="/favicon.png">
   <link rel="shortcut icon" type="image/png" href="/favicon.png">
 
+  {% include google-analytics.html %}
   {% if page.redirect %}
-    {% if jekyll.environment == 'production' %}
-      {% include google-analytics.html %}
-    {% endif %}
     <meta http-equiv="refresh" content="0; URL={{page.redirect}}">
   {% elsif jekyll.environment == 'production' %}
     <link rel="stylesheet" href="{{ "/assets/main.min.css" | relative_url }}">
-    {% include google-analytics.html %}
   {% else %}
     <link rel="stylesheet" href="{{ "/assets/normalize.css" | relative_url }}">
     <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}">
   {% endif %}
 
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700%7CMontserrat:400,700%7CRaleway:500">
-
 </head>

@@ -18,6 +18,7 @@ if [ "$MINIFY" -eq 1 ]; then
   uglifyjs -m reserved $js/nquery.js $js/shared.js > $js/main.min.js
   uglifyjs -m reserved $js/contact.js > $js/contact.min.js
   uglifyjs -m reserved $libraries/typed.min.js $js/index.js > $js/index.min.js
+  uglifyjs -m reserved $js/i13n.js > $js/i13n.min.js
 fi
 
 JEKYLL_ENV=production bundle exec jekyll build --verbose --strict_front_matter

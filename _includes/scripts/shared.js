@@ -89,6 +89,10 @@ $('#work-nav-link').click(function() {
   closeMobileNavMenu()
 })
 
+$('#resume-button', true).click(function() {
+  i13n.logEvent('view_resume')
+})
+
 function highlightWorksNavLink() {
   worksNavLinkHighlighted = true
   $('.home-nav-link').removeClass('nav-current')
