@@ -4,6 +4,11 @@
     "ignore": [
       "**/.*",
       "firebase.json"
-    ]
+    ],
+    "rewrites": [ {
+      "source": "/sendMail", "function": "sendMail"
+    }, {
+      "source": "/testSmtp", "function": "testSmtp"
+    } ]
   }
 }

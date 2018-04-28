@@ -24,6 +24,12 @@ loggly:
   key: 7c195f80-32e3-4204-8a08-c04d8bd7e08c
   send_console_errors: false
 
+ga_id: 'UA-110932647-1' # google analytics id
+
+api:
+  hostname: https://log.nfeld.com
+  ga_path: /.netlify/functions/ga
+
 social:
   name: Jessica Chang
   links:

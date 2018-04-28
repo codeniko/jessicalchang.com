@@ -2,8 +2,20 @@
 <html lang="{{ page.lang | default: site.lang | default: "en" }}">
   {% include head.html %}
   <body>
-    {% include log.html %}
     {% include config.html %}
+    <script>
+      {% include libraries/modernizr-custom.js %}
+      <!--
+      {% if jekyll.environment == 'production' %}
+        {% include scripts/utils.min.js %}
+        {% include scripts/ga-utils.min.js %}
+      {% else %}
+        {% include scripts/utils.js %}
+        {% include scripts/ga-utils.js %}
+      {% endif %}
+      -->
+    </script>
+    {% include log.html %}
     <div id="page-overlay"></div>
     {% include header.html %}
     <main class="page-content" aria-label="Content">

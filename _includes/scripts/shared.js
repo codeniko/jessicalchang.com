@@ -1,9 +1,10 @@
 var path = window.location.pathname
 var worksNavLinkHighlighted = false
+init()
 
 // feature support / polyfills
 function browserSupportsAllFeatures() {
-  return window.Promise && window.fetch && [].map && [].some
+  return window.Promise && window.fetch && [].map && [].some && [].forEach && Object.keys
 }
 
 function loadScript(src, done) {
@@ -18,16 +19,14 @@ function loadScript(src, done) {
   document.head.appendChild(js)
 }
 
-// polyfill if client has older browser that doesn't support necessary features
-if (!browserSupportsAllFeatures()) {
-  log.info('Fetching polyfills')
-  i13n.timerStart('fetch-polyfills')
-  loadScript('https://cdn.polyfill.io/v2/polyfill.min.js?features=Promise,fetch,Array.prototype.map,Array.prototype.some', function(e) {
-    i13n.timerStop('fetch-polyfills')
-    if (e) {
-      log.error('Error loading polyfills.', e)
+// check if google analytics loaded, otherwise attempt fetch again and possibly log pageview through api
+function scheduleRefetchGtagIfNeeded() {
+  setTimeout(function() {
+    if (!window.ga) {
+      log.info('ga not loaded')
+      window.gaUtils.refetchGtagOrLogThroughServer()
     }
-  })
+  }, 1000)
 }
 
 // Fetch helpers
@@ -68,45 +67,6 @@ function closeMobileNavMenu() {
   $('#nav-trigger')[0].checked = false
 }
 
-// Hooks
-
-// close mobile navmenu, and page overlay
-$('#page-overlay').click(function() {
-  var isNavMenuOpen = $('#nav-trigger')[0].checked
-
-  if (isNavMenuOpen) {
-    closeMobileNavMenu()
-  }
-})
-
-// close mobile navmenu and page overlay if nav menu open
-$('#navmenu-close-icon').click(function() {
-  var isNavMenuOpen = $('#nav-trigger')[0].checked
-
-  if (isNavMenuOpen) {
-    closeMobileNavMenu()
-  }
-})
-
-// When nav menu for mobile opened, show page overlay and lock scrolling
-$('#nav-trigger').click(function() {
-  var isNavMenuOpen = $('#nav-trigger')[0].checked
-
-  // should be triggered because element is input, but check incase anything weird happens where input isn't checked
-  if (isNavMenuOpen) {
-    showPageOverlay()
-    window.scrollTo(0, 0)
-  }
-})
-
-$('#work-nav-link').click(function() {
-  closeMobileNavMenu()
-})
-
-$('#resume-button', true).click(function() {
-  i13n.logEvent('view_resume')
-})
-
 function highlightWorksNavLink() {
   worksNavLinkHighlighted = true
   $('.home-nav-link').removeClass('nav-current')
@@ -116,4 +76,60 @@ function highlightHomeNavLink() {
   worksNavLinkHighlighted = false
   $('.home-nav-link').addClass('nav-current')
   $('#work-nav-link').removeClass('nav-current')
+}
+
+function init() {
+  // polyfill if client has older browser that doesn't support necessary features
+  if (!browserSupportsAllFeatures()) {
+    log.info('Fetching polyfills')
+    i13n.timerStart('fetch-polyfills')
+    loadScript('https://cdn.polyfill.io/v2/polyfill.min.js?features=Promise,fetch,Array.prototype.map,Array.prototype.some,Array.prototype.forEach,Object.keys', function(e) {
+      i13n.timerStop('fetch-polyfills')
+      if (e) {
+        log.error('Error loading polyfills.', e)
+      }
+      scheduleRefetchGtagIfNeeded()
+    })
+  } else {
+    scheduleRefetchGtagIfNeeded()
+  }
+
+  // Hooks
+
+  // close mobile navmenu, and page overlay
+  $('#page-overlay').click(function() {
+    var isNavMenuOpen = $('#nav-trigger')[0].checked
+
+    if (isNavMenuOpen) {
+      closeMobileNavMenu()
+    }
+  })
+
+  // close mobile navmenu and page overlay if nav menu open
+  $('#navmenu-close-icon').click(function() {
+    var isNavMenuOpen = $('#nav-trigger')[0].checked
+
+    if (isNavMenuOpen) {
+      closeMobileNavMenu()
+    }
+  })
+
+  // When nav menu for mobile opened, show page overlay and lock scrolling
+  $('#nav-trigger').click(function() {
+    var isNavMenuOpen = $('#nav-trigger')[0].checked
+
+    // should be triggered because element is input, but check incase anything weird happens where input isn't checked
+    if (isNavMenuOpen) {
+      showPageOverlay()
+      window.scrollTo(0, 0)
+    }
+  })
+
+  $('#work-nav-link').click(function() {
+    closeMobileNavMenu()
+  })
+
+  $('#resume-button', true).click(function() {
+    i13n.logEvent('view_resume')
+  })
 }

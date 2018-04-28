@@ -2,12 +2,17 @@
 <!--
 {% if jekyll.environment != 'production' %}
   if (window.config) {
-    log.warn('window.config already exists and will be overwritten. Previous:', window.config)
+    console.warn('window.config already exists and will be overwritten. Previous:', window.config)
   }
 {% endif %}
 window.config = {
   email: '{{site.email}}',
-  functions_endpoint: '{{site.functions_endpoint}}'
+  functions_endpoint: '{{site.functions_endpoint}}',
+  ga_id: '{{site.ga_id}}',
+  api: {
+    hostname: '{{site.api.hostname}}',
+    ga_path: '{{site.api.ga_path}}'
+  }
 }
 -->
 </script>
