@@ -27,7 +27,7 @@ loggly:
 ga_id: 'UA-110932647-1' # google analytics id
 
 api:
-  hostname: https://log.nfeld.com
+  hostname: https://log.jessicalchang.com
   ga_path: /.netlify/functions/ga
 
 social:
