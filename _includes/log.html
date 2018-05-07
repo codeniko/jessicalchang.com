@@ -1,22 +1,8 @@
 <script>
 <!--
 {% include libraries/loglevel.min.js %}
+{% include libraries/simple-tracker.min.js %}
 function setupLogger() {
-  // loggly and loglevel should be loaded by this point. Set handlers for each
-  // log level and a handler to window.onerror
-  var existingErrorHandler = window.onerror
-  window.onerror = function (msg, url, line, col, err){
-    i13n.logException({
-      message: msg,
-      lineno: line,
-      colno: col,
-      stack: err ? err.stack : 'n/a'
-    })
-    if (typeof existingErrorHandler === 'function') {
-      existingErrorHandler.apply(window, arguments)
-    }
-  }
-
   var originalFactory = log.methodFactory
   log.methodFactory = function(methodName, logLevel, loggerName) {
     var defaultHandler = originalFactory(methodName, logLevel, loggerName)
@@ -25,34 +11,25 @@ function setupLogger() {
         var messages = []
         for (var i = 0; i < arguments.length; i++) { messages.push(arguments[i]) }
         defaultHandler.apply(undefined, messages)
-        i13n.beaconMessage(methodName, messages.join(' '))
+        tracker.logMessage(messages.join(' '), methodName)
       }
     } else {
       return defaultHandler
     }
   }
 }
+tracker.push({
+  endpoint: '{{site.api.hostname}}{{site.api.track_path}}',
+  sendCaughtExceptions: true,
+  attachClientContext: true
+})
+setupLogger()
 {% if jekyll.environment == 'production' %}
-  {% include libraries/loggly.min.js %}
-  var _LTracker = _LTracker || []
-  _LTracker.push({
-    logglyKey: '{{site.loggly.key}}',
-    sendConsoleErrors: {{site.loggly.send_console_errors}},
-    tag: '{{site.loggly.tag}}'
-  })
-  {% include scripts/i13n.min.js %}
-  setupLogger()
   log.setLevel(log.levels.INFO)
 {% else %}
-  // stub for loggly, print what's pushed
-  var _LTracker = {
-    push: function(payload) {
-      log.debug('beacon:', payload)
-    }
-  }
-  {% include scripts/i13n.js %}
-  setupLogger()
+  tracker.push({ devMode: true })
   log.setLevel(log.levels.TRACE)
 {% endif %}
+tracker.logEvent('page_view')
 -->
 </script>

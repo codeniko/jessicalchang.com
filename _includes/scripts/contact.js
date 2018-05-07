@@ -26,10 +26,10 @@ function sendEmail() {
   var alertMsg = 'Sorry, we were unable to send the message at this time. Please try again or email ' + window.config.email + ' directly.'
 
   log.info('Submitting contact form')
-  i13n.timerStart('submit-contact-form')
+  tracker.startTimer('submit-contact-form')
   fetch(endpoint, reqOptions)
     .then(function(response) {
-      i13n.timerStop('submit-contact-form')
+      tracker.stopTimer('submit-contact-form')
       return response
     })
     .then(checkStatus)

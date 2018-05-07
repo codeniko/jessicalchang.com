@@ -82,9 +82,9 @@ function init() {
   // polyfill if client has older browser that doesn't support necessary features
   if (!browserSupportsAllFeatures()) {
     log.info('Fetching polyfills')
-    i13n.timerStart('fetch-polyfills')
+    tracker.startTimer('fetch-polyfills')
     loadScript('https://cdn.polyfill.io/v2/polyfill.min.js?features=Promise,fetch,Array.prototype.map,Array.prototype.some,Array.prototype.forEach,Object.keys', function(e) {
-      i13n.timerStop('fetch-polyfills')
+      tracker.stopTimer('fetch-polyfills')
       if (e) {
         log.error('Error loading polyfills.', e)
       }
@@ -130,6 +130,6 @@ function init() {
   })
 
   $('#resume-button', true).click(function() {
-    i13n.logEvent('view_resume')
+    tracker.logEvent('view_resume')
   })
 }
