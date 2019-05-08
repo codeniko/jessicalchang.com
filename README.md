@@ -8,4 +8,4 @@ Custom responsive portfolio website using Jekyll
 [nfeld.loggly.com](https://nfeld.loggly.com)
 
 ## License
-The content of this project itself is copyright all rights reserved to Nikolay Feldman and Jessica Chang. The underlying source code used to format and display that content is licensed under the [MIT license](http://opensource.org/licenses/mit-license.php)
+The content of this project itself is copyright all rights reserved to Nikolay Feldman and Jessica Chang. The underlying source code used to format and display that content is licensed under the [Apache 2.0 license](https://opensource.org/licenses/Apache-2.0)
