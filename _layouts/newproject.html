@@ -1,0 +1,31 @@
+---
+layout: default
+---
+
+{% include paginate.liquid %}
+{% include page-vars.liquid %}
+
+<div class="page newproject-page center flex-vertical-direction">
+  {% include header.html %}
+
+  <div class="project-container">
+    {{ content }}
+
+    <div class="pagination-container center {{ footerClassnames }}">
+      <div class="divider"></div>
+
+      <div class="pagination">
+        <div class="flex-vertical-direction space-between">
+          <span class="direction">PREVIOUS PROJECT</span>
+          <a class="name" href="{{ prevProject.url }}">{% include previous-arrow.svg %} {{ prevProject.name }}</a>
+        </div>
+        <div class="flex-vertical-direction space-between">
+          <span class="direction">NEXT PROJECT</span>
+          <a class="name" href="{{ nextProject.url }}">{{ nextProject.name }} {% include next-arrow.svg %}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>

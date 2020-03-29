@@ -3,3 +3,4 @@ _site
 .jekyll-metadata
 functions/node_modules
 build.log
+.idea

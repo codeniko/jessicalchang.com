@@ -4,6 +4,8 @@ $common-padding: 100px;
 $common-padding-mobile: 40px;
 $other-common-padding-mobile: 60px;
 
+$first-card-height: 750px !default;
+
 .project-page {
   background-color: #fff;
 
@@ -17,32 +19,6 @@ $other-common-padding-mobile: 60px;
     .pad-top {
       padding-top: $common-padding;
       @include media-query($on-mobile) { padding-top: $other-common-padding-mobile; }
-    }
-
-    .pagination {
-      display: flex;
-      justify-content: space-between;
-
-      svg > path { fill: none; }
-
-      a, a:visited {
-        color: $dark-text-color;
-        svg > path { stroke: $dark-text-color; }
-      }
-      a:hover, a:active {
-        color: $darker-accent-color;
-        svg > path { stroke: $darker-accent-color; }
-      }
-
-      .prev svg, .next svg {
-        width: 6px;
-        height: 11px;
-      }
-    }
-
-    .pagination-bottom {
-      padding-top: $common-padding;
-      @include media-query($on-mobile) { padding-top: $common-padding-mobile; }
     }
   }
 
@@ -141,10 +117,12 @@ $other-common-padding-mobile: 60px;
   }
 
   .project-section:first-child {
-    padding: 70px 0px $common-padding 0px;
+    padding: 150px 0px;
+
     @include media-query($on-mobile) { padding: $common-padding-mobile 0px; }
-    &.no-pad-bottom {
-      padding-bottom: 0px;
+
+    .inner {
+      justify-content: center;
     }
   }
   .project-section:last-child {
@@ -159,23 +137,26 @@ $other-common-padding-mobile: 60px;
 
   .project-description-container {
     max-width: 942px;
-    margin-top: 70px;
     letter-spacing: -0.1px;
 
     .project-title {
-      text-align: center;
       display: block;
-      @include lato-font(700);
-      font-size: 32px;
-      line-height: 39px;
-      text-transform: uppercase;
+      @include proximabold-font();
+      color: #444444;
+      font-size: 43px;
+      line-height: 42px;
+      letter-spacing: 1.81px;
     }
 
     .project-description {
-      text-align: center;
+      @include proxima-font();
       display: block;
-      font-size: 22px;
-      line-height: 27px;
+      font-size: 28px;
+      color: #757575;
+      line-height: 34px;
+      letter-spacing: 0.98px;
+      margin-top: 11px;
+      margin-bottom: 36px;
     }
 
     // Used if we don't want to have space-between the two columns and a custom margin instead. Define classes for images with margin-left
@@ -184,8 +165,6 @@ $other-common-padding-mobile: 60px;
     }
 
     @include media-query($on-mobile) {
-      margin-top: $common-padding-mobile;
-
       // Classify high images as .high-image. This will set lower max-width so mobile image isn't crazy tall. Needs to be paired with .two-col-container so we can be sure its max-width for img tag is overridden
       .two-col-container.high-image {
         img {

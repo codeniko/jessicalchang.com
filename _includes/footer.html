@@ -1,7 +1,7 @@
-<footer class="site-footer">
-  <div class="footer-container">
-    <span class="copyright">{{ site.name }} &copy; 2017</span>
+{% include page-vars.liquid %}
 
+<footer class="site-footer {{ footerClassnames }}">
+  <div class="footer-container">
     <div class="social-media-list">
       <a href="mailto:{{ site.email }}" class="social-media-icon margin-excl-first-child email-icon">
         {% include icon-mail.svg %}
@@ -12,12 +12,14 @@
       <a href="{{ site.dribble }}" class="social-media-icon margin-excl-first-child dribbble-icon">
         {% include icon-dribbble.svg %}
       </a>
-      <a href="{{ site.pinterest }}" class="social-media-icon margin-excl-first-child pinterest-icon">
-        {% include icon-pinterest.svg %}
-      </a>
+<!--      <a href="{{ site.pinterest }}" class="social-media-icon margin-excl-first-child pinterest-icon">-->
+<!--        {% include icon-pinterest.svg %}-->
+<!--      </a>-->
       <a href="{{ site.instagram }}" class="social-media-icon margin-excl-first-child instagram-icon">
         {% include icon-instagram.svg %}
       </a>
     </div>
+
+    <span class="copyright">{{ site.name }} &copy; 2020</span>
   </div>
 </footer>

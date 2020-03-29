@@ -6,8 +6,10 @@ assetPath: /assets/images/
 resumePath: /assets/Jessica%20L%20Chang%20-%20Resume.pdf
 ---
 
-<div class="center page about-page">
-  <div class="about-container">
+<div class="center page about-page flex-vertical-direction">
+  {% include header.html %}
+
+  <div class="center"><div class="about-container">
     <span class="about-header">Call me Jess</span>
     <div class="about-images">
       <img src="{{ page.assetPath }}jess1.jpg" width="414" height="426" class="img1" alt="photo of Jessica">
@@ -26,5 +28,5 @@ resumePath: /assets/Jessica%20L%20Chang%20-%20Resume.pdf
       VIEW RESUME
     </a>
 
-  </div>
+  </div></div>
 </div>

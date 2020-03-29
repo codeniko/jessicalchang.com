@@ -4,7 +4,7 @@
   width: 100%; // needed so that modal will resize as viewport gets smaller. If omitted, modal stays same size and overflows outside viewport
 
   // containing div for centering contact-info and form containers
-  & > div {
+  .contact-form-container {
     max-width: $max-footer-width;
     width: 100%;
     display: flex;

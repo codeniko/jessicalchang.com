@@ -4,8 +4,10 @@ title: Contact
 description: Jessica L. Chang UX/UI designer based in San Jose, California (Bay Area/Silicon Valley)
 ---
 
-<div class="page contact-page center">
-  <div>
+<div class="page contact-page center flex-vertical-direction">
+  {% include header.html %}
+
+  <div class="center"><div class="contact-form-container"> <!-- weird div in div needed to center after making header not absolute -->
     <div class="contact-info">
       <span class="contact-header-text">SAY HI</span>
       <span class="contact-desc">Thanks for taking the time to stop by. Feel free to reach out and drop me a line. I’d love to chat!</span>
@@ -105,5 +107,5 @@ description: Jessica L. Chang UX/UI designer based in San Jose, California (Bay 
     </form>
 
     <div id="contact-form-success"><h2>Thanks!</h2>Talk to you soon!</div>
-  </div>
+  </div></div>
 </div>

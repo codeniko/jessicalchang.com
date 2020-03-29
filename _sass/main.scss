@@ -5,7 +5,7 @@ $max-page-width: 1440px !default;
 $max-page-width-tablet: 768px !default;
 $max-footer-width: 936px !default;
 $max-footer-width-tablet: 718px !default;
-$max-footer-width-mobile: 344px !default;
+$max-footer-width-mobile: 375px !default;
 
 $page-margin: 12px !default;
 
@@ -32,6 +32,34 @@ $anchor-color: $accent-color;
 $anchor-hover-color: $darker-accent-color;
 $anchor-active-color: $darker-accent-color;
 
+$gray1: #757575;
+$gray2: $light-text-color;
+
+
+@font-face {
+  font-family: 'ProximaNova';
+  src: url('/assets/fonts/proxima_nova_bold-webfont.woff2') format('woff2'),
+  url('/assets/fonts/proxima_nova_bold-webfont.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'ProximaNova';
+  src: url('/assets/fonts/proxima_nova_regular-webfont.woff2') format('woff2'),
+  url('/assets/fonts/proxima_nova_regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'ProximaNova';
+  src: url('/assets/fonts/proxima_nova_regular_italic-webfont.woff2') format('woff2'),
+  url('/assets/fonts/proxima_nova_regular_italic-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: italic;
+}
+
 @mixin media-query($device) {
   @media screen and (max-width: $device) {
     @content;
@@ -51,6 +79,22 @@ $anchor-active-color: $darker-accent-color;
 @mixin mont-font($weight: 400) {
   font-family: 'Montserrat', sans-serif;
   font-weight: $weight;
+}
+
+@mixin proxima-font() {
+  font-family: 'ProximaNova', sans-serif;
+  font-weight: normal;
+}
+
+@mixin proximaitalic-font() {
+  font-family: 'ProximaNova', sans-serif;
+  font-weight: normal;
+  font-style: italic;
+}
+
+@mixin proximabold-font() {
+  font-family: 'ProximaNova', sans-serif;
+  font-weight: bold;
 }
 
 // set all pseudo states for anchor tag to specified color
@@ -115,5 +159,6 @@ $anchor-active-color: $darker-accent-color;
   "main/index",
   "main/contact",
   "main/about",
-  "main/projects"
+  "main/projects",
+  "main/newprojects"
 ;

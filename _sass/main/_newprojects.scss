@@ -1,0 +1,437 @@
+// assuming fontsize is default, in base
+$on-mobile: 682px;
+$small-common-padding: 120px;
+$small-common-padding-mobile: 80px;
+$large-common-padding: 220px;
+$large-common-padding-mobile: 80px;
+//$small-padding-mobile: 40px;
+//$other-common-padding-mobile: 60px;
+
+$inner-width: 1140px;
+$inner-right-padding: 30px;
+
+$description-width: 520px;
+
+$first-card-height: 750px !default;
+$gold1: #d9cbb9;
+$gold2: #e1d7ca;
+$black1: #444444;
+
+
+@mixin mobile {
+  @include media-query($on-mobile) {
+    @content;
+  }
+}
+
+.newproject-page {
+  background-color: white;
+  @include proxima-font();
+
+  .project-container {
+    display: flex;
+    flex-direction: column;
+    //justify-content: center;
+    align-items: center;
+    width: 100%;
+
+    //.pad-top {
+    //  padding-top: $common-padding;
+    //  @include media-query($on-mobile) { padding-top: $other-common-padding-mobile; }
+    //}
+
+    .pagination {
+      display: flex;
+      justify-content: space-between;
+
+      svg > path { fill: none; }
+
+      a, a:visited {
+        color: $dark-text-color;
+        svg > path { stroke: $dark-text-color; }
+      }
+      a:hover, a:active {
+        color: $darker-accent-color;
+        svg > path { stroke: $darker-accent-color; }
+      }
+
+      .prev svg, .next svg {
+        width: 6px;
+        height: 11px;
+      }
+    }
+
+    .pagination-bottom {
+      padding-top: $common-padding;
+      @include media-query($on-mobile) { padding-top: $common-padding-mobile; }
+    }
+  }
+
+  .project-section {
+    letter-spacing: -0.1px;
+    padding: 0px;
+    display: flex;
+    justify-content: center;
+    background-color: $light-text-color;
+    width: 100%;
+
+    //@include media-query($on-mobile) {
+    //  padding: $common-padding-mobile 0px;
+    //}
+
+    .large-padding {
+      padding: $large-common-padding 0px;
+      @include mobile { padding: $large-common-padding-mobile 0px; }
+    }
+    .large-padding-top {
+      padding-top: $large-common-padding;
+      @include mobile { padding-top: $large-common-padding-mobile; }
+    }
+
+    .small-padding {
+      padding: $small-common-padding 0px;
+      @include mobile { padding: $small-common-padding-mobile 0px; }
+    }
+    .small-padding-top {
+      padding-top: $small-common-padding;
+      @include mobile { padding-top: $small-common-padding-mobile; }
+    }
+
+    .right-padding {
+      padding-right: 46px;
+
+      @include mobile {
+        padding-right: 0px;
+        margin: 0px 10px; // doesn't really belong but mobile for just these elements requires padding on both sides
+      }
+
+      &.extra-mobile-padding {
+        margin: 0px 18px;
+      }
+    }
+
+    .labeled-image-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      & > span {
+        display: block;
+        align-self: flex-end;
+        @include lato-font();
+        font-size: 14px;
+        line-height: 17px;
+        letter-spacing: 0px;
+        color: #5d6060;
+      }
+    }
+
+    .inner {
+      max-width: $inner-width;
+      width: 100%;
+      margin: 0px $inner-right-padding;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+
+      & .large-summary, & .summary {
+        // section header
+        h2 {
+          @include proximabold-font();
+          margin: 0px;
+          margin-bottom: 13px;
+          padding: 0px;
+          font-size: 18px;
+          line-height: 22px;
+          text-transform: uppercase;
+        }
+      }
+
+      & .large-summary {
+        h2 {
+          margin-bottom: 30px;
+
+          @include mobile {
+            margin-bottom: 35px;
+          }
+        }
+
+        span {
+          @include proximabold-font();
+          font-size: 55px;
+          line-height: 78px;
+          display: block;
+          letter-spacing: -0.15px;
+          color: white;
+
+          max-width: 100%;
+          width: 100%;
+
+          @include mobile {
+            font-size: 35px;
+            line-height: 58px;
+            letter-spacing: -0.1px;
+          }
+        }
+      }
+
+      & .summary {
+        // section summary
+        span {
+          font-size: 18px;
+          line-height: 33px;
+          display: block;
+
+          max-width: $description-width;
+          width: 100%;
+
+          @include media-query($on-mobile) {
+            max-width: 100%;
+          }
+        }
+      }
+    }
+
+    .brand-list {
+      span {
+        @include proxima-font();
+        font-size: 24px;
+        color: #6c7378;
+        max-width: 136px;
+        line-height: 29px;
+        width: 100%;
+        text-align: center;
+
+        @include media-query($on-mobile) {
+          max-width: initial;
+          font-size: 11.3px;
+          line-height: 13px;
+        }
+      }
+
+      img {
+        width: 136px;
+        @include media-query($on-mobile) { width: 63px; }
+      }
+
+      img.smaller {
+        height: 136px;
+        @include media-query($on-mobile) { height: 63px; }
+
+      }
+
+      img.bigger {
+        height: 145px;
+        @include media-query($on-mobile) { height: 67px; }
+      }
+
+      .bold {
+        @include proximabold-font();
+        color: #0070ba;
+      }
+
+      & > .mobile-remove {
+        @extend .mobile-remove
+      }
+
+      .nordstrom {
+        position: relative;
+        top: 30px;
+      }
+    }
+
+    .centered-section-description {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+    }
+
+    .italic-description {
+      @include proximaitalic-font();
+      font-size: 18px;
+      line-height: 33px;
+      letter-spacing: -0.05px;
+
+      @include mobile {
+        text-align: start;
+        font-size: 16px;
+        line-height: 22px;
+        margin-top: 20px;
+      }
+
+      &.relative-inside {
+        position: relative;
+        bottom: 16px;
+
+        @include mobile {
+          position: static; // go back to default for mobile
+          margin-top: 6px;
+        }
+      }
+    }
+
+    .center {
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  .project-section:first-child {
+    height: $first-card-height;
+    padding: 0px;
+
+    .inner {
+      justify-content: center;
+    }
+  }
+  .project-section:last-child {
+    padding: $common-padding 0px 70px 0px;
+    @include media-query($on-mobile) { padding: $common-padding-mobile 0px 40px 0px; }
+  }
+
+  // alternating background colors
+  .project-section:nth-child(even) {
+    background-color: #fff;
+  }
+  .project-section.gray {
+    background-color: $light-text-color;
+  }
+  .project-section.white {
+    background-color: white;
+  }
+  .project-section.gold1 {
+    background-color: $gold1;
+  }
+  .project-section.gold2 {
+    background-color: $gold2;
+  }
+
+  .project-section.celebrate-bg {
+    background: url(/assets/images/projects/paypal-shopping/group-37.png) no-repeat center;
+    background-size: cover;
+
+    @include mobile {
+      padding-top: 150px;
+
+      .small-padding-top {
+        flex-direction: column;
+        padding: 0px;
+
+        & > a {
+          padding-top: 60px;
+        }
+      }
+    }
+  }
+
+  .project-description-container {
+    //max-width: 942px;
+    letter-spacing: -0.1px;
+
+    .project-title {
+      display: block;
+      @include proximabold-font();
+      color: $black1;
+      font-size: 43px;
+      line-height: 42px;
+      letter-spacing: 1.81px;
+    }
+
+    .project-description {
+      @include proxima-font();
+      display: block;
+      font-size: 28px;
+      color: $gray1;
+      line-height: 34px;
+      letter-spacing: 0.98px;
+      margin-top: 11px;
+      margin-bottom: 36px;
+    }
+  }
+
+  .pad-spans span:not(:first-child) {
+    padding-bottom: 15px;
+  }
+
+  @include media-query($on-mobile) {
+    //margin-top: $common-padding-mobile;
+
+    .two-col-container {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      img {
+        max-width: 400px; // this and width need to be paired to make it dynamic as page width changes
+        width: 100%;
+        margin-top: 60px;
+      }
+    }
+  }
+}
+
+.pagination-container {
+  background-color: white;
+  max-width: $max-page-width;
+  width: 100%;
+
+  &.gray2 {
+    background-color: $gray2;
+  }
+
+  .pagination {
+    display: flex;
+    justify-content: space-between;
+    max-width: $footer-width;
+    width: 100%;
+    border-top: 2px solid overlay-value(0.25);
+    border-color: rgba(65, 67, 67, 0.25);
+  ;
+    padding: 50px 10px 0px;
+
+    @include media-query($on-mobile) {
+      //mobile set to auto eliminates extra weird spacing
+      margin: 0px 10px;
+      padding: 40px 0px 0px;
+      max-width: $footer-width-mobile;
+      & > div {
+        display: none;
+      }
+    }
+
+    svg > path { fill: none; }
+
+    a, a:visited {
+      color: $dark-text-color;
+      svg > path { stroke: $dark-text-color; }
+    }
+    a:hover, a:active {
+      color: $darker-accent-color;
+      svg > path { stroke: $darker-accent-color; }
+    }
+
+    & > div {
+      height: 68px;
+    }
+
+    .direction {
+      @include lato-font(400);
+      font-size: 14px;
+      color: $black1;
+      letter-spacing: 0.29px;
+    }
+
+    .name {
+      @include lato-font(700);
+      font-size: 30px;
+      color: $black1;
+      letter-spacing: 0.97px;
+
+      svg {
+        width: 14.5px;
+        height: 24px;
+      }
+    }
+  }
+}

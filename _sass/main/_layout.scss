@@ -2,6 +2,9 @@ $header-height: 94px;
 $header-height-mobile: 65px;
 $hamburger-size: 36px;
 
+$footer-width: 1275px;
+$footer-width-mobile: 375px;
+
 #page-overlay {
   display: none;
   position: fixed;
@@ -17,11 +20,9 @@ $hamburger-size: 36px;
 .site-header {
   padding: 0px 40px;
   height: $header-height;
-  background-color: #fff;
+  background-color: $light-text-color;
   box-sizing: border-box;
   z-index: 30;
-
-  position: fixed;
   top: 0px;
   width: 100%;
   max-width: $max-page-width;
@@ -32,15 +33,18 @@ $hamburger-size: 36px;
   justify-content: space-between;
   align-items: center;
 
+  &.white {
+    background-color: white;
+  }
+
   @include media-query($on-tablet) {
     padding: 0px 25px;
   }
 
   @include media-query($on-mobile) {
     padding: 0px 15px;
-    position: static;
-    // note - header is not fixed on mobile
     height: $header-height-mobile;
+    max-height: 100%;
   }
 }
 
@@ -57,19 +61,19 @@ $hamburger-size: 36px;
 .site-header-text {
   display: inline-block;
   padding-left: 11px;
-  @include raleway-font(500);
-  font-size: 18px;
-  line-height: 21px;
+  @include lato-font(400);
+  font-size: 14px;
+  line-height: 17px;
   text-transform: uppercase;
 
   // weird extra spacing
   span {
-    letter-spacing: 0.2px;
+    letter-spacing: 0.29px;
   }
 
   @include media-query($on-mobile) {
-    font-size: 16px;
-    line-height: 19px;
+    font-size: 14px;
+    line-height: 17px;
   }
 }
 
@@ -213,10 +217,10 @@ a.home-anchor {
   display: flex;
   justify-content: center;
   background-color: #fff;
-  padding-top: 50px;
-  margin: 0px $page-margin;
+  max-width: $max-page-width;
 
-  @include media-query($on-mobile) { padding-top: 30px; }
+  @include media-query($on-mobile) {
+  }
 
   a.social-media-icon {
     color: $dark-text-color;
@@ -235,15 +239,22 @@ a.home-anchor {
       svg > g { stroke: $accent-color; }
     }
   }
+
+  &.gray2 {
+    background-color: $gray2;
+  }
 }
 
 .footer-container {
   box-sizing: border-box;
-  border-top: 1px solid overlay-value(0.25);
-  height: 76px;
-  padding-top: 10px;
-  max-width: $max-footer-width;
+  //border-top: 1px solid overlay-value(0.25);
+  max-width: $footer-width;
+  padding: 100px 10px 30px;
   width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: flex-start;
 
   @include media-query($on-tablet) {
     max-width: $max-footer-width-tablet;
@@ -251,20 +262,18 @@ a.home-anchor {
 
   @include media-query($on-mobile) {
     max-width: $max-footer-width-mobile;
-    height: 53px;
-  }
+    padding: 0px 10px 25px;
 
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-between;
-  align-items: flex-start;
+  }
 }
 
 .copyright {
   @include lato-font(300);
-  font-size: 13px;
-  line-height: 16px;
+  font-size: 12px;
+  line-height: 14px;
   text-transform: uppercase;
+  letter-spacing: -0.03px;
+  color: $gray1;
 
   @include media-query($on-mobile) {
     font-size: 11px;
@@ -275,7 +284,7 @@ a.home-anchor {
 .social-media-list {
   .margin-excl-first-child {
     &:not(:first-child) {
-      margin-left: 13px;
+      margin-left: 12px;
     }
 
     @include media-query($on-mobile) {
@@ -316,7 +325,6 @@ a.home-anchor {
 .page-content {
   width: 100%;
   background-color: $light-text-color;
-  margin-top: $header-height;
 
   // header is not fixed on mobile
   @include media-query($on-mobile) { margin-top: 0px; }
@@ -349,8 +357,32 @@ a.home-anchor {
   @extend .center;
   @extend .cross-center;
 }
+.space-between {
+  display: flex;
+  justify-content: space-between;
+}
+.space-evenly {
+  display: flex;
+  justify-content: space-evenly;
+}
+.flex-cross-center {
+  display: flex;
+  align-items: center;
+}
+.flex-vertical-direction {
+  display: flex;
+  flex-direction: column;
+}
 
+.text-center {
+  text-align: center;
+}
 
+.mobile-remove {
+  @include media-query($on-mobile) {
+    display: none;
+  }
+}
 
 .two-col-container {
   display: flex;

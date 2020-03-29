@@ -1,0 +1,15 @@
+{% if page != null %}
+    {% assign pageName = page.name %}
+
+    {% assign footerClassnames = "" %}
+    {% assign headerClassnames = "" %}
+
+    {% if pageName == "Spotify" or pageName == "Heem" or pageName == "about.html" %}
+        {% assign footerClassnames = "gray2" %}
+    {% endif %}
+
+    {% if pageName == "index.html" %}
+        {% assign headerClassnames = "white" %}
+    {% endif %}
+{% endif %}
+
