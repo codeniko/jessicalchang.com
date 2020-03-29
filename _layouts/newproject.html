@@ -6,7 +6,9 @@ layout: default
 {% include page-vars.liquid %}
 
 <div class="page newproject-page center flex-vertical-direction">
-  {% include header.html %}
+  {% if showOverlappingBackgroundHeader == false %}
+    {% include header.html %}
+  {% endif %}
 
   <div class="project-container">
     {{ content }}

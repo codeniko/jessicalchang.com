@@ -14,6 +14,7 @@ $background-color: #fff !default;
 
 $on-mobile:        480px !default;
 $on-tablet:        840px !default;
+$on-large-tablet:   1050px !default;
 $on-desktop:       1200px !default;
 
 $dark-text-color:  #414343 !default;
@@ -34,6 +35,7 @@ $anchor-active-color: $darker-accent-color;
 
 $gray1: #757575;
 $gray2: $light-text-color;
+$gray3: #585858;
 
 
 @font-face {

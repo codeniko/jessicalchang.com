@@ -3,6 +3,7 @@
 
     {% assign footerClassnames = "" %}
     {% assign headerClassnames = "" %}
+    {% assign showOverlappingBackgroundHeader = false %}
 
     {% if pageName == "Spotify" or pageName == "Heem" or pageName == "about.html" %}
         {% assign footerClassnames = "gray2" %}
@@ -10,6 +11,10 @@
 
     {% if pageName == "index.html" %}
         {% assign headerClassnames = "white" %}
+    {% endif %}
+
+    {% if pageName == "PayPal Shopping" %}
+        {% assign showOverlappingBackgroundHeader = true %}
     {% endif %}
 {% endif %}
 

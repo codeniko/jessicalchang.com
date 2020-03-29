@@ -11,8 +11,9 @@ $inner-width: 1140px;
 $inner-right-padding: 30px;
 
 $description-width: 520px;
+$description-width-tablet: 390px;
 
-$first-card-height: 750px !default;
+$first-card-height: 846px;
 $gold1: #d9cbb9;
 $gold2: #e1d7ca;
 $black1: #444444;
@@ -20,6 +21,18 @@ $black1: #444444;
 
 @mixin mobile {
   @include media-query($on-mobile) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @include media-query($on-tablet) {
+    @content;
+  }
+}
+
+@mixin large-tablet {
+  @include media-query($on-large-tablet) {
     @content;
   }
 }
@@ -34,11 +47,6 @@ $black1: #444444;
     //justify-content: center;
     align-items: center;
     width: 100%;
-
-    //.pad-top {
-    //  padding-top: $common-padding;
-    //  @include media-query($on-mobile) { padding-top: $other-common-padding-mobile; }
-    //}
 
     .pagination {
       display: flex;
@@ -63,7 +71,7 @@ $black1: #444444;
 
     .pagination-bottom {
       padding-top: $common-padding;
-      @include media-query($on-mobile) { padding-top: $common-padding-mobile; }
+      @include mobile { padding-top: $common-padding-mobile; }
     }
   }
 
@@ -74,10 +82,6 @@ $black1: #444444;
     justify-content: center;
     background-color: $light-text-color;
     width: 100%;
-
-    //@include media-query($on-mobile) {
-    //  padding: $common-padding-mobile 0px;
-    //}
 
     .large-padding {
       padding: $large-common-padding 0px;
@@ -100,13 +104,17 @@ $black1: #444444;
     .right-padding {
       padding-right: 46px;
 
+      @include large-tablet {
+        padding-right: 0px;
+      }
+
       @include mobile {
         padding-right: 0px;
         margin: 0px 10px; // doesn't really belong but mobile for just these elements requires padding on both sides
-      }
 
-      &.extra-mobile-padding {
-        margin: 0px 18px;
+        &.extra-mobile-padding {
+          margin: 0px 18px;
+        }
       }
     }
 
@@ -181,11 +189,10 @@ $black1: #444444;
           font-size: 18px;
           line-height: 33px;
           display: block;
-
+          margin-right: 20px;
           max-width: $description-width;
-          width: 100%;
 
-          @include media-query($on-mobile) {
+          @include mobile {
             max-width: 100%;
           }
         }
@@ -202,7 +209,7 @@ $black1: #444444;
         width: 100%;
         text-align: center;
 
-        @include media-query($on-mobile) {
+        @include mobile {
           max-width: initial;
           font-size: 11.3px;
           line-height: 13px;
@@ -211,18 +218,18 @@ $black1: #444444;
 
       img {
         width: 136px;
-        @include media-query($on-mobile) { width: 63px; }
+        @include mobile { width: 63px; }
       }
 
       img.smaller {
         height: 136px;
-        @include media-query($on-mobile) { height: 63px; }
+        @include mobile { height: 63px; }
 
       }
 
       img.bigger {
         height: 145px;
-        @include media-query($on-mobile) { height: 67px; }
+        @include mobile { height: 67px; }
       }
 
       .bold {
@@ -284,10 +291,41 @@ $black1: #444444;
     .inner {
       justify-content: center;
     }
+
+    &.overlapping-bg-with-header {
+      flex-direction: column;
+      align-items: center;
+      background: url(/assets/images/projects/paypal-shopping/group-52.jpg) no-repeat center;
+      background-color: $light-text-color;
+      background-size: cover;
+
+      @include mobile {
+        height: 1004px;
+        background: url(/assets/images/projects/paypal-shopping/group-52-mobile.jpg) no-repeat center;
+        background-color: $light-text-color;
+      }
+
+      .overlapping-bg-dummy {
+        margin-top: auto;
+        @include mobile { margin-top: $small-common-padding-mobile }
+      }
+
+      .inner {
+        margin-top: auto;
+
+        & > div {
+          margin-left: $inner-right-padding
+        }
+      }
+
+      .site-header {
+        background-color: transparent;
+      }
+    }
   }
   .project-section:last-child {
     padding: $common-padding 0px 70px 0px;
-    @include media-query($on-mobile) { padding: $common-padding-mobile 0px 40px 0px; }
+    @include mobile { padding: $common-padding-mobile 0px 40px 0px; }
   }
 
   // alternating background colors
@@ -326,7 +364,7 @@ $black1: #444444;
   }
 
   .project-description-container {
-    //max-width: 942px;
+    max-width: 482px;
     letter-spacing: -0.1px;
 
     .project-title {
@@ -336,17 +374,53 @@ $black1: #444444;
       font-size: 43px;
       line-height: 42px;
       letter-spacing: 1.81px;
+
+      @include tablet {
+        max-width: $description-width-tablet;
+      }
+
+      @include mobile {
+        font-size: 25px;
+        letter-spacing: 1.05px;
+      }
     }
 
-    .project-description {
+    .project-subtitle {
       @include proxima-font();
       display: block;
+      max-width: 433px;
       font-size: 28px;
       color: $gray1;
       line-height: 34px;
       letter-spacing: 0.98px;
       margin-top: 11px;
       margin-bottom: 36px;
+
+      @include tablet {
+        max-width: $description-width-tablet;
+      }
+
+      @include mobile {
+        font-size: 22px;
+        line-height: 30px;
+      }
+    }
+
+    .project-description {
+      @include proxima-font();
+      display: block;
+      max-width: 482px;
+      font-size: 20px;
+      color: $gray3;
+      line-height: 31px;
+
+      @include media-query(1010px) {
+        max-width: $description-width-tablet;
+      }
+
+      @include mobile {
+        font-size: 18px;
+      }
     }
   }
 
@@ -354,7 +428,7 @@ $black1: #444444;
     padding-bottom: 15px;
   }
 
-  @include media-query($on-mobile) {
+  @include mobile {
     //margin-top: $common-padding-mobile;
 
     .two-col-container {
@@ -390,7 +464,7 @@ $black1: #444444;
   ;
     padding: 50px 10px 0px;
 
-    @include media-query($on-mobile) {
+    @include mobile {
       //mobile set to auto eliminates extra weird spacing
       margin: 0px 10px;
       padding: 40px 0px 0px;
