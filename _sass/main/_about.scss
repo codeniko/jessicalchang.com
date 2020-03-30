@@ -23,9 +23,9 @@ $page-width-mobile: 344px;
   }
 
   .about-header {
+    @include lato-font(400);
     text-align: center;
     text-transform: uppercase;
-    @include mont-font();
     font-size: 22px;
     line-height: 27px;
     letter-spacing: -0.1px;

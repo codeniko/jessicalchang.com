@@ -73,18 +73,8 @@ $gray3: #585858;
   }
 }
 
-@mixin raleway-font($weight: 400) {
-  font-family: 'Raleway', sans-serif;
-  font-weight: $weight;
-}
-
 @mixin lato-font($weight: 400) {
   font-family: 'Lato', sans-serif;
-  font-weight: $weight;
-}
-
-@mixin mont-font($weight: 400) {
-  font-family: 'Montserrat', sans-serif;
   font-weight: $weight;
 }
 
