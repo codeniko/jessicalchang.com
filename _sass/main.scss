@@ -7,7 +7,12 @@ $max-footer-width: 936px !default;
 $max-footer-width-tablet: 718px !default;
 $max-footer-width-mobile: 375px !default;
 
-$page-margin: 12px !default;
+// introduced with new paypal project
+$footer-width: 1275px;
+$footer-width-mobile: 375px;
+$inner-padding: 30px;
+
+$page-margin: 30px !default;
 
 $base-font-weight: 400 !default;
 $background-color: #fff !default;

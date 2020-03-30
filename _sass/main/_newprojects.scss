@@ -8,7 +8,6 @@ $large-common-padding-mobile: 80px;
 //$other-common-padding-mobile: 60px;
 
 $inner-width: 1140px;
-$inner-right-padding: 30px;
 
 $description-width: 520px;
 $description-width-tablet: 390px;
@@ -137,7 +136,7 @@ $black1: #444444;
     .inner {
       max-width: $inner-width;
       width: 100%;
-      margin: 0px $inner-right-padding;
+      margin: 0px $inner-padding;
       box-sizing: border-box;
       display: flex;
       flex-direction: column;
@@ -314,12 +313,13 @@ $black1: #444444;
         margin-top: auto;
 
         & > div {
-          margin-left: $inner-right-padding
+          margin-left: $inner-padding
         }
       }
 
       .site-header {
         background-color: transparent;
+        width: 100%;
       }
     }
   }
@@ -446,6 +446,8 @@ $black1: #444444;
 }
 
 .pagination-container {
+  display: flex;
+  flex-direction: column;
   background-color: white;
   max-width: $max-page-width;
   width: 100%;
@@ -454,21 +456,23 @@ $black1: #444444;
     background-color: $gray2;
   }
 
+  .divider {
+    height: 2px;
+    max-width: $footer-width;
+    margin: 0px $page-margin;
+    background-color: rgba(65, 67, 67, 0.25);
+  }
+
   .pagination {
     display: flex;
     justify-content: space-between;
     max-width: $footer-width;
-    width: 100%;
-    border-top: 2px solid overlay-value(0.25);
-    border-color: rgba(65, 67, 67, 0.25);
-  ;
-    padding: 50px 10px 0px;
+    padding: 50px $page-margin 0px;
 
     @include mobile {
-      //mobile set to auto eliminates extra weird spacing
-      margin: 0px 10px;
-      padding: 40px 0px 0px;
-      max-width: $footer-width-mobile;
+      display: none;
+      padding: 0px;
+
       & > div {
         display: none;
       }

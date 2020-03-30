@@ -2,8 +2,6 @@ $header-height: 94px;
 $header-height-mobile: 65px;
 $hamburger-size: 36px;
 
-$footer-width: 1275px;
-$footer-width-mobile: 375px;
 
 #page-overlay {
   display: none;
@@ -18,14 +16,12 @@ $footer-width-mobile: 375px;
  * Site header
  */
 .site-header {
-  padding: 0px 40px;
+  padding: 0px $page-margin;
   height: $header-height;
   background-color: $light-text-color;
   box-sizing: border-box;
   z-index: 30;
-  top: 0px;
-  width: 100%;
-  max-width: $max-page-width;
+  max-width: $footer-width;
   overflow: hidden;
 
   display: flex;
@@ -38,11 +34,9 @@ $footer-width-mobile: 375px;
   }
 
   @include media-query($on-tablet) {
-    padding: 0px 25px;
   }
 
   @include media-query($on-mobile) {
-    padding: 0px 15px;
     height: $header-height-mobile;
     max-height: 100%;
   }
@@ -60,7 +54,6 @@ $footer-width-mobile: 375px;
 
 .site-header-text {
   display: inline-block;
-  padding-left: 11px;
   @include lato-font(400);
   font-size: 14px;
   line-height: 17px;
@@ -69,11 +62,6 @@ $footer-width-mobile: 375px;
   // weird extra spacing
   span {
     letter-spacing: 0.29px;
-  }
-
-  @include media-query($on-mobile) {
-    font-size: 14px;
-    line-height: 17px;
   }
 }
 
@@ -249,7 +237,7 @@ a.home-anchor {
   box-sizing: border-box;
   //border-top: 1px solid overlay-value(0.25);
   max-width: $footer-width;
-  padding: 100px 10px 30px;
+  padding: 100px $page-margin $page-margin;
   width: 100%;
   display: flex;
   flex-flow: row nowrap;
@@ -262,8 +250,7 @@ a.home-anchor {
 
   @include media-query($on-mobile) {
     max-width: $max-footer-width-mobile;
-    padding: 0px 10px 25px;
-
+    padding: 40px $page-margin 25px;
   }
 }
 
@@ -289,7 +276,7 @@ a.home-anchor {
 
     @include media-query($on-mobile) {
       &:not(:first-child) {
-        margin-left: 7px;
+        //margin-left: 7px;
       }
     }
   }
@@ -302,7 +289,7 @@ a.home-anchor {
     height: fit-content;
 
     @include media-query($on-mobile) {
-      width: 12px;
+      //width: 12px;
     }
   }
 
@@ -312,8 +299,8 @@ a.home-anchor {
     position: relative;
 
     @include media-query($on-mobile) {
-      width: 12px;
-      height: 10px;
+      //width: 12px;
+      //height: 10px;
     }
   }
 }
