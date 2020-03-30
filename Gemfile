@@ -21,6 +21,7 @@ group :jekyll_plugins do
   # gem "jekyll-seo-tag", :path => "/Users/nikolay/jekyll-seo-tag"
   gem "jekyll-seo-tag", :git => "git://github.com/NikoRocks/jekyll-seo-tag.git"
   gem "jekyll-sitemap"
+  gem 'jekyll-environment-variables'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

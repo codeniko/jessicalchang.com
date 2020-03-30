@@ -4,12 +4,22 @@
 # uglifyjs - https://github.com/mishoo/UglifyJS2
 # minify - https://github.com/tdewolff/minify/tree/master/cmd/minify
 # tidy-html5 v5.7.3 - https://github.com/htacg/tidy-html5
+# uuidgen (uuid-runtime package on debian)
 
 MINIFY=1
 TIDY=1
 OPEN_LOG=1
 LOG_FILE='build.log'
 TEMP_FILE="/tmp/$LOG_FILE"
+BUILD_ID=`/usr/bin/uuidgen`
+
+# test if uuidgen is available
+/usr/bin/uuidgen > /dev/null
+if [ "$?" -ne 0 ]; then
+  echo "uuidgen not found"
+  exit 1
+fi
+echo "BUILD_ID = $BUILD_ID"
 
 if [ "$MINIFY" -eq 1 ]; then
   js='_includes/scripts'
@@ -22,12 +32,12 @@ if [ "$MINIFY" -eq 1 ]; then
   uglifyjs -m reserved $js/ga-utils.js > $js/ga-utils.min.js
 fi
 
-JEKYLL_ENV=production bundle exec jekyll build --verbose --strict_front_matter
+JEKYLL_ENV=production BUILD_ID="${BUILD_ID}" bundle exec jekyll build --verbose --strict_front_matter
 
 if [ "$?" -eq 0 ] && [ "$MINIFY" -eq 1 ]; then
   assets='_site/assets'
   echo 'Minifying CSS assets...'
-  minify --type=css $assets/normalize.css $assets/main.css > $assets/main.min.css
+  minify --type=css $assets/normalize.css $assets/main.css > "$assets/main-${BUILD_ID}.min.css"
 
   # remove originals that were generated in _site
   if [ "$?" -eq 0 ]; then
