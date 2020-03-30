@@ -2,6 +2,22 @@ $header-height: 94px;
 $header-height-mobile: 65px;
 $hamburger-size: 36px;
 
+@mixin footer-divider {
+  .divider {
+    max-width: $footer-width;
+    padding: 100px 30px 40px;
+    width: 100%;
+    @content; // overrides for .divider
+
+    .divider-inner {
+      min-height: 2px;
+      height: 2px;
+      width: 100%;
+      background-color: rgba(65, 67, 67, 0.25);
+    }
+  }
+}
+
 
 #page-overlay {
   display: none;
@@ -16,18 +32,12 @@ $hamburger-size: 36px;
  * Site header
  */
 .site-header {
-  padding: 0px $page-margin;
+  display: flex;
+  justify-content: center;
   height: $header-height;
   background-color: $light-text-color;
-  box-sizing: border-box;
   z-index: 30;
-  max-width: $footer-width;
-  overflow: hidden;
-
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-between;
-  align-items: center;
+  width: 100%;
 
   &.white {
     background-color: white;
@@ -38,7 +48,18 @@ $hamburger-size: 36px;
 
   @include media-query($on-mobile) {
     height: $header-height-mobile;
-    max-height: 100%;
+  }
+
+  .header-container {
+    max-width: $footer-width;
+    padding: 0px $page-margin;
+    overflow: hidden;
+    width: 100%;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
   }
 }
 
@@ -233,18 +254,10 @@ a.home-anchor {
     background-color: $gray2;
   }
 
-  .divider {
-    height: 2px;
-    max-width: $footer-width;
-    margin: 100px $page-margin 40px;
-    width: calc(100% - 60px); // $page-margin * 2
-    background-color: rgba(65, 67, 67, 0.25);
-  }
+  @include footer-divider;
 }
 
 .footer-container {
-  box-sizing: border-box;
-  //border-top: 1px solid overlay-value(0.25);
   max-width: $footer-width;
   padding: 100px $page-margin $page-margin;
   width: 100%;
@@ -252,10 +265,6 @@ a.home-anchor {
   flex-flow: row nowrap;
   justify-content: space-between;
   align-items: flex-start;
-
-  @include media-query($on-tablet) {
-    max-width: $max-footer-width-tablet;
-  }
 
   @include media-query($on-mobile) {
     padding: 40px $page-margin 25px;

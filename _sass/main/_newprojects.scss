@@ -319,7 +319,6 @@ $black1: #444444;
 
       .site-header {
         background-color: transparent;
-        width: 100%;
       }
     }
   }
@@ -346,7 +345,7 @@ $black1: #444444;
   }
 
   .project-section.celebrate-bg {
-    background: url(/assets/images/projects/paypal-shopping/group-37.png) no-repeat center;
+    background: url(/assets/images/projects/paypal-shopping/group-37@2x.png) no-repeat center;
     background-size: cover;
 
     @include mobile {
@@ -448,6 +447,7 @@ $black1: #444444;
 .pagination-container {
   display: flex;
   flex-direction: column;
+  align-items: center;
   background-color: white;
   max-width: $max-page-width;
   width: 100%;
@@ -456,17 +456,15 @@ $black1: #444444;
     background-color: $gray2;
   }
 
-  .divider {
-    height: 2px;
-    max-width: $footer-width;
-    margin: 0px $page-margin;
-    background-color: rgba(65, 67, 67, 0.25);
+  @include footer-divider {
+    padding: 0px $page-margin;
   }
 
   .pagination {
     display: flex;
     justify-content: space-between;
     max-width: $footer-width;
+    width: 100%;
     padding: 50px $page-margin 0px;
 
     @include mobile {
