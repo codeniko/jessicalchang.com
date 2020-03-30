@@ -1,22 +1,25 @@
+$index-padding: 100px;
+$index-padding-mobile: 60px;
+
 .index-page-container {
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  @include lato-font(400);
+  @include proxima-font;
   letter-spacing: -0.1px;
-  background-color: #fff;
+  background-color: white;
 
   .intro-container {
     padding-top: 220px;
-    padding-bottom: 100px;
+    padding-bottom: $index-padding;
     width: 100%;
     display: flex;
     justify-content: center;
 
     @include media-query($on-mobile) {
       padding-top: 136px;
-      padding-bottom: 60px;
+      padding-bottom: $index-padding-mobile;
     }
 
     & > div {
@@ -29,9 +32,10 @@
   }
 
   .typed-container {
-    margin-bottom: 60px;
+    @include proximabold-font;
+    margin-bottom: 58px;
     font-size: 50px;
-    line-height: 60px;
+    line-height: $index-padding-mobile;
 
     @include media-query($on-mobile) {
       margin-bottom: 40px;
@@ -40,7 +44,7 @@
     }
   }
 
-  .typed-text, .typed-pretext { @include lato-font(700); }
+  .typed-text, .typed-pretext { @include proximabold-font; }
   @keyframes blink {
     0%, 100% { opacity: 1; }
     50% { opacity:0; }
@@ -55,7 +59,7 @@
   .long-intro {
     font-size: 25px;
     line-height: 37px;
-    margin-bottom: 258px;
+    margin-bottom: 257px;
     display: block;
     max-width: 386px;
 
@@ -71,7 +75,7 @@
     font-size: 13px;
     line-height: 16px;
     letter-spacing: 0.3px;
-    @include lato-font(700);
+    @include proximabold-font;
     @include anchor-color($dark-text-color, none);
 
     & > span {
@@ -121,67 +125,89 @@
     }
 
 
-    .desc {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
 
+  }
+
+  .desc {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    @include media-query($on-mobile) {
+      order: 0;
+      padding-bottom: $index-padding-mobile;
+    }
+
+    h2 {
+      @include proximabold-font;
+      padding: 0px;
+      margin: 0px;
+      font-size: 26px;
+      line-height: 32px;
+      letter-spacing: 0.5px;
+
+      @include media-query($on-tablet) {
+        font-size: 24px;
+        line-height: 29px;
+      }
       @include media-query($on-mobile) {
-        order: 0;
-        padding-bottom: 60px;
+        font-size: 18px;
+        line-height: 22px;
       }
+    }
 
-      h2 {
-        padding: 0px;
-        margin: 0px;
-        font-size: 26px;
-        line-height: 32px;
-        @include lato-font(700);
-        letter-spacing: 0.5px;
+    span {
+      font-size: 20px;
+      line-height: 30px;
+      margin: 15px 0px 50px 0px;
+      width: 400px;
 
-        @include media-query($on-tablet) {
-          font-size: 24px;
-          line-height: 29px;
-        }
-        @include media-query($on-mobile) {
-          font-size: 18px;
-          line-height: 22px;
-        }
+      @include media-query($on-tablet) {
+        font-size: 18px;
+        width: 311px;
       }
-
-      span {
-        font-size: 20px;
-        line-height: 30px;
-        margin: 15px 0px 50px 0px;
-        width: 400px;
-
-        @include media-query($on-tablet) {
-          font-size: 18px;
-          width: 311px;
-        }
-        @include media-query($on-mobile) {
-          font-size: 14px;
-          line-height: 25px;
-          width: 311px;
-        }
+      @include media-query($on-mobile) {
+        font-size: 14px;
+        line-height: 25px;
+        width: 311px;
       }
     }
   }
 
+  .upcoming-section {
+    padding: $index-padding 0px;
+
+    @include media-query($on-mobile) {
+      padding: $index-padding-mobile 0px;
+
+      .desc {
+        padding-bottom: 0px;
+      }
+    }
+
+    .coming-soon {
+      font-size: 18px;
+      @include proximabold-font;
+      color: #3d96ec;
+      margin: 0px;
+    }
+  }
+
   .spotify-section {
-    padding: 59px 0px;
-    @include media-query($on-tablet) { padding: 57px 0px; }
-    @include media-query($on-mobile) { padding: 60px 0px; }
+    padding: $index-padding 0px;
+    @include media-query($on-mobile) { padding: $index-padding-mobile 0px; }
   }
 
   @include media-query($on-tablet) {
     .spotify-section img { width: 373px; }
     .heem-section img, .rr-section img { width: 385px; }
+    .paypal-shopping-section img { width: 385px; }
     .zeit-section img { width: 390px; }
   }
   @include media-query($on-mobile) {
     .spotify-section img { width: 216px; }
     .heem-section img, .rr-section img { width: 244px; }
+    .paypal-shopping-section img { width: 244px; }
     .zeit-section img { width: 284px; }
   }
 }
@@ -193,11 +219,11 @@
   width: 100%;
   display: flex;
   justify-content: center;
-  padding-top: 100px;
+  padding-top: $index-padding;
 
-  @include media-query($on-mobile) { padding-top: 60px; }
+  @include media-query($on-mobile) { padding-top: $index-padding-mobile; }
 }
 .alternating-section:nth-child(odd) {
-  background-color: #fff;
+  background-color: white;
 }
 

@@ -5,7 +5,7 @@ $page-width-mobile: 344px;
 .about-page {
   .about-container {
     max-width: $page-width;
-    margin: 70px $page-margin 100px;
+    margin: 70px $page-margin 0px;
     box-sizing: border-box;
 
     display: flex;
@@ -17,7 +17,7 @@ $page-width-mobile: 344px;
       max-width: $page-width-tablet;
     }
     @include media-query($on-mobile) {
-      margin: 60px $page-margin;
+      margin: 60px $page-margin 0px;
       max-width: $page-width-mobile;
     }
   }

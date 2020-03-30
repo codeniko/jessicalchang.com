@@ -1,7 +1,11 @@
 {% include page-vars.liquid %}
 
 <footer class="site-footer {{ footerClassnames }}">
-  <div class="footer-container">
+  {% if showFooterDivider == true %}
+  <div class="divider"></div>
+  {% endif %}
+
+  <div class="footer-container {% if showFooterDivider == true %} no-top-padding {% endif %}">
     <div class="social-media-list">
       <a href="mailto:{{ site.email }}" class="social-media-icon margin-excl-first-child email-icon">
         {% include icon-mail.svg %}

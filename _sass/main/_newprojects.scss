@@ -38,7 +38,7 @@ $black1: #444444;
 
 .newproject-page {
   background-color: white;
-  @include proxima-font();
+  @include proxima-font;
 
   .project-container {
     display: flex;
@@ -144,7 +144,7 @@ $black1: #444444;
       & .large-summary, & .summary {
         // section header
         h2 {
-          @include proximabold-font();
+          @include proximabold-font;
           margin: 0px;
           margin-bottom: 13px;
           padding: 0px;
@@ -164,7 +164,7 @@ $black1: #444444;
         }
 
         span {
-          @include proximabold-font();
+          @include proximabold-font;
           font-size: 55px;
           line-height: 78px;
           display: block;
@@ -200,7 +200,7 @@ $black1: #444444;
 
     .brand-list {
       span {
-        @include proxima-font();
+        @include proxima-font;
         font-size: 24px;
         color: #6c7378;
         max-width: 136px;
@@ -232,7 +232,7 @@ $black1: #444444;
       }
 
       .bold {
-        @include proximabold-font();
+        @include proximabold-font;
         color: #0070ba;
       }
 
@@ -254,7 +254,7 @@ $black1: #444444;
     }
 
     .italic-description {
-      @include proximaitalic-font();
+      @include proximaitalic-font;
       font-size: 18px;
       line-height: 33px;
       letter-spacing: -0.05px;
@@ -369,7 +369,7 @@ $black1: #444444;
 
     .project-title {
       display: block;
-      @include proximabold-font();
+      @include proximabold-font;
       color: $black1;
       font-size: 43px;
       line-height: 42px;
@@ -386,7 +386,7 @@ $black1: #444444;
     }
 
     .project-subtitle {
-      @include proxima-font();
+      @include proxima-font;
       display: block;
       max-width: 433px;
       font-size: 28px;
@@ -407,7 +407,7 @@ $black1: #444444;
     }
 
     .project-description {
-      @include proxima-font();
+      @include proxima-font;
       display: block;
       max-width: 482px;
       font-size: 20px;

@@ -3,7 +3,7 @@
 // Define defaults for each variable.
 $max-page-width: 1440px !default;
 $max-page-width-tablet: 768px !default;
-$max-footer-width: 936px !default;
+$max-footer-width: 969px !default;
 $max-footer-width-tablet: 718px !default;
 $max-footer-width-mobile: 375px !default;
 
@@ -88,18 +88,18 @@ $gray3: #585858;
   font-weight: $weight;
 }
 
-@mixin proxima-font() {
+@mixin proxima-font {
   font-family: 'ProximaNova', sans-serif;
   font-weight: normal;
 }
 
-@mixin proximaitalic-font() {
+@mixin proximaitalic-font {
   font-family: 'ProximaNova', sans-serif;
   font-weight: normal;
   font-style: italic;
 }
 
-@mixin proximabold-font() {
+@mixin proximabold-font {
   font-family: 'ProximaNova', sans-serif;
   font-weight: bold;
 }

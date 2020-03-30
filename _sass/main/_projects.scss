@@ -74,7 +74,7 @@ $other-common-padding-mobile: 60px;
 
       // section header
       & > h2 {
-        @include lato-font();
+        @include proximabold-font;
         margin: 0px 0px 15px 0px;
         padding: 0px;
         font-size: 18px;
@@ -139,7 +139,7 @@ $other-common-padding-mobile: 60px;
 
     .project-title {
       display: block;
-      @include proximabold-font();
+      @include proximabold-font;
       color: #444444;
       font-size: 43px;
       line-height: 42px;
@@ -147,7 +147,7 @@ $other-common-padding-mobile: 60px;
     }
 
     .project-description {
-      @include proxima-font();
+      @include proxima-font;
       display: block;
       font-size: 28px;
       color: #757575;
