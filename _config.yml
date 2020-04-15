@@ -20,6 +20,7 @@ pinterest: https://www.pinterest.com/itsjlcx3/
 linkedin: https://www.linkedin.com/in/jessicalchang/
 
 ga_id: 'UA-110932647-1' # google analytics id
+sentry_dsn: 'https://d73372bc859c4ee18dc4c8993a165f23@o154691.ingest.sentry.io/5201784'
 
 api:
   hostname: https://log.jessicalchang.com
